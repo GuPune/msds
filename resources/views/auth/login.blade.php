@@ -18,20 +18,23 @@
               {{-- <h4>Hello! let's get started</h4> --}}
               <h1 class="font-weight-light"><strong>ยินดีต้อนรับ</strong></h1>
 
-
+              {{$gettoken}}
 @if ($errors->any())
 <div class="alert alert-danger">
     <button type="button" class="close" data-dismiss="alert">×</button>
     Check the following errors :(
 </div>
 @endif
-              <form class="pt-3" method="POST" action="{{ url("login") }}">
+              <form class="pt-3" method="POST" action="{{ route('login.custom') }}">
+
                 @csrf
 
 
 
                   <div class="form-group">
                     <label class="my-1 d-flex align-items-center" style="font-size: 20px;" for="role"><i class="fa fa-user-o" aria-hidden="true"></i>  E-MAIL <span class="ml-auto"></span></label>
+                    {{$gettoken}}
+                    <input id="token" type="text" class="form-control form-control-lg" style="border-radius: 10px;"  name="token" value="{{$gettoken}}" required >
 
                     <input id="email" type="email" class="form-control form-control-lg" style="border-radius: 10px;" placeholder="Email"  name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
                     @error('email')
@@ -63,7 +66,7 @@
                 <div class="form-group">
                     <div class="col-auto" style="text-align: center;">
 
-                        <a href="#" class="auth-link text-black">ลงทะเบียน</a>
+                        <a href="{{ url('registration/'.$gettoken) }}" class="auth-link text-black">ลงทะเบียน</a>
                     </div>
                   </div>
 

@@ -1,6 +1,9 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\FirstController;
+use App\Http\Controllers\LoginController;
+use App\Http\Controllers\DashController;
 
 /*
 |--------------------------------------------------------------------------
@@ -21,10 +24,10 @@ Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
-Auth::routes();
+Route::get('/{token}', [App\Http\Controllers\FirstController::class, 'index']);
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
-Auth::routes();
-
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/login/{token}', [App\Http\Controllers\LoginController::class, 'index']);
+Route::post('custom-login', [LoginController::class, 'customLogin'])->name('login.custom');
+Route::get('/dashboard/{token}', [DashController::class, 'dashboard'])->name('dashboard');
+Route::get('/registration/{token}', [LoginController::class, 'registration'])->name('register-user');
