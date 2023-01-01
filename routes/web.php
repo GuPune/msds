@@ -31,3 +31,4 @@ Route::get('/login/{token}', [App\Http\Controllers\LoginController::class, 'inde
 Route::post('custom-login', [LoginController::class, 'customLogin'])->name('login.custom');
 Route::get('/dashboard/{token}', [DashController::class, 'dashboard'])->name('dashboard');
 Route::get('/registration/{token}', [LoginController::class, 'registration'])->name('register-user');
+Route::post('post-registration', [LoginController::class, 'postRegistration'])->name('register.post');

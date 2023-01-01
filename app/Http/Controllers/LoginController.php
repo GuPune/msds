@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Http\Requests\RegisterRequest;
+use App\Models\User;
 
 class LoginController extends Controller
 {
@@ -51,9 +53,19 @@ class LoginController extends Controller
         return view('auth.register')->with(compact('gettoken'));
 
     }
+    public function postRegistration(RegisterRequest $request)
+    {
 
 
 
+
+      $user = User::create($request->validated());
+
+    //  auth()->login($user);
+
+      return redirect('/')->with('success', "Account successfully registered.");
+
+    }
 
     /**
      * Show the form for creating a new resource.
