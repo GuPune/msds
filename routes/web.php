@@ -27,8 +27,8 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 Route::get('/{token}', [App\Http\Controllers\FirstController::class, 'index']);
 
 
-Route::get('/login/{token}', [App\Http\Controllers\LoginController::class, 'index']);
+Route::get('/login/{token}', [App\Http\Controllers\LoginController::class, 'index'])->name('login');
 Route::post('custom-login', [LoginController::class, 'customLogin'])->name('login.custom');
-Route::get('/dashboard/{token}', [DashController::class, 'dashboard'])->name('dashboard');
+Route::get('/dash/firststep', [DashController::class, 'index'])->name('firststep');
 Route::get('/registration/{token}', [LoginController::class, 'registration'])->name('register-user');
 Route::post('post-registration', [LoginController::class, 'postRegistration'])->name('register.post');

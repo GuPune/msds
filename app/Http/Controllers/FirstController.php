@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\System;
 use Illuminate\Http\Request;
 
 class FirstController extends Controller
@@ -15,7 +16,12 @@ class FirstController extends Controller
     {
         //
 
-        $gettoken = $token;
+       $gettoken = $token;
+        $checkto = System::where('token',$token)->first();
+
+    if(!$checkto){
+    return abort(403);
+    }
 
         return view('welcome')->with(compact('gettoken'));
     }

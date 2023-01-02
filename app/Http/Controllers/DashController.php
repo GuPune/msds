@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class DashController extends Controller
 {
@@ -11,9 +12,20 @@ class DashController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+
+
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
+
     public function index()
     {
         //
+
+
+        return view('pages.first');
     }
 
     /**
@@ -82,11 +94,14 @@ class DashController extends Controller
         //
     }
 
-    public function dashboard($token)
+    public function dashboard()
     {
         //
-        $gettoken = $token;
+     //   $gettoken = $token;
 
-        return view('pages.first')->with(compact('gettoken'));
+$a = Auth::user();
+dd('ok');
+
+        return view('pages.first');
     }
 }

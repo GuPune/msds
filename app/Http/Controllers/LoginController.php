@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Http\Requests\RegisterRequest;
 use App\Models\User;
+use App\Models\System;
+use Illuminate\Support\Facades\Auth;
 
 class LoginController extends Controller
 {
@@ -17,6 +19,11 @@ class LoginController extends Controller
     {
         //
         $gettoken = $token;
+        $checkto = System::where('token',$token)->first();
+
+        if(!$checkto){
+            return abort(403);
+                }
 
         return view('auth.login')->with(compact('gettoken'));
     }
@@ -24,21 +31,23 @@ class LoginController extends Controller
     public function customLogin(Request $request)
     {
 
-        // $request->validate([
-        //     'email' => 'required',
-        //     'password' => 'required',
-        // ]);
+        $request->validate([
+            'email' => 'required',
+            'password' => 'required',
+        ]);
+        $getperiod = System::where('token',$request->token)->first();
+        $request->merge(["period"=>$getperiod->period]);
+        $credentials = $request->only('email', 'password','period');
 
-        // $credentials = $request->only('email', 'password');
-        // if (Auth::attempt($credentials)) {
-        //     return redirect()->intended('dashboard')
-        //                 ->withSuccess('Signed in');
-        // }
+        if (Auth::attempt($credentials)) {
+          return redirect()->route('firststep');
+
+        }
 
     //  return redirect()->intended('dashboard')->withSuccess('Signed in');
-        return redirect()->route('dashboard', [
-            'token' => $request->token,
-        ]);
+        // return redirect()->route('dashboard', [
+        //     'token' => $request->token,
+        // ]);
 
 
 
@@ -50,6 +59,12 @@ class LoginController extends Controller
 
 
         $gettoken = $token;
+
+        $checkto = System::where('token',$token)->first();
+
+        if(!$checkto){
+    return abort(403);
+        }
         return view('auth.register')->with(compact('gettoken'));
 
     }
@@ -59,12 +74,63 @@ class LoginController extends Controller
 
 
 
-      $user = User::create($request->validated());
+   //   $user = User::create($request->validated());
 
     //  auth()->login($user);
 
-      return redirect('/')->with('success', "Account successfully registered.");
+    $getperiod = System::where('token',$request->token)->first();
 
+$checkemail = User::where('email',$request->email)->where('period',$getperiod->period)->first();
+
+if($checkemail){
+
+    return redirect()->back()->withErrors(['msg' => 'The email has already been taken.']);
+
+}
+    $adsuser = User::create([
+        "fname" => $request->fname,
+        "lname" => $request->lname,
+        "password" => $request->password,
+        "dep" => $request->department,
+        "email" => $request->email,
+        "period" => $getperiod->period,
+        "is_admin" => 0,
+    ]);
+
+    // $table->text('fname')->nullable();
+    // $table->text('dep')->nullable();
+    // $table->text('lname')->nullable();
+    // $table->string('name')->nullable();
+    // $table->string('email')->unique();
+    // $table->timestamp('email_verified_at')->nullable();
+    // $table->string('password');
+    // $table->string('period');
+    // $table->integer('is_admin');
+
+    // "fname" => "3123"
+    // "password" => "123456"
+    // "department" => "312"
+    // "email" => "rkknoob2@gmail.com"
+    // "password_confirmation" => "123456"
+
+    //  return redirect('/')->with('success', "Account successfully registered.");
+
+
+    //   return redirect()->route('login', [
+    //     'token' => $request->token,
+    // ]);
+
+    // return redirect()->route('login', [
+    //     'token' => 1
+    // ]);
+
+    // return redirect()->route('login', [$request->token]);
+    // return to_route('login', [$request->token]);
+
+
+    return redirect()->route('login', [
+        'token' => $request->token,
+    ]);
     }
 
     /**
