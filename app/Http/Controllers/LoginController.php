@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Http\Requests\RegisterRequest;
+use App\Models\Checkin;
 use App\Models\User;
 use App\Models\System;
 use Illuminate\Support\Facades\Auth;
@@ -40,16 +41,26 @@ class LoginController extends Controller
         $credentials = $request->only('email', 'password','period');
 
         if (Auth::attempt($credentials)) {
+
+            $a = Auth::user();
+
+            $findcheckin = Checkin::where('user_id',$a->id)->first();
+
+if(!$findcheckin){
+
+   $save = Checkin::create([
+                'user_id' => $a->id
+            ]);
+}
+
+
+
           return redirect()->route('firststep');
 
         }
 
-    //  return redirect()->intended('dashboard')->withSuccess('Signed in');
-        // return redirect()->route('dashboard', [
-        //     'token' => $request->token,
-        // ]);
 
-
+        return redirect()->back()->withErrors(['msg' => 'Oppes! You have entered invalid credentials.']);
 
       //  return redirect("login")->withSuccess('Login details are not valid');
     }

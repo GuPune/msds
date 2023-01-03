@@ -32,3 +32,4 @@ Route::post('custom-login', [LoginController::class, 'customLogin'])->name('logi
 Route::get('/dash/firststep', [DashController::class, 'index'])->name('firststep');
 Route::get('/registration/{token}', [LoginController::class, 'registration'])->name('register-user');
 Route::post('post-registration', [LoginController::class, 'postRegistration'])->name('register.post');
+Route::post('checkin', [\App\Http\Controllers\DashController::class, 'checkin']);

@@ -7,10 +7,17 @@
   @include('templateadmin.styles')
 </head>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css">
+
+<style>
+    .bocdy  {
+      background-image: url("https://cdn.vuetifyjs.com/images/backgrounds/vbanner.jpg");
+      background-color: #aa1212;
+    }
+    </style>
 <body>
   <div class="container-scroller">
     <div class="container-fluid page-body-wrapper full-page-wrapper">
-      <div class="content-wrapper d-flex align-items-center auth px-0" style="background-color: blue">
+      <div class="content-wrapper d-flex align-items-center auth px-0 bocdy">
         <div class="row w-100 mx-0">
           <div class="col-lg-4 mx-auto">
             <div class="auth-form-light text-left py-5 px-4 px-sm-5" style="border-radius: 30px;">
@@ -22,9 +29,11 @@
 @if ($errors->any())
 <div class="alert alert-danger">
     <button type="button" class="close" data-dismiss="alert">×</button>
-    Check the following errors :(
+    Check the following errors :(  {{$errors->first()}}
 </div>
 @endif
+
+
               <form class="pt-3" method="POST" action="{{ route('login.custom') }}">
 
                 @csrf

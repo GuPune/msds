@@ -104,4 +104,20 @@ dd('ok');
 
         return view('pages.first');
     }
+
+    public function checkin()
+    {
+        //
+     //   $gettoken = $token;
+
+$a = Auth::user();
+
+
+\Log::info($a);
+
+
+    //    return view('pages.first');
+    }
+
+
 }
