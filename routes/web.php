@@ -4,6 +4,8 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\FirstController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\DashController;
+use App\Http\Controllers\VoteController;
+use App\Http\Controllers\QAController;
 
 /*
 |--------------------------------------------------------------------------
@@ -34,3 +36,7 @@ Route::get('/dash/home', [DashController::class, 'home'])->name('twostep');
 Route::get('/registration/{token}', [LoginController::class, 'registration'])->name('register-user');
 Route::post('post-registration', [LoginController::class, 'postRegistration'])->name('register.post');
 Route::post('checkin', [\App\Http\Controllers\DashController::class, 'checkin']);
+
+
+Route::get('/dash/votefirst', [VoteController::class, 'index'])->name('votefirst');
+Route::get('/dash/qafirst', [QAController::class, 'index'])->name('qafirst');

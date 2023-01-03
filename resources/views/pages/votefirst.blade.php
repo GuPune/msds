@@ -51,15 +51,8 @@
       margin: auto;
     }
     .ima{
-        width: 100px;
+        width: 80px;
     }
-
-    @media only screen and (max-width: 600px) {
-        .ima{
-        width: 100%;
-    }
-
-}
     </style>
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
@@ -100,26 +93,86 @@ $(document).ready(function(){
 
 <div class="wrapper w3-animate-top">
   <!-- Sidebar  -->
-
+  <nav id="sidebar">
+    <div id="dismiss"> <i class="fas  fa-arrow-left"></i> </div>
+    <div class="sidebar-header">
+      <h5 >Main Menu</h5 >
+    </div>
+    <ul class="list-unstyled components">
+      <li> <a href="https://dinovery.app/app/index.php/Home/history"><i class="far fa-list-alt text-dino mr-1"></i> ออเดอร์ของฉัน</a> </li>
+      <li> <a href="#" onclick="return confirm('เมนูนี้ยังไม่เปิดให้บริการ')" ><i class="far fa-user-circle text-dino mr-1"></i> โปรไฟล์ของฉัน</a> </li>
+      <li> <a href="https://dinovery.app/app/index.php/Home/order_location"><i class="fas fa-map-marker-alt text-dino mr-1"></i> ที่อยู่ของฉัน</a> </li>
+      <li> <a href="https://dinovery.app/app/index.php/Auth/logout"><i class="fas fa-sign-out-alt text-dino mr-1"></i> ออกจากระบบ</a> </li>
+    </ul>
+  </nav>
 
   <!-- Page Content  -->
   <div id="content" class="bocdy">
 
     <div class="px-3" style="margin-top:5rem;">
-        @yield('content')
+      <div class="row mb-3">
+        <img src="/wallpaperbetter.jpg" class="img-fluid" alt="Responsive image" style="padding: 10px;">
+      </div>
+
+      <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+        <ol class="carousel-indicators">
+          <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+          <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+          <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+        </ol>
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img class="d-block w-100" src="https://cdn.vuetifyjs.com/images/backgrounds/vbanner.jpg" alt="First slide">
+          </div>
+          <div class="carousel-item">
+            <img class="d-block w-100" src="https://cdn.vuetifyjs.com/images/backgrounds/vbanner.jpg" alt="Second slide">
+          </div>
+          <div class="carousel-item">
+            <img class="d-block w-100" src="https://cdn.vuetifyjs.com/images/backgrounds/vbanner.jpg" alt="Third slide">
+          </div>
+        </div>
+        <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="sr-only">Next</span>
+        </a>
+      </div>
 
 
 
     </div>
-
-
     <div class="p-2 shadow fixed-top">
-        @include('template.header')
+        <div class="row" style="font-family:Mitr;">
+          <div class="col-4 text-center text-white" style="padding-top:1%;">
+            <a href="#"><i class="fa fa-th fa-2x" aria-hidden="true"></i> MSD</a>
+          </div>
+          <div class="col-4 text-white" style="padding-top:1%;">
+            <a href="#"><i class="fa fa-user-circle fa-2x" aria-hidden="true"></i> Rkknoob</a>
+          </div>
+          <div class="col-4 text-center text-white" style="padding-top:1%;">
+            <a href="#"><i class="fa fa-history fa-2x" aria-hidden="true"></i>Logout</a>
+          </div>
+        </div>
       </div>
 		<div style="height:90px;"></div>
 		<div class="p-2 shadow fixed-bottom">
-            @include('template.footer')
-
+  <div class="row" style="margin-bottom:2%; font-family:Mitr;">
+    {{-- <div class="col-4 text-center text-white" style="padding-top:1%;">
+      <a href="#"> <img src="/button-15389.png" alt="buttonpng" border="0" class="ima"/><br>HOME</a>
+    </div> --}}
+    <div class="col-4 text-center text-white" style="padding-top:1%;">
+      <a href="#" target="_blank"><img src="/button-15389.png" alt="buttonpng" border="0" class="ima"/><br>THE WALL</a>
+    </div>
+    <div class="col-4 text-center text-white" style="padding-top:1%;">
+      <a href="#"><img src="/button-15389.png" alt="buttonpng" border="0" class="ima"/><br>Q & A</a>
+    </div>
+    <div class="col-4 text-center text-white" style="padding-top:1%;">
+      <a href="#"><img src="/button-15389.png" alt="buttonpng" border="0" class="ima"/><br>VOTE</a>
+    </div>
+  </div>
 </div>
   </div>
 
@@ -179,9 +232,3 @@ $(document).ready(function(){
 </body>
 
 </html>
-
-
-
-
-
-

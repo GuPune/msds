@@ -3,29 +3,19 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Auth;
 
-class DashController extends Controller
+class VoteController extends Controller
 {
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-
-
-    public function __construct()
-    {
-        $this->middleware('auth');
-    }
-
-
     public function index()
     {
         //
 
-
-        return view('pages.first');
+        return view('pages.votefirst');
     }
 
     /**
@@ -93,41 +83,4 @@ class DashController extends Controller
     {
         //
     }
-
-    public function dashboard()
-    {
-        //
-     //   $gettoken = $token;
-
-$a = Auth::user();
-
-
-        return view('pages.first');
-    }
-
-    public function checkin()
-    {
-        //
-     //   $gettoken = $token;
-
-$a = Auth::user();
-
-
-
-
-
-    //    return view('pages.first');
-    }
-
-    public function home()
-    {
-        //
-     //   $gettoken = $token;
-
-
-
-        return view('pages.two');
-    }
-
-
 }
