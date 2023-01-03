@@ -142,26 +142,7 @@ $(document).ready(function () {
         }
 
         $('body').on('click', '.save', function () {
-                $.ajaxSetup({
-               headers: {
-                   'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-               }
-               });
-
-           $.ajax({
-               dataType: 'json',
-               type:'POST',
-               data:{
-                   '_token': "{{ csrf_token() }}",
-                  },
-               url: '/checkin',
-               success: function(datas){
-                swal("บันทึกสำเร็จ!", "บันทึกสำเร็จ!", "success");
-               }
-           })
-
-
-
+            window.location.href = '/dash/home'
         });
 
     </script>

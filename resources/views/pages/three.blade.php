@@ -43,19 +43,15 @@
 		 white-space: nowrap;
       }
     </style>
-
-<style>
-    .carousel-inner > .item > img,
-    .carousel-inner > .item > a > img {
-      width: 70%;
-      margin: auto;
-    }
-    .ima{
-        width: 80px;
-    }
-    </style>
     <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-162912447-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
 
+  gtag('config', 'UA-162912447-1');
+</script>
 
 </head>
 
@@ -70,8 +66,6 @@ hr.style-two {
 	height: 1px;
 	background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));
 }
-
-
 </style>
 <script type="text/javascript">
 $(document).ready(function(){
@@ -109,68 +103,34 @@ $(document).ready(function(){
   <!-- Page Content  -->
   <div id="content" class="bocdy">
 
-    <div class="px-3" style="margin-top:5rem;">
+    <div class="px-3" style="margin-top:1rem;">
       <div class="row mb-3">
-        <img src="/wallpaperbetter.jpg" class="img-fluid" alt="Responsive image" style="padding: 10px;">
+
       </div>
 
-      <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
-        <ol class="carousel-indicators">
-          <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-          <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-          <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
-        </ol>
-        <div class="carousel-inner">
-          <div class="carousel-item active">
-            <img class="d-block w-100" src="https://cdn.vuetifyjs.com/images/backgrounds/vbanner.jpg" alt="First slide">
-          </div>
-          <div class="carousel-item">
-            <img class="d-block w-100" src="https://cdn.vuetifyjs.com/images/backgrounds/vbanner.jpg" alt="Second slide">
-          </div>
-          <div class="carousel-item">
-            <img class="d-block w-100" src="https://cdn.vuetifyjs.com/images/backgrounds/vbanner.jpg" alt="Third slide">
-          </div>
-        </div>
-        <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
-          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-          <span class="sr-only">Previous</span>
-        </a>
-        <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
-          <span class="carousel-control-next-icon" aria-hidden="true"></span>
-          <span class="sr-only">Next</span>
-        </a>
-      </div>
+
+
+
+
+
 
 
 
     </div>
-    <div class="p-2 shadow fixed-top">
-        <div class="row" style="font-family:Mitr;">
-          <div class="col-4 text-center text-white" style="padding-top:1%;">
-            <a href="#"><i class="fa fa-th fa-2x" aria-hidden="true"></i> MSD</a>
-          </div>
-          <div class="col-4 text-white" style="padding-top:1%;">
-            <a href="#"><i class="fa fa-user-circle fa-2x" aria-hidden="true"></i> Rkknoob</a>
-          </div>
-          <div class="col-4 text-center text-white" style="padding-top:1%;">
-            <a href="#"><i class="fa fa-history fa-2x" aria-hidden="true"></i>Logout</a>
-          </div>
-        </div>
-      </div>
 		<div style="height:90px;"></div>
-		<div class="p-2 shadow fixed-bottom">
+		<div class="p-2 shadow fixed-bottom" style="background-color:#ec7d23;">
   <div class="row" style="margin-bottom:2%; font-family:Mitr;">
-    {{-- <div class="col-4 text-center text-white" style="padding-top:1%;">
-      <a href="#"> <img src="/button-15389.png" alt="buttonpng" border="0" class="ima"/><br>HOME</a>
-    </div> --}}
-    <div class="col-4 text-center text-white" style="padding-top:1%;">
-      <a href="#" target="_blank"><img src="/button-15389.png" alt="buttonpng" border="0" class="ima"/><br>THE WALL</a>
+    <div class="col-3 text-center text-white" style="padding-top:1%;">
+      <a href="https://dinovery.app/app/index.php/Home"><i class="fa fa-th fa-2x" aria-hidden="true"></i><br>หน้าแรก</a>
     </div>
-    <div class="col-4 text-center text-white" style="padding-top:1%;">
-      <a href="#"><img src="/button-15389.png" alt="buttonpng" border="0" class="ima"/><br>Q & A</a>
+    <div class="col-3 text-center text-white" style="padding-top:1%;">
+      <a href="https://dinovery.app/app/index.php/Home/history"><i class="fa fa-history fa-2x" aria-hidden="true"></i><br>ออเดอร์</a>
     </div>
-    <div class="col-4 text-center text-white" style="padding-top:1%;">
-      <a href="#"><img src="/button-15389.png" alt="buttonpng" border="0" class="ima"/><br>VOTE</a>
+    <div class="col-3 text-center text-white" style="padding-top:1%;">
+      <a href="https://dinovery.app/app/index.php/Home/message"><i class="fa fa-envelope fa-2x" aria-hidden="true"></i><br>ข้อความ</a>
+    </div>
+    <div class="col-3 text-center text-white" style="padding-top:1%;">
+      <a href="https://dinovery.app/app/index.php/Home/profile"><i class="fa fa-user-circle fa-2x" aria-hidden="true"></i><br>โปรไฟล์</a>
     </div>
   </div>
 </div>

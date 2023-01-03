@@ -44,12 +44,13 @@ class LoginController extends Controller
 
             $a = Auth::user();
 
-            $findcheckin = Checkin::where('user_id',$a->id)->first();
+            $findcheckin = Checkin::where('user_id',$a->id)->where('period',$a->period)->first();
 
 if(!$findcheckin){
 
-   $save = Checkin::create([
-                'user_id' => $a->id
+            $save = Checkin::create([
+                'user_id' => $a->id,
+                'period' => $a->period
             ]);
 }
 

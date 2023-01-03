@@ -119,5 +119,15 @@ $a = Auth::user();
     //    return view('pages.first');
     }
 
+    public function home()
+    {
+        //
+     //   $gettoken = $token;
+
+
+
+        return view('pages.two');
+    }
+
 
 }
