@@ -1,0 +1,43 @@
+.breadcrumb {
+    font-family: 'DBHelvethaica' !important;
+    font-size: 18px;
+}
+
+.swal-title {
+    font-family: 'DBHelvethaica' !important;
+    font-size:22px !important;
+}
+
+.swal-text {
+    font-family: 'DBHelvethaica' !important;
+    font-size: 20px !important;
+}
+
+.datatable-header {
+    font-family: 'DBHelvethaica' !important;
+    font-size: 18px !important;
+}
+
+.dataTables_filter input {
+    font-family: 'DBHelvethaica' !important;
+    font-size: 18px !important;
+}
+
+.dataTables_length select {
+    font-family: 'DBHelvethaica' !important;
+    font-size: 18px !important
+}
+
+.width_chart {
+    margin:auto; width:85%;
+}
+
+.font-thai {
+    font-family: 'DBHelvethaica' !important;
+    font-size: 18px !important
+}
+
+.modal-title {
+    font-family: 'DBHelvethaica' !important;
+    font-size: 25px !important
+}

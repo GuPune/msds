@@ -23,8 +23,6 @@ class DashController extends Controller
     public function index()
     {
         //
-
-
         return view('pages.first');
     }
 

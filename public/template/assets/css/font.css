@@ -1,0 +1,73 @@
+@font-face {
+    font-family: 'DBHelvethaica';
+    font-weight: normal;
+    font-style: normal;
+    src: url('/fonts/DB_Helvethaica/DB HelvethaicaMon X v3.2.ttf');
+    src: url('/fonts/DB_Helvethaica/DB Helvethaica X Bd Cond It v3.2.ttf') format('truetype'),
+}
+
+.font {
+    font-family: 'DBHelvethaica' !important;
+    font-size: 18px;
+}
+
+.f-12 {
+    font-size: 12px;
+}
+
+.f-13 {
+    font-size: 13px;
+}
+
+.f-14 {
+    font-size: 14px;
+}
+
+.f-15 {
+    font-size: 15px;
+}
+
+.f-16 {
+    font-size: 16px;
+}
+
+.f-17 {
+    font-size: 17px;
+}
+
+.f-18 {
+    font-size: 18px;
+}
+
+.f-19 {
+    font-size: 19px;
+}
+
+.f-20 {
+    font-size: 20px;
+}
+
+.f-22 {
+    font-size: 22px;
+}
+
+.f-24 {
+    font-size: 24px;
+}
+
+th {
+    font-family: 'DBHelvethaica' !important;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.cur-month {
+    font-family: 'DBHelvethaica' !important;
+    font-size: 24px;
+}
+
+.flatpickr-weekday {
+    font-family: 'DBHelvethaica' !important;
+    font-size: 130% !important;
+}
+

@@ -31,7 +31,6 @@ class LoginController extends Controller
 
     public function customLogin(Request $request)
     {
-
         $request->validate([
             'email' => 'required',
             'password' => 'required',
@@ -47,7 +46,6 @@ class LoginController extends Controller
             $findcheckin = Checkin::where('user_id',$a->id)->where('period',$a->period)->first();
 
 if(!$findcheckin){
-
             $save = Checkin::create([
                 'user_id' => $a->id,
                 'period' => $a->period

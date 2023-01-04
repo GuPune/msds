@@ -2,9 +2,9 @@
     <div class="text-center navbar-brand-wrapper d-flex align-items-center justify-content-center">
 
       <a class="navbar-brand brand-logo" href="/">
-        <img src="/cms/images/logo.jpg" alt="logo"/></a>
+        <img src="/cms/images/msd-logo.svg" alt="logo"/></a>
       <a class="navbar-brand brand-logo-mini" href="/">
-        <img src="/cms/images/logo.jpg" alt="logo"/></a>
+        <img src="/cms/images/msd-logo.svg" alt="logo"/></a>
       <button class="navbar-toggler navbar-toggler align-self-center d-none d-lg-flex" type="button" data-toggle="minimize">
         <span class="typcn typcn-th-menu"></span>
       </button>

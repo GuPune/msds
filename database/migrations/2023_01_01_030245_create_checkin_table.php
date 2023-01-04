@@ -16,6 +16,7 @@ class CreateCheckinTable extends Migration
         Schema::create('checkin', function (Blueprint $table) {
             $table->id();
             $table->integer('user_id');
+            $table->string('period');
             $table->timestamps();
         });
     }
