@@ -23,15 +23,11 @@
       <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
     </ol>
     <div class="carousel-inner">
-      <div class="carousel-item active">
-        <img class="d-block w-100" src="https://cdn.vuetifyjs.com/images/backgrounds/vbanner.jpg" alt="First slide">
+      @foreach($item as $key => $rs)
+      <div class="carousel-item {{$key == 0 ? 'active' : '' }}">
+          <img src="/public/product/{{$rs->image}}" class="d-block w-100"  alt="...">
       </div>
-      <div class="carousel-item">
-        <img class="d-block w-100" src="https://cdn.vuetifyjs.com/images/backgrounds/vbanner.jpg" alt="Second slide">
-      </div>
-      <div class="carousel-item">
-        <img class="d-block w-100" src="https://cdn.vuetifyjs.com/images/backgrounds/vbanner.jpg" alt="Third slide">
-      </div>
+      @endforeach
     </div>
     <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
       <span class="carousel-control-prev-icon" aria-hidden="true"></span>

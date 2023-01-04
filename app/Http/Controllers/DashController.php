@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Carosel;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -23,6 +24,7 @@ class DashController extends Controller
     public function index()
     {
         //
+
         return view('pages.first');
     }
 
@@ -123,8 +125,9 @@ $a = Auth::user();
      //   $gettoken = $token;
 
 
+     $getcal = Carosel::orderBy('sequence', 'asc')->get();
 
-        return view('pages.two');
+        return view('pages.two')->with('item',$getcal);
     }
 
 

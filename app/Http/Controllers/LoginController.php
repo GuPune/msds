@@ -42,9 +42,7 @@ class LoginController extends Controller
         if (Auth::attempt($credentials)) {
 
             $a = Auth::user();
-
             $findcheckin = Checkin::where('user_id',$a->id)->where('period',$a->period)->first();
-
 if(!$findcheckin){
             $save = Checkin::create([
                 'user_id' => $a->id,
@@ -208,4 +206,14 @@ if($checkemail){
     {
         //
     }
+
+    public function logout()
+    {
+        //
+        $getauth = Auth::guard('web')->user();
+$getperi = System::where('period',$getauth->period)->first();
+$gettoken = $getperi->token;
+        return view('auth.login')->with(compact('gettoken'));
+    }
+
 }

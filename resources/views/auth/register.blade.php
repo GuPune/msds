@@ -39,7 +39,7 @@
 
                   <div class="form-group">
                     <label class="my-1 d-flex align-items-center" style="font-size: 14px;" for="role">  First Name <span class="ml-auto"></span></label>
-                    <input id="token" type="hidden" class="form-control form-control-lg" style="border-radius: 10px;"  name="token" value="{{$gettoken}}" required >
+                    <input id="token" type="text" class="form-control form-control-lg" style="border-radius: 10px;"  name="token" value="{{$gettoken}}" required >
 
                     <input id="fname" type="text" class="form-control form-control-lg" style="border-radius: 10px;" placeholder="First Name"  name="fname"  required>
                     @if ($errors->has('fname'))

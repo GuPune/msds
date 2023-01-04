@@ -36,6 +36,8 @@ Route::get('/{token}', [App\Http\Controllers\FirstController::class, 'index']);
 
 
 Route::get('/login/{token}', [App\Http\Controllers\LoginController::class, 'index'])->name('login');
+Route::get('/logout/logutfront', [App\Http\Controllers\LoginController::class, 'logout'])->name('logout.front');
+
 Route::post('custom-login', [LoginController::class, 'customLogin'])->name('login.custom');
 Route::get('/dash/firststep', [DashController::class, 'index'])->name('firststep');
 Route::get('/dash/home', [DashController::class, 'home'])->name('twostep');

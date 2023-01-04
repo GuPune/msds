@@ -22,27 +22,17 @@
             <div class="form-group col-sm-4 col-12">
                 <div class="row">
             <div class="form-group" style="padding-left:15px;">
-                <label for="filemagazine"><B>รูปภาพ</B><font color="red">*</font></label><br>
+                <label for="filemagazine"><B>รูปภาพ</B><font color="red">* ขนาดที่แนะนำ 1440 * 500 px</font></label><br>
                 <input type="file" name="product_img" id="product_img" class="filestyle" ><br>
                 <img src="/public/product/{{$item->image}}" alt="รูปภาพประจำสินค้า" class="img-fluid rounded mx-auto d-block profile-image" id="showImage" width="300" height="150">
             </div>
-                </div>
+             </div>
             </div>
             <input type="hidden" name="image" id="image" value="{{$item->image}}" required>
             <button type="submit" class="btn btn-primary">บันทึก</button>
         </form>
         </div>
     </div>
-
-
-
-
-
-
-
-
-
-
 </div>
 
 
