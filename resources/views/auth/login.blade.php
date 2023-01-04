@@ -84,7 +84,7 @@
                       <label class="form-check-label text-muted">
                      <a href="#" class="auth-link text-black">ลืมรหัสผ่าน?</a>
                     </div>
-                    <a href="#" class="auth-link text-black">สำหรับเจ้าหน้าที่</a>
+                    <a href="/admin/login" class="auth-link text-black" target="_blank">สำหรับเจ้าหน้าที่</a>
                   </div>
                 {{-- <div class="my-2 d-flex justify-content-between align-items-center">
                   <div class="form-check">
