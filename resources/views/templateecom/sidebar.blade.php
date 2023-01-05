@@ -5,6 +5,35 @@
             <img src="/cms/images/msd-logo.svg" style="height: auto; width: 100px;">
         </div>
     </a>
+
+    <li class="nav-item">
+        <a class="nav-link" href="#" data-toggle="collapse"  data-target="#collapse11" aria-expanded="true" aria-controls="collapse">
+            <i class="fas fa-fw fa-table"></i>
+            <span>รายงาน</span>
+        </a>
+
+        <div  id="collapse11" class="collapse show'"aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+            <div class="bg-white py-2 collapse-inner rounded">
+                <a class="collapse-item" href="/admin/reporttotal">
+                   รายงานจำนวนผู้สมัคร
+                </a>
+                <a class="collapse-item" href="/admin/reportfirst">
+                    รายงานการลงทะเบียนครั้งที่ 1
+                 </a>
+                 <a class="collapse-item" href="/admin/reporttwo">
+                    รายงานการลงทะเบียนครั้งที่ 2
+                 </a>
+                 <a class="collapse-item" href="/admin/reportqa">
+                    รายงาน Q&A
+                 </a>
+                 <a class="collapse-item" href="/admin/reportvote">
+                    รายงานผลการโหวตคะแนน
+                 </a>
+            </div>
+        </div>
+
+    </li>
+
     <li class="nav-item">
         <a class="nav-link" href="/admin/carosel">
             <i class="fas fa-fw fa-table"></i>
@@ -12,9 +41,9 @@
         </a>
     </li>
     <li class="nav-item">
-        <a class="nav-link" href="/admin/user">
+        <a class="nav-link" href="/admin/users">
             <i class="nav-icon fas fa-edit"></i>
-            <span>จำนวนผู้เข้าร่วม</span>
+            <span>จัดการสมาชิก</span>
         </a>
     </li>
     <li class="nav-item">

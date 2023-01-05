@@ -28,6 +28,10 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('/{token}/resetpassword', [App\Http\Controllers\ResetPasswordController::class, 'index']);
+Route::POST('/resetpassword', [App\Http\Controllers\ResetPasswordController::class, 'store'])->name('reset.custom');
+
+
 Auth::routes();
 
 
@@ -53,13 +57,17 @@ Route::get('/admin/login',[AuthLoginController::class,'showAdminLoginForm'])->na
 Route::post('/admin/login',[AuthLoginController::class,'adminLogin'])->name('admin.login');
 
 
+
+
 Route::prefix('admin')->group(function () {
 
     Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard')->middleware('admin');
     Route::resource('carosel', '\App\Http\Controllers\CaroselController');
     Route::resource('votes', '\App\Http\Controllers\VotesController');
     Route::resource('qac', '\App\Http\Controllers\QaController');
-    Route::resource('users', '\App\Http\Controllers\NewController');
+    Route::resource('users', '\App\Http\Controllers\UserController');
+    Route::post('users/datatables', [\App\Http\Controllers\UserController::class, 'getdatatable'])->name('users.data');
+
     Route::resource('contes', '\App\Http\Controllers\ContesController');
 
     Route::post('/uploadimage', [App\Http\Controllers\uploadController::class, 'upload']);
@@ -67,6 +75,13 @@ Route::prefix('admin')->group(function () {
 
     Route::PATCH('sequence/down', [App\Http\Controllers\SequenceController::class, 'down']);
     Route::get('/logout', [AuthLoginController::class, 'perform'])->name('logout.perform');
+    Route::POST('/reset', [App\Http\Controllers\ResetPasswordController::class, 'reset']);
+
+    Route::get('/reporttotal', [App\Http\Controllers\ReportController::class, 'reporttotal']);
+    Route::get('/reportfirst', [App\Http\Controllers\ReportController::class, 'reportfirst']);
+    Route::get('/reporttwo', [App\Http\Controllers\ReportController::class, 'reporttwo']);
+    Route::get('/reportqa', [App\Http\Controllers\ReportController::class, 'reportqa']);
+    Route::get('/reportvote', [App\Http\Controllers\ReportController::class, 'reportvote']);
 
 });
 
