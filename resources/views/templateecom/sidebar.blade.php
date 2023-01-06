@@ -52,11 +52,25 @@
             <span>ผู้เข้าประกวด</span>
         </a>
     </li>
+
+
     <li class="nav-item">
-        <a class="nav-link" href="/admin/votes">
-            <i class="nav-icon fas fa-edit"></i>
+        <a class="nav-link" href="#" data-toggle="collapse"  data-target="#collapse12" aria-expanded="true" aria-controls="collapse">
+            <i class="fas fa-fw fa-table"></i>
             <span>ผลคะแนน</span>
         </a>
+
+        <div  id="collapse12" class="collapse show'"aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+            <div class="bg-white py-2 collapse-inner rounded">
+                 <a class="collapse-item" href="/admin/setting/votess">
+                    ผู้เข้าประกวด
+                 </a>
+                 <a class="collapse-item" href="/admin/votes">
+                    ตั้งค่า
+                 </a>
+            </div>
+        </div>
+
     </li>
     <li class="nav-item">
         <a class="nav-link" href="/admin/qac">

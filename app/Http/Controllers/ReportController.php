@@ -4,6 +4,9 @@ namespace App\Http\Controllers;
 
 use App\Models\User;
 use Illuminate\Http\Request;
+use Maatwebsite\Excel\Facades\Excel;
+use App\Exports\UsersExport;
+use DB;
 
 class ReportController extends Controller
 {
@@ -40,5 +43,12 @@ class ReportController extends Controller
     {
         return view('backend.reportvote');
     }
+    public function export($y)
+    {
+
+        return Excel::download(new UsersExport($y), 'report.xlsx');
+    }
+
+
 
 }

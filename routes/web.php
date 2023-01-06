@@ -64,6 +64,7 @@ Route::prefix('admin')->group(function () {
     Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard')->middleware('admin');
     Route::resource('carosel', '\App\Http\Controllers\CaroselController');
     Route::resource('votes', '\App\Http\Controllers\VotesController');
+    Route::resource('setting/votess', '\App\Http\Controllers\VotesSettingController');
     Route::resource('qac', '\App\Http\Controllers\QaController');
     Route::resource('users', '\App\Http\Controllers\UserController');
     Route::post('users/datatables', [\App\Http\Controllers\UserController::class, 'getdatatable'])->name('users.data');
@@ -82,6 +83,7 @@ Route::prefix('admin')->group(function () {
     Route::get('/reporttwo', [App\Http\Controllers\ReportController::class, 'reporttwo']);
     Route::get('/reportqa', [App\Http\Controllers\ReportController::class, 'reportqa']);
     Route::get('/reportvote', [App\Http\Controllers\ReportController::class, 'reportvote']);
+    Route::get('export/{type}', [App\Http\Controllers\ReportController::class, 'export']);
 
 });
 

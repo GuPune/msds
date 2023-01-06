@@ -9,6 +9,14 @@
     <h1 class="h3 mb-4 text-gray-800">รายงานการลงทะเบียนครั้งที่ 2</h1>
 
 
+    <div class="card shadow mb-4">
+        <div class="card-body">
+            <div>
+                <span style="float: right"><a  href="export/N"  class="btn btn-info"><i class="fa fa-file-excel-o" aria-hidden="true"></i> ดาวน์โหลดข้อมูลไฟล์ Excel</a>&nbsp;&nbsp;&nbsp;&nbsp;</span>
+            </div>
+
+        </div>
+    </div>
 
     <div class="card shadow mb-4">
         <div class="card-body">

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Headvote;
 use Illuminate\Http\Request;
 
 class VotesController extends Controller
@@ -11,9 +12,12 @@ class VotesController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
         //
+
+        $getheadvote = Headvote::all();
+        return view('backend.settingvotes')->with('vote',$getheadvote);
     }
 
     /**
@@ -57,6 +61,10 @@ class VotesController extends Controller
     public function edit($id)
     {
         //
+
+        $getheadvote = Headvote::where('id',$id)->first();
+
+        return view('backend.formsettingvotes')->with('vote',$getheadvote);
     }
 
     /**
@@ -69,6 +77,15 @@ class VotesController extends Controller
     public function update(Request $request, $id)
     {
         //
+
+        $updatehead = Headvote::find($id)->update([
+'title' => $request->title,
+'start' => $request->start,
+'end' => $request->end
+        ]);
+
+        return redirect()->route('votes.index')->with('success','Update successfully');
+
     }
 
     /**

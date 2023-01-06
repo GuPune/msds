@@ -8,11 +8,27 @@
     <!-- Page Heading -->
     <h1 class="h3 mb-4 text-gray-800">รายงานผู้สมัครทั้งหมด</h1>
 
+    <div class="card shadow mb-4">
+        <div class="card-body">
+            <div>
+                <span style="float: right"><a  href="export/total"  class="btn btn-info"><i class="fa fa-file-excel-o" aria-hidden="true"></i> ดาวน์โหลดข้อมูลไฟล์ Excel</a>&nbsp;&nbsp;&nbsp;&nbsp;</span>
+            </div>
+
+        </div>
+    </div>
+
+
+
+
+
+
 
 
     <div class="card shadow mb-4">
         <div class="card-body">
+
             <div class="table-responsive">
+
                 <table class="table table-bordered" id="example" width="100%" cellspacing="0" style="text-align: center;">
                     <thead>
                         <tr class="center">

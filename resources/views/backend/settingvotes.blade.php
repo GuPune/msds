@@ -6,42 +6,62 @@
 <div class="container-fluid">
 
     <!-- Page Heading -->
-    <h1 class="h3 mb-4 text-gray-800">รายงานการลงทะเบียนครั้งที่ 1</h1>
+    <h1 class="h3 mb-4 text-gray-800">ตั้งค่าการโหวต</h1>
 
-    <div class="card shadow mb-4">
+    {{-- <div class="card shadow mb-4">
         <div class="card-body">
             <div>
-                <span style="float: right"><a  href="export/D"  class="btn btn-info"><i class="fa fa-file-excel-o" aria-hidden="true"></i> ดาวน์โหลดข้อมูลไฟล์ Excel</a>&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                <span style="float: right"><a  href="export/total"  class="btn btn-info"><i class="fa fa-file-excel-o" aria-hidden="true"></i> ดาวน์โหลดข้อมูลไฟล์ Excel</a>&nbsp;&nbsp;&nbsp;&nbsp;</span>
             </div>
 
         </div>
     </div>
+ --}}
+
+
+
+
+
 
 
     <div class="card shadow mb-4">
         <div class="card-body">
+
             <div class="table-responsive">
+
                 <table class="table table-bordered" id="example" width="100%" cellspacing="0" style="text-align: center;">
                     <thead>
                         <tr class="center">
                             <th>#</th>
-                            <th>First Name</th>
-                            <th>Last Name</th>
-                            <th>Department</th>
-                            <th>Email</th>
-                            <th>Create</th>
+                            <th>หัวข้อ</th>
+                            <th>ช่วงเวลา</th>
+                            <th>เริ่มเวลา</th>
+                            <th>หมดเวลา</th>
+                            <th>#</th>
                         </tr>
                     </thead>
 
                     <tbody>
-                        @foreach($report as $key => $rs)
+                        @foreach($vote as $key => $rs)
                         <tr>
                             <td class="text-center">{{$key+1}}</td>
-                            <td class="text-center">{{$rs->fname}}</td>
-                            <td class="text-center">{{$rs->lname}}</td>
-                            <td class="text-center">{{$rs->dep}}</td>
-                            <td class="text-center">{{$rs->email}}</td>
-                            <td class="text-center">{{$rs->created_at}}</td>
+                            <td class="text-center">{{$rs->title}}</td>
+                            <td class="text-center">
+
+                                @if($rs->period =='D')
+                            {{'ช่วงเช้า'}}
+                          @else
+                          {{'ช่วงบ่าย'}}
+                          @endif
+                            </td>
+                            <td class="text-center">{{$rs->start}}</td>
+                            <td class="text-center">{{$rs->end}}</td>
+                            <td class="text-center">
+
+                                <a class="btn btn-warning btn-edit" href="{{ route('votes.edit',$rs['id']) }}" data-popup="tooltip" title="แก้ไข" data-placement="bottom">
+                                    <i class="fas fa-fw fa-wrench"></i>
+                                </a>
+                            </td>
                         </tr>
                         @endforeach
 

@@ -26,6 +26,13 @@ class uploadController extends Controller
             $files->move($destinationPath, $profileImage);
         }
 
+        if ($files = $request->file('product_vote')) {
+            $destinationPath = 'public/product/'; // upload path
+            $profileImage = date('YmdHis').$random. "." . $files->getClientOriginalExtension();
+            $files->move($destinationPath, $profileImage);
+        }
+
+
 
 
         return response()->json([
