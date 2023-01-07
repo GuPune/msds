@@ -78,7 +78,9 @@
                         @foreach($vote as $key => $rs)
                         <tr>
                             <td class="text-center">{{$key+1}}</td>
-                            <td class="text-center">{{$rs->image}}</td>
+                            <td class="text-center"><img class="img-profile"
+                                src="/public/product/{{$rs->image}}" width="150" height="100"></td>
+
 
                             <td class="text-center">{{$rs->title}}</td>
                             <td class="text-center">
@@ -176,6 +178,56 @@
 <script>
 
 
+$('body').on('click', '.btn-delete', function (e) {
+
+var id = $(this).attr('data-id');
+deleteConf(id);
+
+
+});
+
+function deleteConf(id) {
+swal({
+    title: "คุณต้องการลบจริงหรือไม่?",
+    text: "ข้อมูลไม่สามารถกู้คืนได้!",
+    icon: "warning",
+    buttons: [
+        'ยกเลิกลบรายการ',
+        'ลบรายการ'
+    ],
+    dangerMode: true,
+}).then(function(isConfirm) {
+    if (isConfirm) {
+        swal({
+            title: 'ลบรายการ!',
+            text: 'ลบรายการเรียบร้อย',
+            icon: 'success'
+        }).then(function() {
+
+
+            $.ajaxSetup({
+                headers: {
+                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                }
+            });
+            $.ajax({
+                dataType: 'json',
+                type:'DELETE',
+                data:{id:id},
+                url: '/admin/setting/votess/' + id,
+                success: function(datas){
+                    location.reload();
+                }
+            })
+
+
+        });
+    } else {
+        swal("ยกเลิก", "ยกเลิกรายการ", "error");
+    }
+});
+} // error form show text
+
 
     $('.up').on('click',function(){
                 var no   = $(this).data('no');
@@ -249,54 +301,7 @@
 
     } );
 
-            $('body').on('click', '.btn-delete', function (e) {
 
-                var id = $(this).attr('data-id');
-                deleteConf(id);
-            });
-
-            function deleteConf(id) {
-                swal({
-                    title: "คุณต้องการลบจริงหรือไม่?",
-                    text: "ข้อมูลไม่สามารถกู้คืนได้!",
-                    icon: "warning",
-                    buttons: [
-                        'ยกเลิกลบรายการ',
-                        'ลบรายการ'
-                    ],
-                    dangerMode: true,
-                }).then(function(isConfirm) {
-                    if (isConfirm) {
-                        swal({
-                            title: 'ลบรายการ!',
-                            text: 'ลบรายการเรียบร้อย',
-                            icon: 'success'
-                        }).then(function() {
-
-
-                            $.ajaxSetup({
-                                headers: {
-                                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-                                }
-                            });
-                            $.ajax({
-                                dataType: 'json',
-                                type:'DELETE',
-                                data:{id:id},
-                                url: '/admin/carosel/' + id,
-
-                                success: function(datas){
-                                    location.reload();
-                                }
-                            })
-
-
-                        });
-                    } else {
-                        swal("ยกเลิก", "ยกเลิกรายการ", "error");
-                    }
-                });
-            } // error form show text
 
 
         </script>

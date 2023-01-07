@@ -30,16 +30,18 @@ if(!$request->period && $request->type){
 
 }
 if($request->all() == null){
-
     $vote->where('votes.period','D')->where('votes.type','1');
 }
-$a = $vote->get();
+$a = $vote->orderBy('sequence')->get();
 // $min = Carosel::min('sequence');
 // $max = Carosel::max('sequence');
 // $count = Carosel::get()->count();
 $count = $vote->get()->count();
 $min = $vote->get()->min('sequence');
 $max = $vote->get()->max('sequence');
+
+
+
 
         return view('backend.usersettingvotes')->with('vote',$a)->with('min',$min)->with('max',$max)->with('count',$count)->with('type',$request->type)->with('period',$request->period);
     }
@@ -72,7 +74,7 @@ $max = $vote->get()->max('sequence');
     public function store(Request $request)
     {
         //
-\Log::info($request->all());
+
 
 
 
@@ -134,7 +136,23 @@ $max = $vote->get()->max('sequence');
     {
         //
 
-        return redirect()->route('votess.index')->with('success','Vote Update successfully');
+        $max = Vote::where('type',$request->type)->where('period',$request->period)->max('sequence');
+
+        /// check ก่อนว่าได้เปลี่ยน type รึ period ไหม
+       $check = Vote::where('id',$id)->where('type',$request->type)->where('period',$request->period)->first();
+       if(!$check){
+        $updatedata = Vote::where("id", $id)->update([
+            "image" =>  $request->image,
+            "des" =>  $request->des,
+            "sequence" => $max+1,
+            "type" => $request->type,
+            "period" => $request->period
+         ]);
+         return redirect()->route('votess.index')->with('success','Vote Update successfully');
+       }
+
+       return redirect()->route('votess.index')->with('success','Vote Update successfully');
+
     }
 
     /**
@@ -145,6 +163,29 @@ $max = $vote->get()->max('sequence');
      */
     public function destroy($id)
     {
-        //
+
+        \Log::info($id);
+
+        $vat = Vote::where('id',$id)->first();
+        $seq = Vote::where('sequence','>',$vat->sequence)->where('type',$vat->type)->where('period',$vat->period)->get();
+
+        $datase = $vat->sequence;
+
+
+        foreach ($seq as $key => $seq) {
+            $updateseq = Vote::where('id',$seq->id)->update([
+                'sequence' => $datase
+            ]);
+
+            $datase++;
+        }
+
+     $delete = Vote::where('id',$id)->delete();
+
+
+        return response()->json([
+            'msg_return' => 'ลบสำเร็จ',
+            'code_return' => 1,
+        ]);
     }
 }
