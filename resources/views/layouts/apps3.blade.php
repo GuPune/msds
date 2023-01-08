@@ -118,7 +118,7 @@ $(document).ready(function(){
       </div>
 		<div style="height:90px;"></div>
 		<div class="p-2 shadow fixed-bottom">
-            @include('template.footer2')
+            @include('template.footer3')
 
 </div>
   </div>

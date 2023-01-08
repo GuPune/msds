@@ -9,7 +9,7 @@ use App\Http\Controllers\LoginController;
 use App\Http\Controllers\DashController;
 use App\Http\Controllers\VoteController;
 use App\Http\Controllers\QAController;
-
+use App\Http\Controllers\VoteetcController;
 
 
 
@@ -56,7 +56,8 @@ Route::get('/dash/qafirst', [QAController::class, 'index'])->name('qafirst');
 Route::get('/admin/login',[AuthLoginController::class,'showAdminLoginForm'])->name('admin.login-view');
 Route::post('/admin/login',[AuthLoginController::class,'adminLogin'])->name('admin.login');
 
-
+Route::get('/vote/chud', [VoteetcController::class, 'chud'])->name('chud');
+Route::get('/vote/idol', [VoteetcController::class, 'idol'])->name('idol');
 
 
 Route::prefix('admin')->group(function () {

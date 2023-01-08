@@ -25,6 +25,8 @@ class DashController extends Controller
     {
         //
 
+
+
         return view('pages.first');
     }
 
@@ -126,6 +128,8 @@ $a = Auth::user();
 
 
      $getcal = Carosel::orderBy('sequence', 'asc')->get();
+
+
 
         return view('pages.two')->with('item',$getcal);
     }

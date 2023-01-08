@@ -14,7 +14,8 @@ class Headvote extends Model
     protected $fillable = [
         'title',
         'start',
-        'end'
+        'end',
+        'type',
     ];
 
 }

@@ -47,7 +47,7 @@
                   <div class="form-group">
                     <label class="my-1 d-flex align-items-center" style="font-size: 20px;" for="role"><i class="fa fa-user-o" aria-hidden="true"></i>  E-MAIL <span class="ml-auto"></span></label>
 
-                    <input id="token" type="text" class="form-control form-control-lg" style="border-radius: 10px;"  name="token" value="{{$gettoken}}" required >
+                    <input id="token" type="hidden" class="form-control form-control-lg" style="border-radius: 10px;"  name="token" value="{{$gettoken}}" required >
 
                     <input id="email" type="email" class="form-control form-control-lg" style="border-radius: 10px;" placeholder="Email"  name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
                     @error('email')
