@@ -12,9 +12,9 @@
 }
     </style>
 
-<div class="row mb-3">
+{{-- <div class="row mb-3">
     <img src="/wallpaperbetter.jpg" class="img-fluid" alt="Responsive image" style="padding: 10px;">
-  </div>
+  </div> --}}
 
   <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
     <ol class="carousel-indicators">

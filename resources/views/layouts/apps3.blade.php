@@ -50,14 +50,36 @@
       width: 70%;
       margin: auto;
     }
-    .ima2{
+    .ima3{
         width: 100px;
     }
 
     @media only screen and (max-width: 600px) {
-        .ima2{
+        .ima3{
         width: 40%;
     }
+
+    @media (min-width:320px)  {
+        .ima3 {
+    width: 20%;
+}
+
+     }
+@media (min-width:480px)  {
+
+ }
+@media (min-width:600px)  {
+
+  }
+@media (min-width:801px)  {
+
+ }
+@media (min-width:1025px) {
+
+ }
+@media (min-width:1281px) {
+
+  }
 
 }
     </style>

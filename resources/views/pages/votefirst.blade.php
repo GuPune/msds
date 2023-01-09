@@ -36,7 +36,7 @@
       </div>
       <div class="col-sm-4 col-md-12">
         <a href="/vote/chud">
-        <div class="card text-white bg-primary mb-3 mx-auto" style="max-width: 70%;height: 200px;">
+        <div class="card text-white bg-primary mb-3 mx-auto" style="max-width: 70%;height: 100px;">
           <div class="card-body">
 
 
@@ -59,7 +59,7 @@
       </div>
       <div class="col-sm-4 col-md-12">
         <a href="/vote/idol">
-        <div class="card text-white bg-primary mb-3 mx-auto" style="max-width: 70%;height: 200px;">
+        <div class="card text-white bg-primary mb-3 mx-auto" style="max-width: 70%;height: 100px;">
           <div class="card-body">
 
 

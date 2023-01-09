@@ -24,6 +24,22 @@ return $data;
     }
 
 
+    public static function vote($total,$vote_user)
+    {
+
+
+if($vote_user == 0){
+    return 0;
+}
+
+$percent = ($vote_user * 100) / $total;
+
+
+
+return $percent;
+    }
+
+
 
 
 

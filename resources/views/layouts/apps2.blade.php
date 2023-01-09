@@ -59,6 +59,28 @@
         width: 40%;
     }
 
+    @media (min-width:320px)  {
+        .ima2 {
+    width: 20%;
+}
+
+     }
+@media (min-width:480px)  {
+
+ }
+@media (min-width:600px)  {
+
+  }
+@media (min-width:801px)  {
+
+ }
+@media (min-width:1025px) {
+
+ }
+@media (min-width:1281px) {
+
+  }
+
 }
     </style>
     <!-- Global site tag (gtag.js) - Google Analytics -->

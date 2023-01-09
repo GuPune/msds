@@ -81,7 +81,7 @@ hr.style-two {
 <div class="modal fade" id="day" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
       <div class="modal-content">
-        <input id="period" type="text" class="form-control form-control-lg" style="border-radius: 10px;"  name="period" value="{{Auth::user()->period}}" >
+        <input id="period" type="hidden" class="form-control form-control-lg" style="border-radius: 10px;"  name="period" value="{{Auth::user()->period}}" >
         <div class="modal-body" style="margin-top: 25px;font-size: 25px;">
             ระบบได้บันทึกข้อมูลการลงทะเบียนรอบที่ 1 (ช่วงเช้า) แล้ว
         </div>
@@ -102,7 +102,7 @@ hr.style-two {
   <div class="modal fade" id="night" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
       <div class="modal-content">
-        <input id="period" type="text" class="form-control form-control-lg" style="border-radius: 10px;"  name="period" value="{{Auth::user()->period}}" >
+        <input id="period" type="hidden" class="form-control form-control-lg" style="border-radius: 10px;"  name="period" value="{{Auth::user()->period}}" >
         <div class="modal-body" style="margin-top: 25px;font-size: 25px;">
          ระบบได้บันทึกข้อมูลการลงทะเบียนรอบที่ 2 (ช่วงเย็น) แล้ว
         </div>

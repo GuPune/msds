@@ -57,6 +57,7 @@ Route::get('/admin/login',[AuthLoginController::class,'showAdminLoginForm'])->na
 Route::post('/admin/login',[AuthLoginController::class,'adminLogin'])->name('admin.login');
 
 Route::get('/vote/chud', [VoteetcController::class, 'chud'])->name('chud');
+Route::post('savevote', [VoteetcController::class, 'store'])->name('savechud');
 Route::get('/vote/idol', [VoteetcController::class, 'idol'])->name('idol');
 
 

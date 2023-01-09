@@ -28,6 +28,37 @@
     margin-top: -25px;
     margin-left: -65px;
 }
+
+.selvote {
+    border-style: solid;
+    border-color: coral
+}
+.containersss {
+    /* height: 100px;
+    width: 300px; */
+    background: rgb(236, 251, 255);
+    /* position: absolute; */
+    top: 50%;
+    left: 50%;
+    /* transform: translate(-50%, -50%); */
+    /* border-radius: 10px; */
+    box-shadow: 0px 5px 10px -6px rgb(0 0 0 / 50%);
+    overflow: hidden;
+    display: grid;
+    grid-template-columns: 50% 50%;
+}
+
+.right {
+    background: rgb(97, 165, 255);
+}
+
+.left {
+    background: rgb(192, 102, 177);
+}
+
+.container>div {
+    text-align: center;
+}
     </style>
 <div class="row">
 <div class="col-2 col-md-4" style="padding-top: 5px;padding-bottom: 5px">
@@ -35,27 +66,200 @@
     </div>
     <div class="col-8 col-md-4" style="padding-top: 5px;padding-bottom: 5px">
         <div class="card-body">
-
+            <input type="text" id="headid" name="headid" value="{{$headvote->id}}">
+            <input type="text" id="id" name="id" value="{{Auth::guard('web')->user()->id}}">
+            <input type="text" id="uservote" name="uservote" value="{{$uservote->votes_id}}">
+            <input type="text" id="start" name="start" value="{{date('d/m/Y H:i:s', strtotime($headvote->start))}}">
+            <input type="text" id="end" name="end" value="{{date('d/m/Y H:i:s', strtotime($headvote->end))}}">
             <p style="text-align: center;">{{$headvote->title}}</p>
           </div>
         </div>
+
         <div class="col-2 col-md-4" style="padding-top: 5px;padding-bottom: 5px">
 
             </div>
         </div>
+
+
+
+
 <div class="row">
 
+    @foreach($abc as $key => $xx)
+
+
+    <div class="col-4 col-md-4" style="padding-top: 5px;padding-bottom: 5px" onclick="Addvote({{$xx['id']}});">
+        <div class="card {{ $xx['id'] ==  $uservote->votes_id ? 'selvote' : '' }}">
+            <img class="card-img-top" src="/public/product/{{$xx['image']}}" alt="Card image cap">
+        </div>
+        <div class="containersss" style="color: #010101;background-color: white;grid-template-columns: 20% 80%;">
+            <div class="left">
+                <div class="text">
+                    <span class="option-size" id="size-one">10%</span>
+                </div>
+            </div>
+            <div class="right" >
+                <div class="text">
+                    <span class="option-size" id="size-two">90%</span>
+                </div>
+            </div>
+          </div>
+        </div>
+    @endforeach
+{{--
     @foreach($vote as $key => $rs)
-    <div class="col-4 col-md-4" style="padding-top: 5px;padding-bottom: 5px">
-<div class="card">
+    <div class="col-4 col-md-4" style="padding-top: 5px;padding-bottom: 5px" onclick="Addvote({{$rs->id}});">
+<div class="card {{ $rs->id ==  $uservote->votes_id ? 'selvote' : '' }}">
     <img class="card-img-top" src="/public/product/{{$rs->image}}" alt="Card image cap">
 </div>
 </div>
-    @endforeach
-
+    @endforeach --}}
   </div>
+
+
+  <div class="modal fade" id="vote" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-sm" role="document">
+        <div class="modal-content">
+            <input type="text" id="vote_id" name="vote_id">
+            <div class="modal-header" style="justify-content: center;">
+                <img id="myImg" src="/aaaa.jpg" alt="Snow" style="width:50%;">
+            </div>
+            <div class="modal-body">คุณ {{Auth::guard('web')->user()->fname}} ต้องการโหวตให้กับหมายเลข 03 ?</div>
+            <div class="modal-footer">
+                <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
+                <a class="btn btn-save" href="#">Vote</a>
+            </div>
+        </div>
+    </div>
+</div>
 <br>
 
+<script>
+
+    $(document).ready( function () {
+      $('#myTable').DataTable();
+  } );
+
+
+  function Addvote(id)
+{
+
+    var ids = $('#id').val();
+    var start = $('#start').val();
+    var end = $('#end').val();
+
+
+
+    var datestart = new Date(start);
+    var dateend = new Date(end);
+var milliseconds = datestart.getTime();
+var milliseconds2 = dateend.getTime();
+
+const date = new Date();
+const localDateTime = date.toLocaleString('en-GB');
+
+let day = localDateTime.slice(0, 10);
+let time = localDateTime.slice(11, 20);
+let total = day +''+time;
+
+var totals = new Date(total);
+var milliseconds3 = totals.getTime();
+
+if((milliseconds3 > milliseconds) && (milliseconds2 > milliseconds3)){
+    var vote_id = $('#vote_id').val(id);
+    $("#vote").modal()
+}else{
+  //  $("#vote").modal()
+}
+
+
+
+
+}
+
+function edi(id)
+{
+    alert(id);
+
+
+}
+
+
+
+function deleteConf(id) {
+            swal({
+                title: "คุณต้องการลบจริงหรือไม่?",
+                text: "ข้อมูลไม่สามารถกู้คืนได้!",
+                icon: "warning",
+                buttons: [
+                    'ยกเลิกลบรายการ',
+                    'ลบรายการ'
+                ],
+                dangerMode: true,
+            }).then(function(isConfirm) {
+                if (isConfirm) {
+                    swal({
+                        title: 'ลบรายการ!',
+                        text: 'ลบรายการเรียบร้อย',
+                        icon: 'success'
+                    }).then(function() {
+                        $.ajaxSetup({
+                            headers: {
+                                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                            }
+                        });
+
+                        $.ajax({
+                            dataType: 'json',
+                            type:'DELETE',
+                            data:{
+                                '_token': "{{ csrf_token() }}",
+                                id:id},
+                            url: '/admin/contact/' + id,
+                            success: function(datas){
+
+                                location.reload();
+                            }
+
+                        })
+                    });
+                } else {
+                    swal("ยกเลิก", "ยกเลิกรายการ", "error");
+                }
+            });
+        }
+
+        $('body').on('click', '.btn-save', function() {
+
+            var vote_id = $('#vote_id').val();
+            var headid = $('#headid').val();
+
+            $.ajaxSetup({
+                            headers: {
+                                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                            }
+                        });
+
+                        $.ajax({
+                    dataType: 'json',
+                    type:'POST',
+
+                    data:{
+                        '_token': "{{ csrf_token() }}",
+                        vote_id:vote_id,headid:headid},
+                    url: '/savevote',
+                    success: function(datas){
+                        location.reload();
+
+
+                    }
+                })
+
+
+        });
+
+
+    </script>
 
 
 

@@ -3,10 +3,10 @@
       <a href="#"> <img src="/button-15389.png" alt="buttonpng" border="0" class="ima"/><br>HOME</a>
     </div> --}}
     <div class="col-6 text-center text-white" style="padding-top:1%;">
-        <a href="/dash/home"><img src="/home.png" alt="buttonpng" border="0" class="ima2"/></a>
+        <a href="/dash/home"><img src="/home.png" alt="buttonpng" border="0" class="ima3"/></a>
       </div>
     <div class="col-6 text-center text-white" style="padding-top:1%;">
-      <a href="/dash/home"><img src="/v1.png" alt="buttonpng" border="0" class="ima2"/></a>
+      <a href="/dash/home"><img src="/v1.png" alt="buttonpng" border="0" class="ima3"/></a>
     </div>
 
   </div>
