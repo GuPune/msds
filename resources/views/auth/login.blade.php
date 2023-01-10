@@ -45,7 +45,7 @@
 
 
                   <div class="form-group">
-                    <label class="my-1 d-flex align-items-center" style="font-size: 20px;" for="role"><i class="fa fa-user-o" aria-hidden="true"></i>  E-MAIL <span class="ml-auto"></span></label>
+                    <label class="my-1 d-flex align-items-center" style="font-size: 50px;" for="role"><i class="fa fa-user-o" aria-hidden="true"></i>  E-MAIL <span class="ml-auto"></span></label>
 
                     <input id="token" type="hidden" class="form-control form-control-lg" style="border-radius: 10px;"  name="token" value="{{$gettoken}}" required >
 
@@ -58,7 +58,7 @@
                   </div>
 
                   <div class="form-group">
-                    <label class="my-1 d-flex align-items-center" style="font-size: 20px;" for="role"><i class="fa fa-lock" aria-hidden="true"></i>  Password <span class="ml-auto"></span></label>
+                    <label class="my-1 d-flex align-items-center" style="font-size: 50px;" for="role"><i class="fa fa-lock" aria-hidden="true"></i>  Password <span class="ml-auto"></span></label>
 
 
                     <input id="password" type="password" style="border-radius: 10px;" class="form-control  @error('password') is-invalid @enderror"  placeholder="Password" name="password" required autocomplete="current-password">
@@ -73,22 +73,22 @@
 
 
                 <div class="col-auto" style="text-align: center;">
-                    <button type="submit" class="btn btn-primary" style="background-color: black;border-color: #0a0a0a;">เข้าสู่ระบบ</button>
+                    <button type="submit" class="btn btn-primary" style="font-size: 50px;background-color: black;border-color: #0a0a0a;">เข้าสู่ระบบ</button>
                 </div>
 
                 <div class="form-group">
                     <div class="col-auto" style="text-align: center;">
 
-                        <a href="{{ url('registration/'.$gettoken) }}" class="auth-link text-black">ลงทะเบียน</a>
+                        <a href="{{ url('registration/'.$gettoken) }}" class="auth-link text-black" style="font-size: 30px;">ลงทะเบียน</a>
                     </div>
                   </div>
 
                   <div class="d-flex justify-content-between align-items-center">
                     <div class="form-check">
                       <label class="form-check-label text-muted">
-                     <a href="#" class="auth-link text-black">ลืมรหัสผ่าน?</a>
+                     <a href="#" class="auth-link text-black" style="font-size: 30px;">ลืมรหัสผ่าน?</a>
                     </div>
-                    <a href="/admin/login" class="auth-link text-black" target="_blank">สำหรับเจ้าหน้าที่</a>
+                    <a href="/admin/login" class="auth-link text-black" target="_blank" style="font-size: 30px;">สำหรับเจ้าหน้าที่</a>
                   </div>
                 {{-- <div class="my-2 d-flex justify-content-between align-items-center">
                   <div class="form-check">
