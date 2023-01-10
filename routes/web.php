@@ -28,15 +28,14 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('/app/{token}', [App\Http\Controllers\FirstController::class, 'index']);
+
 Route::get('/{token}/resetpassword', [App\Http\Controllers\ResetPasswordController::class, 'index']);
 Route::POST('/resetpassword', [App\Http\Controllers\ResetPasswordController::class, 'store'])->name('reset.custom');
 
 
 Auth::routes();
 
-
-
-Route::get('/{token}', [App\Http\Controllers\FirstController::class, 'index']);
 
 
 Route::get('/login/{token}', [App\Http\Controllers\LoginController::class, 'index'])->name('login');

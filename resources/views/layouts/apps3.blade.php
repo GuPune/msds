@@ -30,7 +30,7 @@
     <style media="screen">
          .bocdy  {
       background-image: url("https://cdn.vuetifyjs.com/images/backgrounds/vbanner.jpg");
-      background-color: #aa1212;
+
     }
 
       h1, h2, h3, h4, h5, h6{
@@ -140,9 +140,8 @@ $(document).ready(function(){
       </div>
 		<div style="height:90px;"></div>
 		<div class="p-2 shadow fixed-bottom">
-            @include('template.footer3')
-
-</div>
+            @include('template.footer3',['page' => $page])
+        </div>
   </div>
 
 </div>

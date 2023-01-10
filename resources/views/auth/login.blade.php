@@ -11,7 +11,7 @@
 <style>
     .bocdy  {
       background-image: url("https://cdn.vuetifyjs.com/images/backgrounds/vbanner.jpg");
-      background-color: #aa1212;
+
     }
     </style>
 <body>

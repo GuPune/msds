@@ -1,4 +1,4 @@
-@extends('layouts.apps3')
+@extends('layouts.apps3', ['page' => 'idol'])
 
 @section('content')
 <style>
