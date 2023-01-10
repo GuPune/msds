@@ -9,7 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
     <meta name="csrf-token" content="{{ csrf_token() }}">
-    <title>Admin Ecommerce</title>
+    <title>MSD</title>
 
     <!-- Custom fonts for this template-->
     <link rel="shortcut icon" href="{{ asset('logo.jpg') }}">
