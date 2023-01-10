@@ -23,7 +23,7 @@
             <div class="auth-form-light text-left py-5 px-4 px-sm-5" style="border-radius: 30px;">
 
               {{-- <h4>Hello! let's get started</h4> --}}
-              <h1 class="font-weight-light"><strong>ยินดีต้อนรับ</strong></h1>
+              <h1 class="font-weight-light" style="font-size: 50px;"><strong>ยินดีต้อนรับ</strong></h1>
         @if ($message = Session::get('success'))
               <div class="alert alert-success">
                   <p>{{ $message }}</p>
