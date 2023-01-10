@@ -26,7 +26,7 @@
             width: 50px;
         }
         .logoutee{
-            font-size: 5px;
+            font-size: 13px;
         }
 
         .logot{
