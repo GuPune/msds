@@ -7,11 +7,16 @@
   @include('templateadmin.styles')
 </head>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
 <style>
     .bocdy  {
       background-image: url("https://cdn.vuetifyjs.com/images/backgrounds/vbanner.jpg");
 
     }
+    html {
+	-webkit-text-size-adjust: none;
+	touch-action: manipulation;
+}
     </style>
 <body>
   <div class="container-scroller">
