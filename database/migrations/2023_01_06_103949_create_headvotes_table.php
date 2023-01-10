@@ -18,6 +18,8 @@ class CreateHeadvotesTable extends Migration
             $table->text('title');
             $table->dateTime('start');
             $table->dateTime('end');
+            $table->string('period');
+            $table->string('type');
             $table->timestamps();
         });
     }

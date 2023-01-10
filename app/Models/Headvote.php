@@ -16,6 +16,7 @@ class Headvote extends Model
         'start',
         'end',
         'type',
+        'period',
     ];
 
 }
