@@ -151,6 +151,14 @@ $max = $vote->get()->max('sequence');
          return redirect()->route('votess.index')->with('success','Vote Update successfully');
        }
 
+
+       $updatedata = Vote::where("id", $id)->update([
+        "image" =>  $request->image,
+        "des" =>  $request->des,
+        "type" => $request->type,
+        "period" => $request->period
+     ]);
+
        return redirect()->route('votess.index')->with('success','Vote Update successfully');
 
     }
@@ -164,7 +172,7 @@ $max = $vote->get()->max('sequence');
     public function destroy($id)
     {
 
-        \Log::info($id);
+
 
         $vat = Vote::where('id',$id)->first();
         $seq = Vote::where('sequence','>',$vat->sequence)->where('type',$vat->type)->where('period',$vat->period)->get();

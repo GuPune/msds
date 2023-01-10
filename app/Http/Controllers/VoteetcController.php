@@ -19,7 +19,21 @@ class VoteetcController extends Controller
         $getauth = Auth::user()->period;
         $getvote = Vote::where('period',$getauth)->where('type','1')->get();
         $gethead = Headvote::where('period',$getauth)->where('type','1')->first();
+
         $getvoteuser = FactVote::where('user_id',Auth::user()->id)->where('headvotes_id',$gethead->id)->first();
+        $datavote = [];
+        $datavote['user_id'] = 0;
+        $datavote['headvotes_id'] = 0;
+        $datavote['votes_id'] = 0;
+        if($getvoteuser){
+            $datavote = [];
+            $datavote['user_id'] = $getvoteuser->user_id;
+            $datavote['headvotes_id'] = $getvoteuser->headvotes_id;
+            $datavote['votes_id'] = $getvoteuser->votes_id;
+
+        }
+
+
 
         $counts = FactVote::all()->count();
 
@@ -42,18 +56,17 @@ $getvotecount_id = FactVote::where('headvotes_id',$gethead->id)->where('votes_id
 
 $datazone = Datatable::vote($getvotecount,$getvotecount_id);
 $datas[$index]['vote'] = $datazone;
-$datas[$index]['votea'] = 20;
-$datas[$index]['voteb'] = 80;
+
+
+
+$per = 100 - $datazone;
+$datas[$index]['perd'] = $per;
+
         }
-
-
 
         $abc = collect($datas);
 
-
-
-
-        return view('pages.chud')->with('vote',$getvote)->with('headvote',$gethead)->with('uservote',$getvoteuser)->with('abc',$abc);
+        return view('pages.chud')->with('vote',$getvote)->with('headvote',$gethead)->with('abc',$abc)->with(compact('datavote'));
     }
 
     public function store(Request $request)
@@ -96,13 +109,62 @@ $datas[$index]['voteb'] = 80;
 
 
 
+
+
     public function idol()
     {
         $getauth = Auth::user()->period;
         $getvote = Vote::where('period',$getauth)->where('type','2')->get();
         $gethead = Headvote::where('period',$getauth)->where('type','2')->first();
 
-        return view('pages.idol')->with('vote',$getvote)->with('headvote',$gethead);
+        $getvoteuser = FactVote::where('user_id',Auth::user()->id)->where('headvotes_id',$gethead->id)->first();
+        $datavote = [];
+        $datavote['user_id'] = 0;
+        $datavote['headvotes_id'] = 0;
+        $datavote['votes_id'] = 0;
+        if($getvoteuser){
+            $datavote = [];
+            $datavote['user_id'] = $getvoteuser->user_id;
+            $datavote['headvotes_id'] = $getvoteuser->headvotes_id;
+            $datavote['votes_id'] = $getvoteuser->votes_id;
+
+        }
+
+
+
+        $counts = FactVote::all()->count();
+
+        $datas = [];
+
+        foreach ($getvote as $index => $getvotes) {
+
+$datas[$index]['id'] = $getvotes->id;
+$datas[$index]['image'] = $getvotes->image;
+$datas[$index]['sequence'] = $getvotes->sequence;
+$datas[$index]['des'] = $getvotes->des;
+$datas[$index]['type'] = $getvotes->type;
+$datas[$index]['period'] = $getvotes->period;
+
+
+
+$getvotecount = FactVote::where('headvotes_id',$gethead->id)->count();
+$getvotecount_id = FactVote::where('headvotes_id',$gethead->id)->where('votes_id',$getvotes->id)->count();
+
+
+$datazone = Datatable::vote($getvotecount,$getvotecount_id);
+$datas[$index]['vote'] = $datazone;
+
+
+
+$per = 100 - $datazone;
+$datas[$index]['perd'] = $per;
+
+        }
+
+        $abc = collect($datas);
+
+        return view('pages.idol')->with('vote',$getvote)->with('headvote',$gethead)->with('abc',$abc)->with(compact('datavote'));
     }
+
 
 }

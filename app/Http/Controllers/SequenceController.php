@@ -35,7 +35,7 @@ class SequenceController extends Controller
 
     public function down(Request $request)
     {
-        \Log::info($request->all());
+
         switch($request->name):
             case "cate":
                 $sequence_a = Carosel::where('sequence',   $request->no)->first();
