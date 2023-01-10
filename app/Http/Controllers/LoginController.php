@@ -26,6 +26,13 @@ class LoginController extends Controller
             return abort(403);
                 }
 
+
+
+                $getauth = Auth::guard('web')->user();
+                if($getauth){
+ return redirect()->route('twostep');
+                }
+
         return view('auth.login')->with(compact('gettoken'));
     }
 
@@ -213,7 +220,14 @@ if($checkemail){
         $getauth = Auth::guard('web')->user();
 $getperi = System::where('period',$getauth->period)->first();
 $gettoken = $getperi->token;
-        return view('auth.login')->with(compact('gettoken'));
+
+Auth::guard('web')->logout();
+
+
+return redirect()->route('login', [
+    'token' => $gettoken,
+]);
+     //  return view('auth.login')->with(compact('gettoken'));
     }
 
 }
