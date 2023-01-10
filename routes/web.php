@@ -24,9 +24,11 @@ use App\Http\Controllers\VoteetcController;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/', function () {
+//     return view('index');
+// });
+
+Route::get('/', [App\Http\Controllers\FirstController::class, 'home']);
 
 Route::get('/app/{token}', [App\Http\Controllers\FirstController::class, 'index']);
 

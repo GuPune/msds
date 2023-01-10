@@ -91,4 +91,17 @@ class FirstController extends Controller
     {
         //
     }
+
+
+    public function home(Request $request)
+    {
+        //
+
+        $system = System::all();
+
+
+
+        return view('index')->with('sys',$system);
+    }
+
 }
