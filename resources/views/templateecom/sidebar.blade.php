@@ -46,18 +46,12 @@
             <span>จัดการสมาชิก</span>
         </a>
     </li>
-    <li class="nav-item">
-        <a class="nav-link" href="/admin/contes">
-            <i class="nav-icon fas fa-edit"></i>
-            <span>ผู้เข้าประกวด</span>
-        </a>
-    </li>
 
 
     <li class="nav-item">
         <a class="nav-link" href="#" data-toggle="collapse"  data-target="#collapse12" aria-expanded="true" aria-controls="collapse">
             <i class="fas fa-fw fa-table"></i>
-            <span>ผลคะแนน</span>
+            <span>ผู้เข้าประกวด</span>
         </a>
 
         <div  id="collapse12" class="collapse show'"aria-labelledby="headingTwo" data-parent="#accordionSidebar">
@@ -72,6 +66,21 @@
         </div>
 
     </li>
+    <li class="nav-item">
+        <a class="nav-link" href="/admin/regis">
+            <i class="nav-icon fas fa-edit"></i>
+            <span>จัดกการลงทะเบียน</span>
+        </a>
+    </li>
+
+    <li class="nav-item">
+        <a class="nav-link" href="/admin/users">
+            <i class="nav-icon fas fa-edit"></i>
+            <span>ดูผลโหวต</span>
+        </a>
+    </li>
+
+
     <li class="nav-item">
         <a class="nav-link" href="/admin/qac">
             <i class="nav-icon fas fa-edit"></i>

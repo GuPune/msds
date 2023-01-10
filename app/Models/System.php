@@ -15,6 +15,7 @@ class System extends Model
     protected $fillable = [
         'token',
         'images',
-        'period'
+        'period',
+        'url'
     ];
 }
