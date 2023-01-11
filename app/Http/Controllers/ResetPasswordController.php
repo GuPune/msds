@@ -14,19 +14,16 @@ class ResetPasswordController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index($token)
+    public function index()
     {
         //
 
-        $gettoken = $token;
-        $checkto = System::where('token',$token)->first();
-
-    if(!$checkto){
-    return abort(403);
-    }
 
 
-        return view('resetpassword')->with(compact('gettoken'));
+
+
+
+        return view('resetpassword');
     }
 
     /**
@@ -50,8 +47,10 @@ class ResetPasswordController extends Controller
     {
         //
 
-        $checktoken = System::where('token',$request->token)->first();
-$checkemail = User::where('email',$request->email)->where('period',$checktoken->period)->first();
+
+
+
+$checkemail = User::where('email',$request->email)->first();
 
 if(!$checkemail){
     return redirect()->back()->withErrors(['msg' => 'ไม่เจอ Email ดังกล่าว ติดต่อเจ้าหน้าที่']);
@@ -70,9 +69,29 @@ $updateuser = User::find($checkemail->id);
 $updateuser->status = 'R';
 $updateuser->save();
 
-        return redirect()->route('login', [
-            'token' => $request->token,
+
+        if($request->path == '/'){
+            $getpath = System::where('path',$request->path)->first();
+            $gettoken = $getpath->token;
+            return redirect()->route('loginhome')->with('success','เจ้าหน้าที่จะส่งEmail แจ้งให้ภายหลัง');
+        }
+        if($request->path == '/login/a1'){
+            $getpath = System::where('path',$request->path)->first();
+            return redirect()->route('login', [
+                'token' => $getpath->token,
+            ])->with('success','เจ้าหน้าที่จะส่งEmail แจ้งให้ภายหลัง');
+        }
+        if($request->path == '/login/a2'){
+            $getpath = System::where('path',$request->path)->first();
+            return redirect()->route('login', [
+            'token' => $getpath->token,
         ])->with('success','เจ้าหน้าที่จะส่งEmail แจ้งให้ภายหลัง');
+
+        }
+
+
+        return back()->with('success', 'Resetpassword successfully');
+
     }
 
     /**

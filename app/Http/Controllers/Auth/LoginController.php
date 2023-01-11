@@ -35,10 +35,7 @@ class LoginController extends Controller
      *
      * @return void
      */
-    public function __construct()
-    {
-        $this->middleware('admin')->except('logout');
-    }
+
 
     public function showAdminLoginForm()
     {

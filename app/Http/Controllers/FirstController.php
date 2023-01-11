@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\System;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class FirstController extends Controller
 {
@@ -96,12 +97,25 @@ class FirstController extends Controller
     public function home(Request $request)
     {
         //
-
         $system = System::all();
-
-
-
         return view('index')->with('sys',$system);
+    }
+
+    public function login(Request $request)
+    {
+        //
+
+
+
+$system = System::where('period','E')->first();
+$gettoken = $system->token;
+$getauth = Auth::guard('web')->user();
+
+if($getauth){
+    return redirect()->route('twostep');
+                   }
+
+        return view('loginhome')->with(compact('gettoken'));
     }
 
 }

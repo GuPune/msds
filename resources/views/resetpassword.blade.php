@@ -26,6 +26,11 @@
               <h1 class="font-weight-light"><strong>ลืมรหัสผ่าน</strong></h1>
 
 
+              @if ($message = Session::get('success'))
+              <div class="alert alert-success">
+                  <p>{{ $message }}</p>
+              </div>
+          @endif
 @if ($errors->any())
 <div class="alert alert-danger">
     <button type="button" class="close" data-dismiss="alert">×</button>
@@ -39,8 +44,7 @@
                   <div class="form-group">
                     <label class="my-1 d-flex align-items-center" style="font-size: 20px;" for="role"><i class="fa fa-user-o" aria-hidden="true"></i>  E-MAIL <span class="ml-auto"></span></label>
 
-                    <input id="token" type="hidden" class="form-control form-control-lg" style="border-radius: 10px;"  name="token" value="{{$gettoken}}" required >
-
+                    <input id="path" type="text" class="form-control form-control-lg" style="border-radius: 10px;"  name="path" value="" required >
                     <input id="email" type="email" class="form-control form-control-lg" style="border-radius: 10px;" placeholder="Email"  name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
                     @error('email')
                     <span class="invalid-feedback" role="alert">
@@ -48,25 +52,9 @@
                     </span>
                 @enderror
                   </div>
-
-
-
-
                 <div class="col-auto" style="text-align: center;">
                     <button type="submit" class="btn btn-primary" style="background-color: black;border-color: #0a0a0a;">แจ้งลืมรหัสผ่าน</button>
                 </div>
-
-
-
-                {{-- <div class="my-2 d-flex justify-content-between align-items-center">
-                  <div class="form-check">
-                    <label class="form-check-label text-muted">
-                      <input type="checkbox" class="form-check-input">
-                      Keep me signed in
-                    </label>
-                  </div>
-                  <a href="#" class="auth-link text-black">Forgot password?</a>
-                </div> --}}
               </form>
             </div>
           </div>
@@ -83,3 +71,13 @@
 </body>
 
 </html>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<script type="text/javascript">
+
+var x = localStorage.getItem("url");
+var path = $('#path').val(x);
+
+
+
+
+   </script>

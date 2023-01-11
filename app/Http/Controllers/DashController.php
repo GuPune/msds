@@ -121,16 +121,13 @@ $a = Auth::user();
     //    return view('pages.first');
     }
 
-    public function home()
+    public function home(Request $request)
     {
         //
      //   $gettoken = $token;
 
 
      $getcal = Carosel::orderBy('sequence', 'asc')->get();
-
-
-
         return view('pages.two')->with('item',$getcal);
     }
 

@@ -120,11 +120,8 @@
 </body>
 
 </html>
-<script type="text/javascript">
-    var currentLocation = window.location.pathname;
-    if(currentLocation){
-        localStorage.setItem("url",currentLocation);
-    }
 
+<script type="text/javascript">
+ localStorage.setItem("url",'/');
 
  </script>

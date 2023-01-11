@@ -24,7 +24,7 @@ class LoginController extends Controller
 
         if(!$checkto){
             return abort(403);
-                }
+        }
 
 
 
@@ -42,25 +42,40 @@ class LoginController extends Controller
             'email' => 'required',
             'password' => 'required',
         ]);
+
+
+
+
+
         $getperiod = System::where('token',$request->token)->first();
+        if($getperiod){
+                if($getperiod->status == 'C'){
+                    return redirect()->back()->withErrors(['msg' => 'The system is not available yet.']);
+                }
+        }
+
+
         $request->merge(["period"=>$getperiod->period]);
-        $credentials = $request->only('email', 'password','period');
+        $credentials = $request->only('email', 'password');
 
         if (Auth::attempt($credentials)) {
-
             $a = Auth::user();
-            $findcheckin = Checkin::where('user_id',$a->id)->where('period',$a->period)->first();
-if(!$findcheckin){
+            $findcheckin = Checkin::where('user_id',$a->id)->first();
+           $updatetoken = User::find($a->id)->update(['token' => $request->token]);
             $save = Checkin::create([
                 'user_id' => $a->id,
-                'period' => $a->period
+                'period' => $getperiod->period
             ]);
-}
+            $gettoken = $getperiod->period;
+
+            $request->session()->put('path', $getperiod->period);
 
 
 
-          return redirect()->route('firststep');
 
+
+
+            return view('pages.first')->with(compact('gettoken'));
         }
 
 
@@ -95,12 +110,10 @@ if(!$findcheckin){
 
     $getperiod = System::where('token',$request->token)->first();
 
-$checkemail = User::where('email',$request->email)->where('period',$getperiod->period)->first();
+$checkemail = User::where('email',$request->email)->first();
 
 if($checkemail){
-
     return redirect()->back()->withErrors(['msg' => 'The email has already been taken.']);
-
 }
     $adsuser = User::create([
         "fname" => $request->fname,
@@ -108,9 +121,16 @@ if($checkemail){
         "password" => $request->password,
         "dep" => $request->department,
         "email" => $request->email,
-        "period" => $getperiod->period,
         "is_admin" => 0,
     ]);
+
+
+    if($getperiod->period == 'E'){
+        $gettoken = $getperiod->token;
+       // return view('loginhome')->with(compact('gettoken'));
+            return redirect()->route('loginhome')->with('success','User created successfully');
+    }
+
 
     // $table->text('fname')->nullable();
     // $table->text('dep')->nullable();
@@ -145,7 +165,7 @@ if($checkemail){
 
     return redirect()->route('login', [
         'token' => $request->token,
-    ]);
+    ])->with('success','User created successfully');
     }
 
     /**
@@ -217,17 +237,40 @@ if($checkemail){
     public function logout()
     {
         //
-        $getauth = Auth::guard('web')->user();
-$getperi = System::where('period',$getauth->period)->first();
-$gettoken = $getperi->token;
-
-Auth::guard('web')->logout();
 
 
+    $getauth = Auth::guard('web')->user();
+    $gettoken = $getauth->token;
+    $getperi = System::where('token',$getauth->token)->first();
+
+
+
+    if($getperi->period == 'E'){
+  //      return redirect()->route('login.home ');
+  Auth::guard('web')->logout();
+        return redirect('/');
+
+    }
+
+    Auth::guard('web')->logout();
 return redirect()->route('login', [
     'token' => $gettoken,
 ]);
      //  return view('auth.login')->with(compact('gettoken'));
+    }
+
+
+    public function home()
+    {
+        //
+
+
+
+
+return view('welcome')->with(compact('gettoken'));
+
+
+
     }
 
 }

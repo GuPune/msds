@@ -19,6 +19,9 @@ class CreateSystemTable extends Migration
             $table->text('images')->nullable();
             $table->string('period')->nullable();
             $table->text('url')->nullable();
+            $table->text('path')->nullable();
+            $table->text('logout')->nullable();
+            $table->string('status')->nullable();
             $table->timestamps();
         });
     }

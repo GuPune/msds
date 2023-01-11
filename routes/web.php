@@ -28,11 +28,11 @@ use App\Http\Controllers\VoteetcController;
 //     return view('index');
 // });
 
-Route::get('/', [App\Http\Controllers\FirstController::class, 'home']);
+Route::get('/', [App\Http\Controllers\FirstController::class, 'login'])->name('loginhome');
 
 Route::get('/app/{token}', [App\Http\Controllers\FirstController::class, 'index']);
 
-Route::get('/{token}/resetpassword', [App\Http\Controllers\ResetPasswordController::class, 'index']);
+Route::get('/resetpassword', [App\Http\Controllers\ResetPasswordController::class, 'index']);
 Route::POST('/resetpassword', [App\Http\Controllers\ResetPasswordController::class, 'store'])->name('reset.custom');
 
 
@@ -64,7 +64,7 @@ Route::get('/vote/idol', [VoteetcController::class, 'idol'])->name('idol');
 
 Route::prefix('admin')->group(function () {
 
-    Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard')->middleware('admin');
+    Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
     Route::resource('carosel', '\App\Http\Controllers\CaroselController');
     Route::resource('votes', '\App\Http\Controllers\VotesController');
     Route::resource('setting/votess', '\App\Http\Controllers\VotesSettingController');

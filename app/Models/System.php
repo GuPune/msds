@@ -16,6 +16,10 @@ class System extends Model
         'token',
         'images',
         'period',
-        'url'
+        'url',
+        'path',
+        'status',
+        'logout',
+
     ];
 }
