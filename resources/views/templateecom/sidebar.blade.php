@@ -26,8 +26,11 @@
                  <a class="collapse-item" href="/admin/reportqa">
                     รายงาน Q&A
                  </a>
-                 <a class="collapse-item" href="/admin/reportvote">
-                    รายงานผลการโหวตคะแนน
+                 <a class="collapse-item" href="/admin/bepvoted">
+                    ผลการโหวตคะแนนรอบเช้า
+                 </a>
+                 <a class="collapse-item" href="/admin/areportvoten">
+                    ผลการโหวตคะแนนรอบบ่าย
                  </a>
             </div>
         </div>

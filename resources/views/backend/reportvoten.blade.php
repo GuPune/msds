@@ -6,7 +6,7 @@
 <div class="container-fluid">
 
     <!-- Page Heading -->
-    <h1 class="h3 mb-4 text-gray-800">>รายงานผลการโหวตคะแนน</h1>
+    <h1 class="h3 mb-4 text-gray-800">รายงานผลการโหวตคะแนน บ่าย</h1>
 
 
 
@@ -18,8 +18,9 @@
                         <tr class="center">
                             <th>ลำดับ</th>
                             <th>รูปภาพ</th>
-                            <th>ปรับเรียง</th>
-                            <th>#</th>
+                            <th>คำอธิบาย</th>
+                            <th>จำนวนผลการโหวต</th>
+                            <th>คะแนนเปอร์เซ็น</th>
                         </tr>
                     </thead>
 

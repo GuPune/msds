@@ -5,7 +5,7 @@
     <div class="col-5 text-white" style="padding-top:1%;">
       <a href="#" class="ffasd"><i class="fa fa-user-circle fa-2x" aria-hidden="true"></i>
         @if(Auth::guard('web')->check())
-        {{Auth::user()->name}}
+        {{Auth::user()->fname}}
         @endif
         </a>
     </div>
