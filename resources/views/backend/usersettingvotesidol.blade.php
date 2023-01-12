@@ -14,11 +14,45 @@
     <!-- Page Heading -->
     <h1 class="h3 mb-4 text-gray-800">ผู้เข้าประกวด
         </h1>
+      <div class="card shadow mb-4">
+        <form method="GET"  action="{{ url('/admin/setting/idol') }}" >
+        <div class="card-body">
+            <div class="row">
+                <div class="col-md-12">
+                  <div class="form-group row">
+                    <label class="col-sm-3 col-form-label">หัวข้อการเข้าประกวด</label>
+                    <div class="col-sm-9">
+                        <select class="form-control form-control-sm" name="type">
+                            <option value="2">ประกวดโชว์ไอดอล</option>
+                          </select>
+                    </div>
+                  </div>
+                </div>
 
+
+                <div class="col-md-12">
+                    <div class="form-group row">
+                      <label class="col-sm-3 col-form-label">ช่วงเวลา</label>
+                      <div class="col-sm-9">
+                        <select class="form-control form-control-sm" name="group_id">
+                            <option value="1" @if($group_id == '1') selected @endif>เดี่ยว</option>
+                            <option value="2" @if($group_id == '2') selected @endif>กลุ่ม</option>
+                          </select>
+                      </div>
+                    </div>
+                  </div>
+
+
+              </div>
+
+              <button type="submit" class="btn btn-primary mr-2">ค้นหา</button>
+        </div>
+        </form>
+    </div>
 
     <div class="card shadow mb-4">
         <div class="card-header py-3"  style="text-align:right; margin: 0 0 2% 0;">
-            <a href="{{ route('votess.create') }}" class="btn btn-success">
+            <a href="{{ route('idol.create') }}" class="btn btn-success">
                 เพิ่มผู้เข้าประกวด
             </a>
         </div>
@@ -30,26 +64,32 @@
                     <thead>
                         <tr class="center">
                             <th>#</th>
-                            <th>ชื่อ</th>
                             <th>รูป</th>
                             <th>เข้าประกวดหัวข้อ</th>
-
+                            <th>ประเภท</th>
                             <th>ปรับ</th>
                             <th>#</th>
                         </tr>
                     </thead>
 
                     <tbody>
+
                         @foreach($vote as $key => $rs)
                         <tr>
                             <td class="text-center">{{$key+1}}</td>
-                            <td class="text-center">{{$rs->title}}</td>
                             <td class="text-center"><img class="img-profile"
                                 src="/public/product/{{$rs->image}}" width="150" height="100"></td>
 
 
                             <td class="text-center">{{$rs->title}}</td>
+                            <td class="text-center">
 
+                                @if($rs->group_id == '1')
+                            {{'เดี่ยว'}}
+                          @else
+                          {{'กลุ่ม'}}
+                          @endif
+                            </td>
                             <td class="text-center" width="20%">
                                 @if($min == $rs->sequence)
                                     <button
@@ -100,7 +140,7 @@
                                 @endif
                             </td>
                             <td class="text-center">
-                                <a class="btn btn-warning btn-edit" href="{{ url('/admin/setting/votess/'.$rs->id.'/edit') }}"  data-popup="tooltip" title="แก้ไข" data-placement="bottom">
+                                <a class="btn btn-warning btn-edit" href="{{ url('/admin/setting/idol/'.$rs->id.'/edit') }}"  data-popup="tooltip" title="แก้ไข" data-placement="bottom">
                                     <i class="fas fa-fw fa-wrench"></i>
                                 </a>
                                 <button class="btn btn-danger btn-delete" data-id="{{ $rs['id']}}" data-popup="tooltip" title="ลบ" data-placement="bottom">
@@ -173,7 +213,7 @@ swal({
                 dataType: 'json',
                 type:'DELETE',
                 data:{id:id},
-                url: '/admin/setting/votess/' + id,
+                url: '/admin/setting/idol/' + id,
                 success: function(datas){
                     location.reload();
                 }

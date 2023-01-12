@@ -6,14 +6,13 @@
 <div class="container-fluid">
 
     <!-- Page Heading -->
-    <h1 class="h3 mb-4 text-gray-800">รายงานการลงทะเบียนครั้งที่ 1</h1>
+    <h1 class="h3 mb-4 text-gray-800">รายงานการลงทะเบียนช่วงเช้า</h1>
 
     <div class="card shadow mb-4">
         <div class="card-body">
             <div>
                 <span style="float: right"><a  href="export/D"  class="btn btn-info"><i class="fa fa-file-excel-o" aria-hidden="true"></i> ดาวน์โหลดข้อมูลไฟล์ Excel</a>&nbsp;&nbsp;&nbsp;&nbsp;</span>
             </div>
-
         </div>
     </div>
 
@@ -29,7 +28,7 @@
                             <th>Last Name</th>
                             <th>Department</th>
                             <th>Email</th>
-                            <th>Create</th>
+                            <th>LastTime</th>
                         </tr>
                     </thead>
 
@@ -37,7 +36,7 @@
                         @foreach($report as $key => $rs)
                         <tr>
                             <td class="text-center">{{$key+1}}</td>
-                            <td class="text-center">{{$rs->fname}}</td>
+                            <td class="text-center"><a href="/admin/reportfirst/{{$rs->id}}">{{$rs->fname}}</a></td>
                             <td class="text-center">{{$rs->lname}}</td>
                             <td class="text-center">{{$rs->dep}}</td>
                             <td class="text-center">{{$rs->email}}</td>

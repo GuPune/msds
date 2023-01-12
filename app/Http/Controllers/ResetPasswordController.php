@@ -7,6 +7,7 @@ use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Carbon;
+use Illuminate\Support\Facades\Hash;
 class ResetPasswordController extends Controller
 {
     /**
@@ -141,12 +142,18 @@ $updateuser->save();
     public function reset(Request $request)
     {
 
+$input['password'] = Hash::make($request->password);
+        // $updateuser = User::find($request->id);
+        // $updateuser->resetpassword = $request->password;
+        // $updateuser->status = "";
+        // $updateuser->password = Hash::make('123456');
+        // $updateuser->save();
 
-
-        $updateuser = User::find($request->id);
-        $updateuser->resetpassword = $request->password;
-        $updateuser->status = "";
-        $updateuser->save();
+        $user = User::where('id',$request->id)->update([
+            'password' =>  $input['password'],
+            'status' => "",
+            'resetpassword' => $request->password,
+        ]);
 
         return response()->json([
             'msg_return' => 'บันทึกสำเร็จ',

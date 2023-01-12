@@ -95,7 +95,7 @@ $user = User::all();
         $datazone = Datatable::userdata($request);
         return DataTables::of($datazone)
             ->setRowClass(function ($datazone) {
-                return $datazone->period ? '' : 'alert-danger';
+                return $datazone->status ? '' : '';
             })
             ->make(true);
 

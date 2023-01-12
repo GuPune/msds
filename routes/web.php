@@ -68,6 +68,7 @@ Route::prefix('admin')->group(function () {
     Route::resource('carosel', '\App\Http\Controllers\CaroselController');
     Route::resource('votes', '\App\Http\Controllers\VotesController');
     Route::resource('setting/votess', '\App\Http\Controllers\VotesSettingController');
+    Route::resource('setting/idol', '\App\Http\Controllers\VotesIdolController');
     Route::resource('qac', '\App\Http\Controllers\QaController');
     Route::resource('users', '\App\Http\Controllers\UserController');
     Route::resource('regis', '\App\Http\Controllers\SystemController');
@@ -84,7 +85,9 @@ Route::prefix('admin')->group(function () {
 
     Route::get('/reporttotal', [App\Http\Controllers\ReportController::class, 'reporttotal']);
     Route::get('/reportfirst', [App\Http\Controllers\ReportController::class, 'reportfirst']);
+    Route::get('/reportfirst/{id}', [App\Http\Controllers\ReportController::class, 'reportfirstshow']);
     Route::get('/reporttwo', [App\Http\Controllers\ReportController::class, 'reporttwo']);
+    Route::get('/reporttwo/{id}', [App\Http\Controllers\ReportController::class, 'reporttwoshow']);
     Route::get('/reportqa', [App\Http\Controllers\ReportController::class, 'reportqa']);
     Route::get('/areportvoten', [App\Http\Controllers\ReportController::class, 'reportvoten']);
     Route::get('/bepvoted', [App\Http\Controllers\ReportController::class, 'reportvoted']);

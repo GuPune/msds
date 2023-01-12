@@ -15,7 +15,7 @@
         </div>
         @endif
       <div class="card shadow mb-4">
-        <form method="POST"  action="{{ route('votess.store') }}" >
+        <form method="POST"  action="{{ route('idol.store') }}" >
             {{ csrf_field() }}
         <div class="card-body">
             <div class="row">
@@ -24,22 +24,39 @@
                     <label class="col-sm-3 col-form-label">หัวข้อการเข้าประกวด :</label>
                     <div class="col-sm-9">
                         <select class="form-control form-control-sm" name="type">
-                            <option value="1">ประกวดการแต่งกาย</option>
+                            <option value="2" >ประกวดโชว์ไอดอล</option>
                           </select>
                     </div>
                   </div>
+
+
                 </div>
+
+
+                <div class="col-md-12">
+                    <div class="form-group row">
+                      <label class="col-sm-3 col-form-label">ประเภท :</label>
+                      <div class="col-sm-9">
+                        <select class="form-control form-control-sm" name="group_id">
+                            <option value="1">เดียว</option>
+                            <option value="2">กลุ่ม</option>
+                          </select>
+                      </div>
+                    </div>
+                  </div>
+
+
                   <div class="col-md-12">
                     <div class="form-group row">
                       <label class="col-sm-3 col-form-label">ชื่อ</label>
                       <div class="col-sm-9">
-                        <input type="text" class="form-control" id="name" name="name" aria-describedby="emailHelp" placeholder="Enter Name">
+                        <input type="text" class="form-control" id="name" name="name" aria-describedby="emailHelp" placeholder="Enter Name" required>
                       </div>
                     </div>
                   </div>
 
                   <div class="form-group" style="padding-left:15px;">
-                    <label for="filemagazine"><B>รูปภาพ</B><font color="red">* ขนาดที่แนะนำ 100 * 100 px</font></label><br>
+                    <label for="filemagazine"><B>รูปภาพ</B></label><br>
                     <input type="file" name="product_vote" id="product_vote" class="filestyle" ><br>
                     <img src="{{ $image_display }}" alt="รูปภาพประจำสินค้า" class="img-fluid rounded mx-auto d-block profile-image" id="showImage" width="100" height="100">
                     </div>

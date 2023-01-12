@@ -18,10 +18,10 @@
                    รายงานจำนวนผู้สมัคร
                 </a>
                 <a class="collapse-item" href="/admin/reportfirst">
-                    รายงานการลงทะเบียนครั้งที่ 1
+                    การลงทะเบียนครั้งที่ เช้า
                  </a>
                  <a class="collapse-item" href="/admin/reporttwo">
-                    รายงานการลงทะเบียนครั้งที่ 2
+                    การลงทะเบียนครั้งที่ บ่าย
                  </a>
                  <a class="collapse-item" href="/admin/reportqa">
                     รายงาน Q&A
@@ -60,7 +60,10 @@
         <div  id="collapse12" class="collapse show'"aria-labelledby="headingTwo" data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
                  <a class="collapse-item" href="/admin/setting/votess">
-                    ผู้เข้าประกวด
+                    ผู้เข้าประกวดแต่งกาย
+                 </a>
+                 <a class="collapse-item" href="/admin/setting/idol">
+                    ผู้เข้าประกวดโชว์เน็ตไอดอล
                  </a>
                  <a class="collapse-item" href="/admin/votes">
                     ตั้งค่า

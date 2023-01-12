@@ -7,6 +7,7 @@ use App\Models\User;
 use Illuminate\Http\Request;
 use Maatwebsite\Excel\Facades\Excel;
 use App\Exports\UsersExport;
+use App\Exports\UsersRegisExport;
 use App\Models\FactVote;
 use DB;
 
@@ -20,22 +21,48 @@ class ReportController extends Controller
         $reportuser = User::all();
         $cou = User::all()->count();
 
+
+
         return view('backend.reporttotal')->with('report',$reportuser)->with('count',$cou);
 
     }
     public function reportfirst(Request $request)
     {
         $reportuser = User::where('period','D')->get();
+
+
         $cou = User::where('period','D')->get()->count();
 
+        // $datas =  User::select('users.id','users.fname','users.lname','users.dep','users.email','checkin.created_at')
+        // ->leftJoin('checkin', 'users.id', '=', 'checkin.user_id')->get()->groupBy(function($data) {
+        //     return $data->fname;
+        // });
 
-        return view('backend.reportfirst')->with('report',$reportuser)->with('count',$cou);
+        $users = User::select("users.id","fname","lname","email","dep", DB::raw("count(*) as total"),"checkin.created_at")
+        ->leftJoin('checkin', 'users.id', '=', 'checkin.user_id')
+        ->where('checkin.period','D')
+        ->groupBy('users.id','users.fname','users.lname','users.email','users.dep')
+        ->get();
+
+
+
+
+        return view('backend.reportfirst')->with('report',$users)->with('count',$cou);
     }
     public function reporttwo(Request $request)
     {
-        $reportuser = User::where('period','N')->get();
+     //   $reportuser = User::where('period','N')->get();
         $cou = User::where('period','N')->get()->count();
-        return view('backend.reporttwo')->with('report',$reportuser)->with('count',$cou);
+
+
+        $users = User::select("users.id","fname","lname","email","dep", DB::raw("count(*) as total"),"checkin.created_at")
+        ->leftJoin('checkin', 'users.id', '=', 'checkin.user_id')
+        ->where('checkin.period','N')
+        ->groupBy('users.id','users.fname','users.lname','users.email','users.dep')
+        ->get();
+
+
+        return view('backend.reporttwo')->with('report',$users)->with('count',$cou);
     }
     public function reportqa(Request $request)
     {
@@ -109,7 +136,39 @@ if($type == '2'){
     public function export($y)
     {
 
+if($y == 'total'){
+    return Excel::download(new UsersRegisExport($y), 'report.xlsx');
+}
         return Excel::download(new UsersExport($y), 'report.xlsx');
+    }
+
+    public function reportfirstshow($id)
+    {
+
+
+        $users = User::select("user_id","fname","lname","email","dep","checkin.created_at")
+        ->leftJoin('checkin', 'users.id', '=', 'checkin.user_id')
+        ->where('checkin.user_id',$id)
+        ->where('checkin.period','D')
+        ->get();
+
+
+        return view('backend.reportone')->with('users',$users);
+    }
+
+    public function reporttwoshow($id)
+    {
+
+
+        $users = User::select("user_id","fname","lname","email","dep","checkin.created_at")
+        ->leftJoin('checkin', 'users.id', '=', 'checkin.user_id')
+        ->where('checkin.user_id',$id)
+        ->where('checkin.period','N')
+        ->get();
+
+
+
+        return view('backend.reporttwoshow')->with('users',$users);
     }
 
 

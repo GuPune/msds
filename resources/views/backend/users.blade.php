@@ -25,7 +25,6 @@
                             <th>First Name</th>
                             <th>Last Name</th>
                             <th>Email</th>
-                            <th>Interval</th>
                             <th>Status</th>
                             <th>#</th>
                         </tr>
@@ -58,7 +57,7 @@
                 </div>
                 <div class="modal-footer">
                     <button class="btn btn-secondary" type="button" data-dismiss="modal">ยกเลิก</button>
-                    <a class="btn btn-primary btn-save" href="#">บันทึก</a>
+                    <a class="btn btn-primary btn-save">บันทึก</a>
                 </div>
             </div>
         </div>
@@ -120,7 +119,6 @@ $.ajaxSetup({
         {data: 'fname'},
         {data: 'lname'},
         {data: 'email'},
-        {data: 'period'},
         {data: 'status'},
         {data: 'action', name: 'action', orderable:false, serachable:false},
 
@@ -130,31 +128,12 @@ $.ajaxSetup({
                 }
     },
     columnDefs: [{
-                targets: [0,5,6],
+                targets: [0,4,5],
             },
 
-            {
-                    targets: 4,
-                    orderable: true,
-                    searchable: true,
-                    render: function (data, type, row) {
 
-                        var dataid = row.id;
-                        if(row.period == 'D'){
-
-                            var btnEdit = '<button type="button" class="btn btn-outline-info btn-sm"    class="btn-modal">ช่วงเช้า</button>';
-
-                        }else {
-
-                            var btnEdit = '<button type="button" class="btn btn-outline-info btn-sm"  class="btn-modal">ช่วงบ่าย</button>';
-
-                        }
-
-                         return btnEdit;
-                    }
-                },
                 {
-                    targets: 5,
+                    targets: 4,
                     orderable: true,
                     searchable: true,
                     render: function (data, type, row) {
@@ -173,7 +152,7 @@ return btnEdit;
                 },
 
             {
-                    targets: 6,
+                    targets: 5,
                     orderable: false,
                     searchable: false,
                     render: function (data, type, row) {

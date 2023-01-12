@@ -16,6 +16,9 @@ class Vote extends Model
         'sequence',
         'des',
         'type',
-        'period'
+        'period',
+        'name',
+        'group_id',
+
     ];
 }

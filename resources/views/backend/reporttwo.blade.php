@@ -6,7 +6,7 @@
 <div class="container-fluid">
 
     <!-- Page Heading -->
-    <h1 class="h3 mb-4 text-gray-800">รายงานการลงทะเบียนครั้งที่ 2</h1>
+    <h1 class="h3 mb-4 text-gray-800">รายงานการลงทะเบียนบ่าย</h1>
 
 
     <div class="card shadow mb-4">
@@ -29,7 +29,7 @@
                             <th>Last Name</th>
                             <th>Department</th>
                             <th>Email</th>
-                            <th>Create</th>
+                            <th>Lasttime</th>
                         </tr>
                     </thead>
 
@@ -37,7 +37,7 @@
                         @foreach($report as $key => $rs)
                         <tr>
                             <td class="text-center">{{$key+1}}</td>
-                            <td class="text-center">{{$rs->fname}}</td>
+                            <td class="text-center"><a href="/admin/reporttwo/{{$rs->id}}">{{$rs->fname}}</a></td>
                             <td class="text-center">{{$rs->lname}}</td>
                             <td class="text-center">{{$rs->dep}}</td>
                             <td class="text-center">{{$rs->email}}</td>

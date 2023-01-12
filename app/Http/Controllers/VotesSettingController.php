@@ -17,21 +17,8 @@ class VotesSettingController extends Controller
 
 
 
-$vote =  Vote::select('votes.id','votes.image','votes.sequence','votes.des','votes.type','headvotes.title','votes.period')
-->leftJoin('headvotes', 'votes.type', '=', 'headvotes.id');
-
-if($request->type){
-$vote->where('votes.type',$request->type);
-}
-if($request->period){
-    $vote->where('votes.period',$request->period);
-}
-if(!$request->period && $request->type){
-
-}
-if($request->all() == null){
-    $vote->where('votes.period','D')->where('votes.type','1');
-}
+$vote =  Vote::select('votes.id','votes.image','votes.sequence','votes.des','votes.type','headvotes.title')
+->leftJoin('headvotes', 'votes.type', '=', 'headvotes.id')->where('votes.type','1');
 $a = $vote->orderBy('sequence')->get();
 // $min = Carosel::min('sequence');
 // $max = Carosel::max('sequence');
@@ -76,21 +63,21 @@ $max = $vote->get()->max('sequence');
         //
 
 
-
-
-
         $this->validate($request, [
             'image' => 'required',
+            'name' => 'required',
         ]);
 
 
-        $max = Vote::where('type',$request->type)->where('period',$request->period)->max('sequence');
+
+
+        $max = Vote::where('type','1')->max('sequence');
         $shell_category = Vote::create([
             "image" => $request->image,
             "sequence" => $max+1,
             "des" => $request->des,
-            "type" => $request->type,
-            "period" => $request->period,
+            "type" => 1,
+            "group_id" => 1,
         ]);
 
 
