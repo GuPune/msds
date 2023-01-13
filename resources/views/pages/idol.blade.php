@@ -153,11 +153,11 @@
             {{-- <input type="text" id="uservote" name="uservote" value="{{$uservote->votes_id}}"> --}}
             <input type="hidden" id="uservote" name="uservote" value="{{$datavotesolo['user_id']}}">
 
-            <input type="text" id="start" name="start" value="{{date('d/m/Y H:i:s', strtotime($headvote->start))}}">
-            <input type="text" id="end" name="end" value="{{date('d/m/Y H:i:s', strtotime($headvote->end))}}">
+            {{-- <input type="text" id="start" name="start" value="{{date('d/m/Y H:i:s', strtotime($headvote->start))}}">
+            <input type="text" id="end" name="end" value="{{date('d/m/Y H:i:s', strtotime($headvote->end))}}"> --}}
 
-            {{-- <input type="text" id="start" name="start" value="{{$headvote->start}}">
-            <input type="text" id="end" name="end" value="{{$headvote->end}}"> --}}
+            <input type="text" id="start" name="start" value="{{$headvote->start}}">
+            <input type="text" id="end" name="end" value="{{$headvote->end}}">
             <p style="text-align: center;color: white;">{{$headvote->title}}</p>
           </div>
         </div>
@@ -548,41 +548,39 @@ $.ajaxSetup({
 //     }, 1000);
 // }
 
-var timenow = new Date().getTime();
-//var date = new Date(time);// Milliseconds to date
 
 
+const date = new Date();
+const localDateTime = date.toLocaleString('en-GB');
 
+let day = localDateTime.slice(0, 10);
+let time = localDateTime.slice(11, 20);
+let total = formatDate(date) +''+time;
 
-
-// let day = localDateTime.slice(0, 10);
-// let time = localDateTime.slice(11, 20);
-// let total = formatDate(date) +''+time;
-
-// var totals = new Date(total);
-// var milliseconds3 = totals.getTime();
+var totals = new Date(total);
+var milliseconds3 = totals.getTime();
 
 
 
     var start = $('#start').val();
 
-//     var end = $('#end').val();
-//     var startgroup = $('#startgroup').val();
-//     var endgroup = $('#endgroup').val();
+    var end = $('#end').val();
+    var startgroup = $('#startgroup').val();
+    var endgroup = $('#endgroup').val();
 
-   // var datestart = new Date(start);
-alert(start);
+    var datestart = new Date(start);
 
-//     var dateend = new Date(end);
-//     var datestartgroup = new Date(startgroup);
-//     var dateendgroup = new Date(endgroup);
-// var milliseconds = datestart.getTime();
-// var milliseconds2 = dateend.getTime();
-// var millisecondsgroup = datestartgroup.getTime();
-// var millisecondsgroupend = dateendgroup.getTime();
 
-// var millis = milliseconds2 - milliseconds3;
-// var millisgroup = millisecondsgroupend - milliseconds3;
+    var dateend = new Date(end);
+    var datestartgroup = new Date(startgroup);
+    var dateendgroup = new Date(endgroup);
+var milliseconds = datestart.getTime();
+var milliseconds2 = dateend.getTime();
+var millisecondsgroup = datestartgroup.getTime();
+var millisecondsgroupend = dateendgroup.getTime();
+
+var millis = milliseconds2 - milliseconds3;
+var millisgroup = millisecondsgroupend - milliseconds3;
 // var millis = 123456789;
 function startTimer(){
     //Thank you MaxArt.
@@ -602,11 +600,11 @@ function startTimer(){
 
 }
 
-// setInterval(function(){
-//     millis -= 1000;
-//     millisgroup -= 1000;
-//     startTimer();
-// }, 1000);
+setInterval(function(){
+    millis -= 1000;
+    millisgroup -= 1000;
+    startTimer();
+}, 1000);
 
 
 
