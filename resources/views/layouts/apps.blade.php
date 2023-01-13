@@ -29,7 +29,11 @@
 
     <style media="screen">
          .bocdy  {
-      background-image: url("https://cdn.vuetifyjs.com/images/backgrounds/vbanner.jpg");
+    /* background-image: url("https://cdn.vuetifyjs.com/images/backgrounds/vbanner.jpg"); */
+      background-image: url("http://127.0.0.1:8000/Art.png");
+      background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center
 
     }
 

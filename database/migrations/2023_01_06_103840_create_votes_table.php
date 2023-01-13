@@ -20,6 +20,9 @@ class CreateVotesTable extends Migration
             $table->text('des')->nullable();
             $table->text('type');
             $table->string('period');
+            $table->string('group_id');
+            $table->text('name');
+            $table->text('name_des');
             $table->timestamps();
         });
     }

@@ -19,6 +19,6 @@ class Vote extends Model
         'period',
         'name',
         'group_id',
-
+        'name_des',
     ];
 }

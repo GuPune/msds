@@ -60,18 +60,41 @@
     text-align: center;
 }
 
+.blocl{
+    height: 250px;
+    background-color: #21A7E1;
+    color: white;
+    font-size: 50px;
+    text-align: center;
+}
+
 
 
  @media (min-width:320px)  {
     .imgs{
     height: 120px;
     }
+    .blocl{
+    height: 120px;
+    background-color: #21A7E1;
+    color: white;
+    font-size: 30px;
+    text-align: center;
+}
 
   }
 @media (min-width:480px)  {
     .imgs{
     height: 120px;
     }
+
+    .blocl{
+    height: 120px;
+    background-color: #21A7E1;
+    color: white;
+    font-size: 30px;
+    text-align: center;
+}
 
  }
 @media (min-width:600px)  {
@@ -81,18 +104,40 @@
 
  }
 @media (min-width:801px)  {
+    .blocl{
+    height: 250px;
+    background-color: #21A7E1;
+    color: white;
+    font-size: 50px;
+    text-align: center;
+}
+
 
 }
 @media (min-width:1025px) {
     .imgs{
         height: 200px;
     }
+    .blocl{
+    height: 200px;
+    background-color: #21A7E1;
+    color: white;
+    font-size: 50px;
+    text-align: center;
+}
 
  }
 @media (min-width:1281px) {
     .imgs{
     height: 250px;
     }
+    .blocl{
+    height: 250px;
+    background-color: #21A7E1;
+    color: white;
+    font-size: 50px;
+    text-align: center;
+}
 
 }
     </style>
@@ -106,10 +151,13 @@
             <input type="hidden" id="id" name="id" value="{{Auth::guard('web')->user()->id}}">
 
             {{-- <input type="text" id="uservote" name="uservote" value="{{$uservote->votes_id}}"> --}}
-            <input type="hidden" id="uservote" name="uservote" value="{{$datavote['user_id']}}">
+            <input type="hidden" id="uservote" name="uservote" value="{{$datavotesolo['user_id']}}">
 
-            <input type="hidden" id="start" name="start" value="{{date('d/m/Y H:i:s', strtotime($headvote->start))}}">
-            <input type="hidden" id="end" name="end" value="{{date('d/m/Y H:i:s', strtotime($headvote->end))}}">
+            {{-- <input type="text" id="start" name="start" value="{{date('d/m/Y H:i:s', strtotime($headvote->start))}}">
+            <input type="text" id="end" name="end" value="{{date('d/m/Y H:i:s', strtotime($headvote->end))}}"> --}}
+
+            <input type="hidden" id="start" name="start" value="{{$headvote->start}}">
+            <input type="hidden" id="end" name="end" value="{{$headvote->end}}">
             <p style="text-align: center;">{{$headvote->title}}</p>
           </div>
         </div>
@@ -128,10 +176,16 @@
 
 
     <div class="col-4 col-md-4" style="padding-top: 5px;padding-bottom: 5px" onclick="Addvote({{$xx['id']}});">
-        <div class="card {{ $xx['id'] ==  $datavote['votes_id'] ? 'selvote' : '' }}">
+        {{-- <div class="card {{ $xx['id'] ==  $datavotesolo['votes_id'] ? 'selvote' : '' }}">
             <img class="card-img-top imgs" src="/public/product/{{$xx['image']}}" alt="Card image cap">
-        </div>
-        <div class="containersss" style="color: #010101;background-color: white;grid-template-columns: {{$xx['perd']}}% {{$xx['vote']}}%;">
+        </div> --}}
+
+        <div class="card blocl">
+            <div class="card-body">
+             {{$xx['name']}}
+            </div>
+          </div>
+        {{-- <div class="containersss" style="color: #010101;background-color: white;grid-template-columns: {{$xx['perd']}}% {{$xx['vote']}}%;">
             <div class="left">
                 <div class="text">
                     <span class="option-size" id="size-one">
@@ -146,24 +200,77 @@
                     <span class="option-size" id="size-two">{{$xx['vote']}}%</span>
                 </div>
             </div>
-          </div>
+          </div> --}}
         </div>
     @endforeach
-{{--
-    @foreach($vote as $key => $rs)
-    <div class="col-4 col-md-4" style="padding-top: 5px;padding-bottom: 5px" onclick="Addvote({{$rs->id}});">
-<div class="card {{ $rs->id ==  $uservote->votes_id ? 'selvote' : '' }}">
-    <img class="card-img-top" src="/public/product/{{$rs->image}}" alt="Card image cap">
-</div>
-</div>
-    @endforeach --}}
+
   </div>
+
+
+
+  <div class="row">
+    <div class="col-2 col-md-4" style="padding-top: 5px;padding-bottom: 5px">
+
+        </div>
+        <div class="col-8 col-md-4" style="padding-top: 5px;padding-bottom: 5px">
+            <div class="card-body">
+                <input type="hidden" id="headgroupid" name="headgroupid" value="{{$headvotegroup->id}}">
+                <input type="hidden" id="id" name="id" value="{{Auth::guard('web')->user()->id}}">
+
+                {{-- <input type="text" id="uservote" name="uservote" value="{{$uservote->votes_id}}"> --}}
+                <input type="hidden" id="usergroupvote" name="usergroupvote" value="{{$datavotegroup['user_id']}}">
+
+                {{-- <input type="text" id="startgroup" name="startgroup" value="{{date('d/m/Y H:i:s', strtotime($headvotegroup->start))}}">
+                <input type="text" id="endgroup" name="endgroup" value="{{date('d/m/Y H:i:s', strtotime($headvotegroup->end))}}"> --}}
+                <input type="hidden" id="startgroup" name="startgroup" value="{{$headvotegroup->start}}">
+                <input type="hidden" id="endgroup" name="endgroup" value="{{$headvotegroup->end}}">
+                <p style="text-align: center;">{{$headvotegroup->title}}</p>
+              </div>
+            </div>
+
+            <div class="col-2 col-md-4" style="padding-top: 5px;padding-bottom: 5px">
+
+                </div>
+            </div>
+
+
+            <div style="text-align: right;color: white;">Vote closes in <span id="timegroup">00:00:00</span></div>
+
+
+
+  <div class="row">
+    @foreach($group as $key => $groups)
+    <div class="col-4 col-md-4" style="padding-top: 5px;padding-bottom: 5px" onclick="Addvotegroup({{$groups['id']}});">
+        <div class="card {{ $groups['id'] ==  $datavotegroup['votes_id'] ? 'selvote' : '' }}">
+            <img class="card-img-top imgs" src="/public/product/{{$groups['image']}}" alt="Card image cap">
+        </div>
+        {{-- <div class="containersss" style="color: #010101;background-color: white;grid-template-columns: {{$xx['perd']}}% {{$xx['vote']}}%;">
+            <div class="left">
+                <div class="text">
+                    <span class="option-size" id="size-one">
+                        @if($xx['perd'] == 100)
+                        {{'0%'}}
+                        @endif
+                    </span>
+                </div>
+            </div>
+            <div class="right" >
+                <div class="text">
+                    <span class="option-size" id="size-two">{{$xx['vote']}}%</span>
+                </div>
+            </div>
+          </div> --}}
+        </div>
+    @endforeach
+
+  </div>
+
 
 
   <div class="modal fade" id="vote" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-sm" role="document">
         <div class="modal-content">
-            <input type="hidden" id="vote_id" name="vote_id">
+            <input type="text" id="vote_id" name="vote_id">
             <div class="modal-header" style="justify-content: center;">
                 <img id="myImg" src="/aaaa.jpg" alt="Snow" style="width:50%;">
             </div>
@@ -171,6 +278,22 @@
             <div class="modal-footer">
                 <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
                 <a class="btn btn-save" href="#">Vote</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="votegroup" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-sm" role="document">
+        <div class="modal-content">
+            <input type="text" id="votegroup_id" name="votegroup_id">
+            <div class="modal-header" style="justify-content: center;">
+                <img id="myImg" src="/aaaa.jpg" alt="Snow" style="width:50%;">
+            </div>
+            <div class="modal-body">คุณ {{Auth::guard('web')->user()->fname}} ต้องการโหวตให้กับหมายเลข 03 ?</div>
+            <div class="modal-footer">
+                <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
+                <a class="btn btn-save-group" href="#">Votegroup</a>
             </div>
         </div>
     </div>
@@ -218,7 +341,7 @@ const localDateTime = date.toLocaleString('en-GB');
 
 let day = localDateTime.slice(0, 10);
 let time = localDateTime.slice(11, 20);
-let total = day +''+time;
+let total = formatDate(date) +''+time;
 
 var totals = new Date(total);
 var milliseconds3 = totals.getTime();
@@ -235,11 +358,61 @@ if((milliseconds3 > milliseconds) && (milliseconds2 > milliseconds3)){
 
 }
 
+function Addvotegroup(id)
+{
+
+    var ids = $('#id').val();
+    var startgroup = $('#startgroup').val();
+
+    var endgroup = $('#endgroup').val();
+
+
+    var datestart = new Date(startgroup);
+    console.log(datestart);
+    var dateend = new Date(endgroup);
+var milliseconds = datestart.getTime();
+var milliseconds2 = dateend.getTime();
+
+const date = new Date();
+const localDateTime = date.toLocaleString('en-GB');
+
+let day = localDateTime.slice(0, 10);
+let time = localDateTime.slice(11, 20);
+let total = formatDate(date) +''+time;
+
+var totals = new Date(total);
+var milliseconds3 = totals.getTime();
+
+
+if((milliseconds3 > milliseconds) && (milliseconds2 > milliseconds3)){
+    var vote_id = $('#votegroup_id').val(id);
+    $("#votegroup").modal()
+}else{
+  $("#closevote").modal()
+}
+
+
+}
+
 function edi(id)
 {
     alert(id);
 
 
+}
+
+function formatDate(date) {
+    var d = new Date(date),
+        month = '' + (d.getMonth() + 1),
+        day = '' + d.getDate(),
+        year = d.getFullYear();
+
+    if (month.length < 2)
+        month = '0' + month;
+    if (day.length < 2)
+        day = '0' + day;
+
+    return [year, month, day].join('-');
 }
 
 
@@ -317,6 +490,37 @@ function deleteConf(id) {
         });
 
 
+
+        $('body').on('click', '.btn-save-group', function() {
+
+var vote_id = $('#votegroup_id').val();
+var headid = $('#headgroupid').val();
+
+$.ajaxSetup({
+                headers: {
+                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                }
+            });
+
+            $.ajax({
+        dataType: 'json',
+        type:'POST',
+
+        data:{
+            '_token': "{{ csrf_token() }}",
+            vote_id:vote_id,headid:headid},
+        url: '/savevote',
+        success: function(datas){
+            location.reload();
+
+
+        }
+    })
+
+
+});
+
+
 //         function startTimer(duration, display) {
 //     var timer = duration, minutes, seconds;
 
@@ -338,13 +542,12 @@ function deleteConf(id) {
 
 
 
-
 const date = new Date();
 const localDateTime = date.toLocaleString('en-GB');
 
 let day = localDateTime.slice(0, 10);
 let time = localDateTime.slice(11, 20);
-let total = day +''+time;
+let total = formatDate(date) +''+time;
 
 var totals = new Date(total);
 var milliseconds3 = totals.getTime();
@@ -353,13 +556,20 @@ var milliseconds3 = totals.getTime();
 
     var start = $('#start').val();
     var end = $('#end').val();
+    var startgroup = $('#startgroup').val();
+    var endgroup = $('#endgroup').val();
 
     var datestart = new Date(start);
     var dateend = new Date(end);
+    var datestartgroup = new Date(startgroup);
+    var dateendgroup = new Date(endgroup);
 var milliseconds = datestart.getTime();
 var milliseconds2 = dateend.getTime();
+var millisecondsgroup = datestartgroup.getTime();
+var millisecondsgroupend = dateendgroup.getTime();
 
 var millis = milliseconds2 - milliseconds3;
+var millisgroup = millisecondsgroupend - milliseconds3;
 // var millis = 123456789;
 function startTimer(){
     //Thank you MaxArt.
@@ -368,13 +578,20 @@ function startTimer(){
     var hours = Math.floor(millis / 36e5),
         mins = Math.floor((millis % 36e5) / 6e4),
         secs = Math.floor((millis % 6e4) / 1000);
+
+    var hoursgroup = Math.floor(millisgroup / 36e5),
+        minsgroup = Math.floor((millisgroup % 36e5) / 6e4),
+        secsgroup = Math.floor((millisgroup % 6e4) / 1000);
         display = document.querySelector('#time');
+        displaygroup = document.querySelector('#timegroup');
        display.textContent =  hours +":"+ mins + ":" + secs;
+       displaygroup.textContent =  hoursgroup +":"+ minsgroup + ":" + secsgroup;
 
 }
 
 setInterval(function(){
     millis -= 1000;
+    millisgroup -= 1000;
     startTimer();
 }, 1000);
 

@@ -65,6 +65,8 @@
                         <tr class="center">
                             <th>#</th>
                             <th>รูป</th>
+                            <th>ชื่อ</th>
+                            <th>หมายเลข</th>
                             <th>เข้าประกวดหัวข้อ</th>
                             <th>ประเภท</th>
                             <th>ปรับ</th>
@@ -79,8 +81,8 @@
                             <td class="text-center">{{$key+1}}</td>
                             <td class="text-center"><img class="img-profile"
                                 src="/public/product/{{$rs->image}}" width="150" height="100"></td>
-
-
+                            <td class="text-center">{{$rs->name_des}}</td>
+                            <td class="text-center">{{$rs->name}}</td>
                             <td class="text-center">{{$rs->title}}</td>
                             <td class="text-center">
 

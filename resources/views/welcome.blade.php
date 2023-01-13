@@ -10,7 +10,7 @@
 
 <style>
     .bocdy  {
-      background-image: url("http://139.5.146.235/img/A1.jpg");
+      background-image: url("http://139.5.146.235/img/s11.png");
       background-size: 100% 100%;
 
 

@@ -18,7 +18,7 @@ class VotesIdolController extends Controller
 
 
 
-$vote =  Vote::select('votes.id','votes.image','votes.sequence','votes.des','votes.type','headvotes.title','votes.group_id')
+$vote =  Vote::select('votes.id','votes.image','votes.sequence','votes.des','votes.type','headvotes.title','votes.group_id','votes.name','votes.name_des')
 ->leftJoin('headvotes', 'votes.type', '=', 'headvotes.id');
 
 
@@ -94,6 +94,9 @@ $max = $vote->get()->max('sequence');
                 "sequence" => $max+1,
                 "des" => $request->des,
                 "type" => 2,
+                "name_des" => $request->name_des,
+                "name" => $request->name,
+                "type" => 2,
                 "group_id" => 1,
             ]);
         }
@@ -105,6 +108,8 @@ $max = $vote->get()->max('sequence');
                 "des" => $request->des,
                 "type" => 3,
                 "group_id" => 2,
+                "name_des" => $request->name_des,
+                "name" => $request->name,
             ]);
         }
 
@@ -159,13 +164,16 @@ $max = $vote->get()->max('sequence');
             $max = Vote::where('group_id',$request->group_id)->where('type','2')->max('sequence');
 
             $check = Vote::where('id',$id)->where('group_id',$request->group_id)->first();
+
             if(!$check){
                 $updatedata = Vote::where("id", $id)->update([
                     "image" =>  $request->image,
                     "des" =>  $request->des,
                     "sequence" => $max+1,
                     "type" => 2,
-                    "group_id" => $request->group_id
+                    "group_id" => $request->group_id,
+                    "name_des" => $request->name_des,
+                    "name" => $request->name,
                  ]);
 
 
@@ -179,6 +187,16 @@ $max = $vote->get()->max('sequence');
 
 
         }
+
+        if($check){
+            $updatedata = Vote::where("id", $id)->update([
+                "image" =>  $request->image,
+                "des" =>  $request->des,
+                "name_des" => $request->name_des,
+                "name" => $request->name,
+             ]);
+
+    }
     }
         if($request->group_id == 2){
             $max = Vote::where('group_id',$request->group_id)->where('type','3')->max('sequence');
@@ -190,7 +208,9 @@ $max = $vote->get()->max('sequence');
                     "des" =>  $request->des,
                     "sequence" => $max+1,
                     "type" => 3,
-                    "group_id" => $request->group_id
+                    "group_id" => $request->group_id,
+                    "name_des" => $request->name_des,
+                    "name" => $request->name,
                  ]);
 
 
@@ -205,6 +225,16 @@ $max = $vote->get()->max('sequence');
                 }
 
         }
+
+        if($check){
+            $updatedata = Vote::where("id", $id)->update([
+                "image" =>  $request->image,
+                "des" =>  $request->des,
+                "name_des" => $request->name_des,
+                "name" => $request->name,
+             ]);
+
+    }
 
     }
 

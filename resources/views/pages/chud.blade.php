@@ -108,8 +108,11 @@
             {{-- <input type="text" id="uservote" name="uservote" value="{{$uservote->votes_id}}"> --}}
             <input type="hidden" id="uservote" name="uservote" value="{{$datavote['user_id']}}">
 
-            <input type="hidden" id="start" name="start" value="{{date('d/m/Y H:i:s', strtotime($headvote->start))}}">
-            <input type="hidden" id="end" name="end" value="{{date('d/m/Y H:i:s', strtotime($headvote->end))}}">
+            {{-- <input type="text" id="start" name="start" value="{{date('d/m/Y H:i:s', strtotime($headvote->start))}}">
+            <input type="text" id="end" name="end" value="{{date('d/m/Y H:i:s', strtotime($headvote->end))}}"> --}}
+
+            <input type="hidden" id="start" name="start" value="{{$headvote->start}}">
+            <input type="hidden" id="end" name="end" value="{{$headvote->end}}">
             <p style="text-align: center;">{{$headvote->title}}</p>
           </div>
         </div>
@@ -191,6 +194,7 @@
     </div>
 </div>
 <br>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.4/moment.min.js"></script>
 
 <script>
 
@@ -218,7 +222,7 @@ const localDateTime = date.toLocaleString('en-GB');
 
 let day = localDateTime.slice(0, 10);
 let time = localDateTime.slice(11, 20);
-let total = day +''+time;
+let total = formatDate(date) +''+time;
 
 var totals = new Date(total);
 var milliseconds3 = totals.getTime();
@@ -229,9 +233,6 @@ if((milliseconds3 > milliseconds) && (milliseconds2 > milliseconds3)){
 }else{
   $("#closevote").modal()
 }
-
-
-
 
 }
 
@@ -338,29 +339,40 @@ function deleteConf(id) {
 
 
 
+function formatDate(date) {
+    var d = new Date(date),
+        month = '' + (d.getMonth() + 1),
+        day = '' + d.getDate(),
+        year = d.getFullYear();
+
+    if (month.length < 2)
+        month = '0' + month;
+    if (day.length < 2)
+        day = '0' + day;
+
+    return [year, month, day].join('-');
+}
 
 const date = new Date();
 const localDateTime = date.toLocaleString('en-GB');
 
+
 let day = localDateTime.slice(0, 10);
 let time = localDateTime.slice(11, 20);
-let total = day +''+time;
+let total = formatDate(date) +''+time;
+
+
 
 var totals = new Date(total);
 var milliseconds3 = totals.getTime();
-
-
-
-    var start = $('#start').val();
-    var end = $('#end').val();
-
-    var datestart = new Date(start);
-    var dateend = new Date(end);
+var start = $('#start').val();
+var end = $('#end').val();
+var datestart = new Date(start);
+var dateend = new Date(end);
 var milliseconds = datestart.getTime();
 var milliseconds2 = dateend.getTime();
-
 var millis = milliseconds2 - milliseconds3;
-// var millis = 123456789;
+
 function startTimer(){
     //Thank you MaxArt.
 
@@ -370,6 +382,7 @@ function startTimer(){
         secs = Math.floor((millis % 6e4) / 1000);
         display = document.querySelector('#time');
        display.textContent =  hours +":"+ mins + ":" + secs;
+
 
 }
 
