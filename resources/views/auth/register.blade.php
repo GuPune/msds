@@ -183,7 +183,7 @@ var email = $('#email').val();
 
 console.log(email);
 
-return false;
+return true;
 
 
 
