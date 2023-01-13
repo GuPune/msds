@@ -18,20 +18,18 @@
                    รายงานจำนวนผู้สมัคร
                 </a>
                 <a class="collapse-item" href="/admin/reportfirst">
-                    การลงทะเบียนครั้งที่ เช้า
+                    การลงทะเบียนช่วงเช้า
                  </a>
                  <a class="collapse-item" href="/admin/reporttwo">
-                    การลงทะเบียนครั้งที่ บ่าย
+                    การลงทะเบียนช่วงบ่าย
                  </a>
                  <a class="collapse-item" href="/admin/reportqa">
                     รายงาน Q&A
                  </a>
                  <a class="collapse-item" href="/admin/bepvoted">
-                    ผลการโหวตคะแนนรอบเช้า
+                    ผลการโหวตคะแนน
                  </a>
-                 <a class="collapse-item" href="/admin/areportvoten">
-                    ผลการโหวตคะแนนรอบบ่าย
-                 </a>
+
             </div>
         </div>
 

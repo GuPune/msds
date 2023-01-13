@@ -6,7 +6,7 @@
 <div class="container-fluid">
 
     <!-- Page Heading -->
-    <h1 class="h3 mb-4 text-gray-800">รายงานผลการโหวตคะแนน เช้า</h1>
+    <h1 class="h3 mb-4 text-gray-800">รายงานผลการโหวตคะแนน</h1>
 
 
     <div class="card shadow mb-4">
@@ -16,8 +16,9 @@
             <div class="form-row">
                 <div class="form-group col-md-6">
                     <select class="custom-select" onchange='submitForm();' name="type" id="type">
-                      <option value="1" @if($type == 1)  selected @endif>ประกวดการแต่งกาย</option>
-                      <option value="2" @if($type == 2)  selected @endif>ประกวดโชว์ไอดอล</option>
+                      <option value="1" @if($type == 1)  selected @endif>Talent Show</option>
+                      <option value="2" @if($type == 2)  selected @endif>Next Idol</option>
+                      <option value="3" @if($type == 3)  selected @endif>Next Idol Group</option>
                     </select>
                   </div>
                 <div class="form-group col-md-6">

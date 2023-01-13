@@ -25,8 +25,8 @@
                     <label class="col-sm-3 col-form-label">หัวข้อการเข้าประกวด</label>
                     <div class="col-sm-9">
                         <select class="form-control form-control-sm" name="type">
-                            <option value="1" @if($res->type == 1) selected @endif>ประกวดการแต่งกาย</option>
-                            <option value="2" @if($res->type == 2) selected @endif>ประกวดโชว์ไอดอล</option>
+                            <option value="1">ประกวดการแต่งกาย</option>
+
                           </select>
                     </div>
                   </div>
@@ -35,14 +35,22 @@
                 </div>
 
 
-                <div class="col-md-12">
+
+                  <div class="col-md-12">
                     <div class="form-group row">
-                      <label class="col-sm-3 col-form-label">ช่วงเวลา</label>
+                      <label class="col-sm-3 col-form-label">ชื่อ</label>
                       <div class="col-sm-9">
-                        <select class="form-control form-control-sm" name="period">
-                            <option value="D" @if($res->period == "D") selected @endif>เช้า</option>
-                            <option value="N" @if($res->period == "N") selected @endif>บ่าย</option>
-                          </select>
+                        <input type="text" class="form-control" id="name_des" name="name_des" aria-describedby="emailHelp" placeholder="Enter Name" value="{{$res->name_des}}">
+                      </div>
+                    </div>
+                  </div>
+
+
+                  <div class="col-md-12">
+                    <div class="form-group row">
+                      <label class="col-sm-3 col-form-label">หมายเลข</label>
+                      <div class="col-sm-9">
+                        <input type="text" class="form-control" id="name" name="name" aria-describedby="emailHelp" placeholder="Enter 00 " value="{{$res->name}}" required>
                       </div>
                     </div>
                   </div>

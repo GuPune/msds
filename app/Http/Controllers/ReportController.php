@@ -81,8 +81,8 @@ class ReportController extends Controller
             \DB::Raw('count(*) as total'),'dsc.image','dsc.des','fsc.votes_id'
         )->leftjoin('votes as dsc','fsc.votes_id','=','dsc.id')
         ->where('dsc.type',$request->type)
-        ->where('dsc.period','D')
         ->groupBy('fsc.votes_id')->orderby('total','desc')->get();
+
 
 
 if(!$request->type){
@@ -91,10 +91,22 @@ if(!$request->type){
     \DB::Raw('count(*) as total'),'dsc.image','dsc.des','fsc.votes_id'
 )->leftjoin('votes as dsc','fsc.votes_id','=','dsc.id')
 ->where('dsc.type','1')
-->where('dsc.period','D')
-->groupBy('fsc.votes_id')->orderby('total','desc')->get();
+->groupBy('fsc.votes_id','dsc.image')->orderby('total','desc')->get();
+
 
 $type = '1';
+}
+
+if($request->type == '3'){
+
+    $reportReturn = \DB::table('fact_votes as fsc')
+    ->select(
+        \DB::Raw('count(*) as total'),'dsc.image','dsc.des','fsc.votes_id'
+    )->leftjoin('votes as dsc','fsc.votes_id','=','dsc.id')
+    ->where('dsc.type','3')
+    ->where('dsc.group_id','2')
+    ->groupBy('fsc.votes_id')->orderby('total','desc')->get();
+$type = '3';
 }
 
 
@@ -102,6 +114,8 @@ $pert = collect($reportReturn)->map(function($x){ return (array) $x; })->toArray
 
 
 
+
+$max = 0;
 $datas = [];
 $labels = [];
 $data = [];
@@ -113,7 +127,9 @@ foreach ($pert as $key => $regroup) {
     $datas[$key]['votes_id'] = $regroup['votes_id'];
     $labels[$key] = $regroup['image'];
     $data[$key] = $regroup['total'];
+
     $max = FactVote::where('headvotes_id',$type)->count();
+
     $getvotecount_id = FactVote::where('headvotes_id',$type)->where('votes_id',$regroup['votes_id'])->count();
     $datazone = Datatable::vote($max,$getvotecount_id);
     $datas[$key]['vote'] = $datazone;
@@ -122,11 +138,16 @@ foreach ($pert as $key => $regroup) {
 
 $s = collect($datas);
 
+
+
 if($type == '1'){
-    $name = 'ประกวดการแต่งกาย';
+    $name = 'Talent Show';
 }
 if($type == '2'){
-    $name = 'ประกวดโชว์ไอดอล';
+    $name = 'Next Idol';
+}
+if($type == '3'){
+    $name = 'Next Idol Group';
 }
 
 

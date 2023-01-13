@@ -17,7 +17,7 @@ class VotesSettingController extends Controller
 
 
 
-$vote =  Vote::select('votes.id','votes.image','votes.sequence','votes.des','votes.type','headvotes.title')
+$vote =  Vote::select('votes.id','votes.image','votes.sequence','votes.des','votes.type','headvotes.title','votes.name','votes.name_des')
 ->leftJoin('headvotes', 'votes.type', '=', 'headvotes.id')->where('votes.type','1');
 $a = $vote->orderBy('sequence')->get();
 // $min = Carosel::min('sequence');
@@ -76,6 +76,8 @@ $max = $vote->get()->max('sequence');
             "image" => $request->image,
             "sequence" => $max+1,
             "des" => $request->des,
+            "name" => $request->name,
+            "name_des" => $request->name_des,
             "type" => 1,
             "group_id" => 1,
         ]);
@@ -132,8 +134,10 @@ $max = $vote->get()->max('sequence');
             "image" =>  $request->image,
             "des" =>  $request->des,
             "sequence" => $max+1,
-            "type" => $request->type,
-            "period" => $request->period
+            "name" => $request->name,
+            "name_des" => $request->name_des,
+
+
          ]);
          return redirect()->route('votess.index')->with('success','Vote Update successfully');
        }
@@ -142,8 +146,8 @@ $max = $vote->get()->max('sequence');
        $updatedata = Vote::where("id", $id)->update([
         "image" =>  $request->image,
         "des" =>  $request->des,
-        "type" => $request->type,
-        "period" => $request->period
+        "name" => $request->name,
+        "name_des" => $request->name_des,
      ]);
 
        return redirect()->route('votess.index')->with('success','Vote Update successfully');

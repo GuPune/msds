@@ -33,10 +33,21 @@
                     <div class="form-group row">
                       <label class="col-sm-3 col-form-label">ชื่อ</label>
                       <div class="col-sm-9">
-                        <input type="text" class="form-control" id="name" name="name" aria-describedby="emailHelp" placeholder="Enter Name">
+                        <input type="text" class="form-control" id="name_des" name="name_des" aria-describedby="emailHelp" placeholder="Enter Name">
                       </div>
                     </div>
                   </div>
+
+
+                  <div class="col-md-12">
+                    <div class="form-group row">
+                      <label class="col-sm-3 col-form-label">หมายเลข</label>
+                      <div class="col-sm-9">
+                        <input type="text" class="form-control" id="name" name="name" aria-describedby="emailHelp" placeholder="Enter 00 " required>
+                      </div>
+                    </div>
+                  </div>
+
 
                   <div class="form-group" style="padding-left:15px;">
                     <label for="filemagazine"><B>รูปภาพ</B><font color="red">* ขนาดที่แนะนำ 100 * 100 px</font></label><br>

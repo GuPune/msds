@@ -10,6 +10,7 @@
 
 <style>
     .bocdy  {
+
       background-image: url("http://139.5.146.235/p/appmobile.png");
       background-size: 100% 100%;
 
