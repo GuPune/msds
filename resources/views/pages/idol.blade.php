@@ -567,7 +567,8 @@ $.ajaxSetup({
     var startgroup = $('#startgroup').val();
     var endgroup = $('#endgroup').val();
 
-    var datestart = new Date(Date.parse(start));
+    // var datestart = new Date(Date.parse(start));
+    var datestart = new Date(start.replace(/\s+/g, 'T').concat('.000+08:00')).getTime()
 alert(datestart);
 //     var dateend = new Date(end);
 //     var datestartgroup = new Date(startgroup);
