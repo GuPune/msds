@@ -156,8 +156,8 @@
             {{-- <input type="text" id="start" name="start" value="{{date('d/m/Y H:i:s', strtotime($headvote->start))}}">
             <input type="text" id="end" name="end" value="{{date('d/m/Y H:i:s', strtotime($headvote->end))}}"> --}}
 
-            <input type="text" id="start" name="start" value="{{$headvote->start}}">
-            <input type="text" id="end" name="end" value="{{$headvote->end}}">
+            <input type="hidden" id="start" name="start" value="{{$headvote->start}}">
+            <input type="hidden" id="end" name="end" value="{{$headvote->end}}">
             <p style="text-align: center;color: white;">{{$headvote->title}}</p>
           </div>
         </div>
@@ -224,7 +224,7 @@
                 <input type="text" id="endgroup" name="endgroup" value="{{date('d/m/Y H:i:s', strtotime($headvotegroup->end))}}"> --}}
                 <input type="hidden" id="startgroup" name="startgroup" value="{{$headvotegroup->start}}">
                 <input type="hidden" id="endgroup" name="endgroup" value="{{$headvotegroup->end}}">
-                <p style="text-align: center;color: white;">{{$headvotegroup->title}}</p>
+                <p style="text-align: center;color:white">{{$headvotegroup->title}}</p>
               </div>
             </div>
 
@@ -563,14 +563,11 @@ var milliseconds3 = totals.getTime();
 
 
     var start = $('#start').val();
-
     var end = $('#end').val();
     var startgroup = $('#startgroup').val();
     var endgroup = $('#endgroup').val();
 
     var datestart = new Date(start);
-
-
     var dateend = new Date(end);
     var datestartgroup = new Date(startgroup);
     var dateendgroup = new Date(endgroup);
