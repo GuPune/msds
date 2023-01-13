@@ -10,7 +10,7 @@
 
 <style>
     .bocdy  {
-      background-image: url("http://139.5.146.235/s11.png");
+      background-image: url("http://139.5.146.235/p/appmobile.png");
       background-size: 100% 100%;
 
 
@@ -21,7 +21,7 @@
     }
     .fixed-btn{
   position: fixed;
-  bottom: 10%;
+  bottom: 5%;
   /* right: 45%; */
   /* background: #0FACF3; */
   /* width: 180px;
@@ -62,10 +62,22 @@
  } */
 @media (min-width:480px)  {
 
-
+    .bottext{
+    font-size: 40px;
+}
  }
-@media (min-width:600px)  { /* portrait tablets, portrait iPad, e-readers (Nook/Kindle), landscape 800x480 phones (Android) */ }
-@media (min-width:801px)  { /* tablet, landscape iPad, lo-res laptops ands desktops */ }
+@media (min-width:600px)  { /* portrait tablets, portrait iPad, e-readers (Nook/Kindle), landscape 800x480 phones (Android) */
+    .bottext{
+    font-size: 35px;
+}
+}
+@media (min-width:801px)  { /* tablet, landscape iPad, lo-res laptops ands desktops */
+
+
+    .bottext{
+    font-size: 30px;
+}
+}
 /* @media (min-width:1025px) {
     .fixed-btn{
   position: fixed;
@@ -81,7 +93,11 @@
   cursor: pointer;
 }
 } */
-@media (min-width:1281px) { /* hi-res laptops and desktops */ }
+@media (min-width:1281px) { /* hi-res laptops and desktops */
+    .bottext{
+    font-size: 25px;
+}
+}
     </style>
 <body >
   <div class="container-scroller">
@@ -107,7 +123,7 @@
           </div> --}}
 
           <div class="col-12 fixed-btn">
-            <a href="/login/{{$gettoken}}" class="btn btn-primary btn-block srta"> เข้าสู่ระบบ </a>
+            <a href="/login/{{$gettoken}}" class="btn btn-primary btn-block srta bottext"> เข้าสู่ระบบ </a>
           </div>
         </div>
       </div>
