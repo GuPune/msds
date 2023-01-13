@@ -548,9 +548,9 @@ $.ajaxSetup({
 //     }, 1000);
 // }
 
-var time = new Date().getTime();
-var date = new Date(time);// Milliseconds to date
-alert(time);
+var timenow = new Date().getTime();
+//var date = new Date(time);// Milliseconds to date
+
 
 
 
@@ -564,14 +564,14 @@ alert(time);
 
 
 
-//     var start = $('#start').val();
+    var start = $('#start').val();
 
 //     var end = $('#end').val();
 //     var startgroup = $('#startgroup').val();
 //     var endgroup = $('#endgroup').val();
 
-//     var datestart = new Date(start);
-
+    var datestart = new Date(start);
+alert(datestart);
 
 //     var dateend = new Date(end);
 //     var datestartgroup = new Date(startgroup);
