@@ -573,6 +573,10 @@ $.ajaxSetup({
     var dateend = new Date(end.replace(/\s+/g, 'T').concat('.000+07:00')).getTime();
 
 
+    var datestartgroup = new Date(start.replace(/\s+/g, 'T').concat('.000+07:00')).getTime();
+    var dateendgroup = new Date(endgroup.replace(/\s+/g, 'T').concat('.000+07:00')).getTime();
+
+
 //     var dateend = new Date(end);
 //     var datestartgroup = new Date(startgroup);
 //     var dateendgroup = new Date(endgroup);
@@ -582,6 +586,7 @@ $.ajaxSetup({
 // var millisecondsgroupend = dateendgroup.getTime();
 
  var millis = dateend - date;
+ var millisgroup = dateendgroup - date;
 // var millisgroup = millisecondsgroupend - milliseconds3;
 // var millis = 123456789;
 function startTimer(){
@@ -592,19 +597,19 @@ function startTimer(){
         mins = Math.floor((millis % 36e5) / 6e4),
         secs = Math.floor((millis % 6e4) / 1000);
 
-    // var hoursgroup = Math.floor(millisgroup / 36e5),
-    //     minsgroup = Math.floor((millisgroup % 36e5) / 6e4),
-    //     secsgroup = Math.floor((millisgroup % 6e4) / 1000);
+    var hoursgroup = Math.floor(millisgroup / 36e5),
+        minsgroup = Math.floor((millisgroup % 36e5) / 6e4),
+        secsgroup = Math.floor((millisgroup % 6e4) / 1000);
         display = document.querySelector('#time');
-        // displaygroup = document.querySelector('#timegroup');
+        displaygroup = document.querySelector('#timegroup');
       display.textContent =  hours +":"+ mins + ":" + secs;
-    //    displaygroup.textContent =  hoursgroup +":"+ minsgroup + ":" + secsgroup;
+     displaygroup.textContent =  hoursgroup +":"+ minsgroup + ":" + secsgroup;
 
 }
 
 setInterval(function(){
     millis -= 1000;
-    // millisgroup -= 1000;
+     millisgroup -= 1000;
     startTimer();
 }, 1000);
 
