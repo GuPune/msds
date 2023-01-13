@@ -563,13 +563,12 @@ $.ajaxSetup({
 
 
     var start = $('#start').val();
-    // var end = $('#end').val();
-    // var startgroup = $('#startgroup').val();
-    // var endgroup = $('#endgroup').val();
+    var end = $('#end').val();
+    var startgroup = $('#startgroup').val();
+    var endgroup = $('#endgroup').val();
 
-   // var datestart = new Date(start);
-    var datestart = new Date(start + 'T00:00');
-    alert(datestart);
+    var datestart = new Date(Date.parse("2017-01-22T11:57:00"));
+alert(datestart);
 //     var dateend = new Date(end);
 //     var datestartgroup = new Date(startgroup);
 //     var dateendgroup = new Date(endgroup);
