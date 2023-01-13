@@ -562,12 +562,13 @@ $.ajaxSetup({
 
 
 
-    var start = $('#start').val('09/28/2018');
+    var start = $('#start').val();
     // var end = $('#end').val();
     // var startgroup = $('#startgroup').val();
     // var endgroup = $('#endgroup').val();
 
-    var datestart = new Date(start);
+   // var datestart = new Date(start);
+    var datestart = new Date(start + 'T00:00');
     alert(datestart);
 //     var dateend = new Date(end);
 //     var datestartgroup = new Date(startgroup);
