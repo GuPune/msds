@@ -568,6 +568,7 @@ var milliseconds3 = totals.getTime();
     var endgroup = $('#endgroup').val();
 
     var datestart = new Date(start);
+    alert(datestart);
     var dateend = new Date(end);
     var datestartgroup = new Date(startgroup);
     var dateendgroup = new Date(endgroup);

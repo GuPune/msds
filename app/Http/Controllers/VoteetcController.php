@@ -124,7 +124,10 @@ $datas[$index]['perd'] = $per;
         $getheadsolo = Headvote::where('type','2')->first();
         $getheadgroup = Headvote::where('type','3')->first();
 
+
         $getvoteusersolo = FactVote::where('user_id',Auth::user()->id)->where('headvotes_id',$getheadsolo->id)->first();
+
+
         $getvoteusergroup = FactVote::where('user_id',Auth::user()->id)->where('headvotes_id',$getheadgroup->id)->first();
 
 
