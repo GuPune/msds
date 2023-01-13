@@ -153,11 +153,11 @@
             {{-- <input type="text" id="uservote" name="uservote" value="{{$uservote->votes_id}}"> --}}
             <input type="hidden" id="uservote" name="uservote" value="{{$datavotesolo['user_id']}}">
 
-            {{-- <input type="text" id="start" name="start" value="{{date('d/m/Y H:i:s', strtotime($headvote->start))}}">
-            <input type="text" id="end" name="end" value="{{date('d/m/Y H:i:s', strtotime($headvote->end))}}"> --}}
-
+            <input type="text" id="start" name="start" value="{{date('d/m/Y H:i:s', strtotime($headvote->start))}}">
+            <input type="text" id="end" name="end" value="{{date('d/m/Y H:i:s', strtotime($headvote->end))}}">
+{{--
             <input type="hidden" id="start" name="start" value="{{$headvote->start}}">
-            <input type="hidden" id="end" name="end" value="{{$headvote->end}}">
+            <input type="hidden" id="end" name="end" value="{{$headvote->end}}"> --}}
             <p style="text-align: center;color: white;">{{$headvote->title}}</p>
           </div>
         </div>
@@ -569,7 +569,7 @@ var milliseconds3 = totals.getTime();
     var endgroup = $('#endgroup').val();
 
     var datestart = new Date(start);
-
+    alert(datestart);
     var dateend = new Date(end);
     var datestartgroup = new Date(startgroup);
     var dateendgroup = new Date(endgroup);
