@@ -2,100 +2,145 @@
 
 @section('content')
 <style>
-.carousel-indicators li {
-    width: 10px;
-    height: 10px;
-    border-radius: 100%;
-}
-.carousel-indicators {
-    bottom: -50px;
-}
-
-.fullscreenDiv {
-
-    width: 100%;
-    height: auto;
-    bottom: 0px;
-    top: 0px;
-    left: 0;
-    position: absolute;
-}
-.center {
-    position: absolute;
-
-    top: 50%;
-    left: 50%;
-    margin-top: -25px;
-    margin-left: -65px;
-}
-
-.selvote {
-    border-style: solid;
-    border-color: coral
-}
-.containersss {
-    /* height: 100px;
-    width: 300px; */
-    background: rgb(236, 251, 255);
-    /* position: absolute; */
-    top: 50%;
-    left: 50%;
-    /* transform: translate(-50%, -50%); */
-    /* border-radius: 10px; */
-    box-shadow: 0px 5px 10px -6px rgb(0 0 0 / 50%);
-    overflow: hidden;
-    display: grid;
-    grid-template-columns: 50% 50%;
-}
-
-.right {
-    background: rgb(97, 165, 255);
-}
-
-.left {
-    background: rgb(192, 102, 177);
-}
-
-.container>div {
-    text-align: center;
-}
-
-
-
- @media (min-width:320px)  {
-    .imgs{
-    height: 120px;
+    .carousel-indicators li {
+        width: 10px;
+        height: 10px;
+        border-radius: 100%;
+    }
+    .carousel-indicators {
+        bottom: -50px;
     }
 
-  }
-@media (min-width:480px)  {
-    .imgs{
-    height: 120px;
+    .fullscreenDiv {
+
+        width: 100%;
+        height: auto;
+        bottom: 0px;
+        top: 0px;
+        left: 0;
+        position: absolute;
+    }
+    .center {
+        position: absolute;
+
+        top: 50%;
+        left: 50%;
+        margin-top: -25px;
+        margin-left: -65px;
     }
 
- }
-@media (min-width:600px)  {
-    .imgs{
-    height: 120px;
+    .selvote {
+        border-style: solid;
+        border-color: coral
+    }
+    .containersss {
+        /* height: 100px;
+        width: 300px; */
+        background: rgb(236, 251, 255);
+        /* position: absolute; */
+        top: 50%;
+        left: 50%;
+        /* transform: translate(-50%, -50%); */
+        /* border-radius: 10px; */
+        box-shadow: 0px 5px 10px -6px rgb(0 0 0 / 50%);
+        overflow: hidden;
+        display: grid;
+        grid-template-columns: 50% 50%;
     }
 
- }
-@media (min-width:801px)  {
+    .right {
+        background: rgb(97, 165, 255);
+    }
 
-}
-@media (min-width:1025px) {
-    .imgs{
+    .left {
+        background: rgb(192, 102, 177);
+    }
+
+    .container>div {
+        text-align: center;
+    }
+
+    .blocl{
+        height: 250px;
+        background-color: #21A7E1;
+        color: white;
+        font-size: 50px;
+        text-align: center;
+    }
+
+
+
+     @media (min-width:320px)  {
+        .imgs{
+        height: 120px;
+        }
+        .blocl{
+        height: 120px;
+        background-color: #21A7E1;
+        color: white;
+        font-size: 30px;
+        text-align: center;
+    }
+
+      }
+    @media (min-width:480px)  {
+        .imgs{
+        height: 120px;
+        }
+
+        .blocl{
+        height: 120px;
+        background-color: #21A7E1;
+        color: white;
+        font-size: 30px;
+        text-align: center;
+    }
+
+     }
+    @media (min-width:600px)  {
+        .imgs{
+        height: 120px;
+        }
+
+     }
+    @media (min-width:801px)  {
+        .blocl{
+        height: 250px;
+        background-color: #21A7E1;
+        color: white;
+        font-size: 50px;
+        text-align: center;
+    }
+
+
+    }
+    @media (min-width:1025px) {
+        .imgs{
+            height: 200px;
+        }
+        .blocl{
         height: 200px;
+        background-color: #21A7E1;
+        color: white;
+        font-size: 50px;
+        text-align: center;
     }
 
- }
-@media (min-width:1281px) {
-    .imgs{
-    height: 250px;
+     }
+    @media (min-width:1281px) {
+        .imgs{
+        height: 250px;
+        }
+        .blocl{
+        height: 250px;
+        background-color: #21A7E1;
+        color: white;
+        font-size: 50px;
+        text-align: center;
     }
 
-}
-    </style>
+    }
+        </style>
 <div class="row">
 <div class="col-2 col-md-4" style="padding-top: 5px;padding-bottom: 5px">
 
@@ -131,10 +176,16 @@
 
 
     <div class="col-4 col-md-4" style="padding-top: 5px;padding-bottom: 5px" onclick="Addvote({{$xx['id']}});">
-        <div class="card {{ $xx['id'] ==  $datavote['votes_id'] ? 'selvote' : '' }}">
+        {{-- <div class="card {{ $xx['id'] ==  $datavote['votes_id'] ? 'selvote' : '' }}">
             <img class="card-img-top imgs" src="/public/product/{{$xx['image']}}" alt="Card image cap">
-        </div>
-        <div class="containersss" style="color: #010101;background-color: white;grid-template-columns: {{$xx['perd']}}% {{$xx['vote']}}%;">
+        </div> --}}
+
+        <div class="card blocl {{ $xx['id'] ==  $datavote['votes_id'] ? 'selvote' : '' }}">
+            <div class="card-body">
+{{$xx['name']}}
+            </div>
+          </div>
+        {{-- <div class="containersss" style="color: #010101;background-color: white;grid-template-columns: {{$xx['perd']}}% {{$xx['vote']}}%;">
             <div class="left">
                 <div class="text">
                     <span class="option-size" id="size-one">
@@ -149,7 +200,7 @@
                     <span class="option-size" id="size-two">{{$xx['vote']}}%</span>
                 </div>
             </div>
-          </div>
+          </div> --}}
         </div>
     @endforeach
 {{--

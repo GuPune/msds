@@ -158,7 +158,7 @@
 
             <input type="hidden" id="start" name="start" value="{{$headvote->start}}">
             <input type="hidden" id="end" name="end" value="{{$headvote->end}}">
-            <p style="text-align: center;">{{$headvote->title}}</p>
+            <p style="text-align: center;color: white;">{{$headvote->title}}</p>
           </div>
         </div>
 
@@ -180,7 +180,7 @@
             <img class="card-img-top imgs" src="/public/product/{{$xx['image']}}" alt="Card image cap">
         </div> --}}
 
-        <div class="card blocl">
+        <div class="card blocl {{ $xx['id'] ==  $datavotesolo['votes_id'] ? 'selvote' : '' }}">
             <div class="card-body">
              {{$xx['name']}}
             </div>
@@ -224,7 +224,7 @@
                 <input type="text" id="endgroup" name="endgroup" value="{{date('d/m/Y H:i:s', strtotime($headvotegroup->end))}}"> --}}
                 <input type="hidden" id="startgroup" name="startgroup" value="{{$headvotegroup->start}}">
                 <input type="hidden" id="endgroup" name="endgroup" value="{{$headvotegroup->end}}">
-                <p style="text-align: center;">{{$headvotegroup->title}}</p>
+                <p style="text-align: center;color: white;">{{$headvotegroup->title}}</p>
               </div>
             </div>
 
@@ -241,9 +241,17 @@
   <div class="row">
     @foreach($group as $key => $groups)
     <div class="col-4 col-md-4" style="padding-top: 5px;padding-bottom: 5px" onclick="Addvotegroup({{$groups['id']}});">
-        <div class="card {{ $groups['id'] ==  $datavotegroup['votes_id'] ? 'selvote' : '' }}">
+        {{-- <div class="card {{ $groups['id'] ==  $datavotegroup['votes_id'] ? 'selvote' : '' }}">
             <img class="card-img-top imgs" src="/public/product/{{$groups['image']}}" alt="Card image cap">
-        </div>
+        </div> --}}
+
+
+        <div class="card blocl {{ $groups['id'] ==  $datavotegroup['votes_id'] ? 'selvote' : '' }}">
+            <div class="card-body">
+             {{$groups['name']}}
+            </div>
+          </div>
+
         {{-- <div class="containersss" style="color: #010101;background-color: white;grid-template-columns: {{$xx['perd']}}% {{$xx['vote']}}%;">
             <div class="left">
                 <div class="text">

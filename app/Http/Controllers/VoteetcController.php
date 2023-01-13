@@ -49,6 +49,8 @@ $datas[$index]['image'] = $getvotes->image;
 $datas[$index]['sequence'] = $getvotes->sequence;
 $datas[$index]['des'] = $getvotes->des;
 $datas[$index]['type'] = $getvotes->type;
+$datas[$index]['name'] = $getvotes->name;
+$datas[$index]['name_des'] = $getvotes->name_des;
 
 $getvotecount = FactVote::where('headvotes_id',$gethead->id)->count();
 $getvotecount_id = FactVote::where('headvotes_id',$gethead->id)->where('votes_id',$getvotes->id)->count();

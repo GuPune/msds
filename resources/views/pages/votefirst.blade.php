@@ -41,7 +41,7 @@
 
 
             <div class='fullscreenDiv'>
-                <div class="center">ประกวดการแต่งกาย</div>
+                <div class="center">MSD TALENT SHOW</div>
             </div>
           </div>
         </div>
@@ -64,7 +64,7 @@
 
 
             <div class='fullscreenDiv'>
-                <div class="center">ประกวดโชว์ไอดอล</div>
+                <div class="center">MSD NEXT IDOL</div>
             </div>
           </div>
         </div>

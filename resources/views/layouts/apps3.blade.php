@@ -30,7 +30,8 @@
 
     <style media="screen">
          .bocdy  {
-      background-image: url("https://cdn.vuetifyjs.com/images/backgrounds/vbanner.jpg");
+            background-image: url("http://139.5.146.235/Art.png");
+      /* background-image: url("https://cdn.vuetifyjs.com/images/backgrounds/vbanner.jpg"); */
 
     }
 
