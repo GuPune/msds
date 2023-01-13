@@ -34,7 +34,7 @@
                         <tr class="center">
                             <th>#</th>
                             <th>หัวข้อ</th>
-                            <th>ช่วงเวลา</th>
+
                             <th>เริ่มเวลา</th>
                             <th>หมดเวลา</th>
                             <th>#</th>
@@ -46,14 +46,7 @@
                         <tr>
                             <td class="text-center">{{$key+1}}</td>
                             <td class="text-center">{{$rs->title}}</td>
-                            <td class="text-center">
 
-                                @if($rs->period =='D')
-                            {{'ช่วงเช้า'}}
-                          @else
-                          {{'ช่วงบ่าย'}}
-                          @endif
-                            </td>
                             <td class="text-center">{{$rs->start}}</td>
                             <td class="text-center">{{$rs->end}}</td>
                             <td class="text-center">

@@ -69,7 +69,7 @@
 <script>
 
 $('.datetime').datetimepicker({
-    format: 'YYYY-DD-MM HH:mm:ss',
+    format: 'YYYY-MM-DD HH:mm:ss',
     locale: 'en',
     sideBySide: true,
     icons: {

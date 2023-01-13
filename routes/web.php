@@ -34,7 +34,7 @@ Route::get('/app/{token}', [App\Http\Controllers\FirstController::class, 'index'
 
 Route::get('/resetpassword', [App\Http\Controllers\ResetPasswordController::class, 'index']);
 Route::POST('/resetpassword', [App\Http\Controllers\ResetPasswordController::class, 'store'])->name('reset.custom');
-
+Route::get('qrcode', [App\Http\Controllers\QrcodeController::class, 'index']);
 
 Auth::routes();
 
@@ -92,6 +92,8 @@ Route::prefix('admin')->group(function () {
     Route::get('/areportvoten', [App\Http\Controllers\ReportController::class, 'reportvoten']);
     Route::get('/bepvoted', [App\Http\Controllers\ReportController::class, 'reportvoted']);
     Route::get('export/{type}', [App\Http\Controllers\ReportController::class, 'export']);
+
+
 
 });
 
