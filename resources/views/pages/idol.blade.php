@@ -156,8 +156,8 @@
             {{-- <input type="text" id="start" name="start" value="{{date('d/m/Y H:i:s', strtotime($headvote->start))}}">
             <input type="text" id="end" name="end" value="{{date('d/m/Y H:i:s', strtotime($headvote->end))}}"> --}}
 
-            <input type="hidden" id="start" name="start" value="{{$headvote->start}}">
-            <input type="hidden" id="end" name="end" value="{{$headvote->end}}">
+            <input type="text" id="start" name="start" value="{{$headvote->start}}">
+            <input type="text" id="end" name="end" value="{{$headvote->end}}">
             <p style="text-align: center;color: white;">{{$headvote->title}}</p>
           </div>
         </div>
@@ -552,6 +552,7 @@ $.ajaxSetup({
 
 const date = new Date();
 const localDateTime = date.toLocaleString('en-GB');
+alert(localDateTime);
 
 let day = localDateTime.slice(0, 10);
 let time = localDateTime.slice(11, 20);
@@ -569,7 +570,7 @@ var milliseconds3 = totals.getTime();
     var endgroup = $('#endgroup').val();
 
     var datestart = new Date(start);
-    alert(datestart);
+
 
     var dateend = new Date(end);
     var datestartgroup = new Date(startgroup);
