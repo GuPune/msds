@@ -374,29 +374,33 @@ function Addvotegroup(id)
 {
 
     var ids = $('#id').val();
-    var startgroup = $('#startgroup').val();
-
-    var endgroup = $('#endgroup').val();
-
-
-    var datestart = new Date(startgroup);
-    console.log(datestart);
-    var dateend = new Date(endgroup);
-var milliseconds = datestart.getTime();
-var milliseconds2 = dateend.getTime();
-
-const date = new Date();
-const localDateTime = date.toLocaleString('en-GB');
-
-let day = localDateTime.slice(0, 10);
-let time = localDateTime.slice(11, 20);
-let total = formatDate(date) +''+time;
-
-var totals = new Date(total);
-var milliseconds3 = totals.getTime();
+    var startp = $('#startgroup').val();
+    var end = $('#endgroup').val();
 
 
-if((milliseconds3 > milliseconds) && (milliseconds2 > milliseconds3)){
+    const date = new Date().getTime();
+    var datestart = new Date(start.replace(/\s+/g, 'T').concat('.000+07:00')).getTime();
+    var dateend = new Date(end.replace(/\s+/g, 'T').concat('.000+07:00')).getTime();
+
+
+//     var datestart = new Date(startgroup);
+//     console.log(datestart);
+//     var dateend = new Date(endgroup);
+// var milliseconds = datestart.getTime();
+// var milliseconds2 = dateend.getTime();
+
+// const date = new Date();
+// const localDateTime = date.toLocaleString('en-GB');
+
+// let day = localDateTime.slice(0, 10);
+// let time = localDateTime.slice(11, 20);
+// let total = formatDate(date) +''+time;
+
+// var totals = new Date(total);
+// var milliseconds3 = totals.getTime();
+
+
+if((date > datestart) && (dateend > date)){
     var vote_id = $('#votegroup_id').val(id);
     $("#votegroup").modal()
 }else{
