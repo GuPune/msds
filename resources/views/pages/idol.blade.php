@@ -570,8 +570,8 @@ var timenow = new Date().getTime();
 //     var startgroup = $('#startgroup').val();
 //     var endgroup = $('#endgroup').val();
 
-    var datestart = new Date(start);
-alert(datestart);
+   // var datestart = new Date(start);
+alert(start);
 
 //     var dateend = new Date(end);
 //     var datestartgroup = new Date(startgroup);
