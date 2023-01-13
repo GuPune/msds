@@ -550,7 +550,7 @@ $.ajaxSetup({
 
 var time = new Date().getTime();
 var date = new Date(time);// Milliseconds to date
-alert(date);
+alert(time);
 
 
 
