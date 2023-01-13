@@ -550,7 +550,8 @@ $.ajaxSetup({
 
 
 
-// const date = new Date();
+ const date = new Date().getTime();
+
 // const localDateTime = date.toLocaleString('en-GB');
 
 // let day = localDateTime.slice(0, 10);
@@ -568,8 +569,10 @@ $.ajaxSetup({
     var endgroup = $('#endgroup').val();
 
     // var datestart = new Date(Date.parse(start));
-    var datestart = new Date(start.replace(/\s+/g, 'T').concat('.000+08:00')).getTime()
-alert(datestart);
+    var datestart = new Date(start.replace(/\s+/g, 'T').concat('.000+07:00')).getTime();
+    var dateend = new Date(end.replace(/\s+/g, 'T').concat('.000+07:00')).getTime();
+
+
 //     var dateend = new Date(end);
 //     var datestartgroup = new Date(startgroup);
 //     var dateendgroup = new Date(endgroup);
@@ -578,7 +581,7 @@ alert(datestart);
 // var millisecondsgroup = datestartgroup.getTime();
 // var millisecondsgroupend = dateendgroup.getTime();
 
-// var millis = milliseconds2 - milliseconds3;
+ var millis = dateend - date;
 // var millisgroup = millisecondsgroupend - milliseconds3;
 // var millis = 123456789;
 function startTimer(){
@@ -589,21 +592,21 @@ function startTimer(){
         mins = Math.floor((millis % 36e5) / 6e4),
         secs = Math.floor((millis % 6e4) / 1000);
 
-    var hoursgroup = Math.floor(millisgroup / 36e5),
-        minsgroup = Math.floor((millisgroup % 36e5) / 6e4),
-        secsgroup = Math.floor((millisgroup % 6e4) / 1000);
+    // var hoursgroup = Math.floor(millisgroup / 36e5),
+    //     minsgroup = Math.floor((millisgroup % 36e5) / 6e4),
+    //     secsgroup = Math.floor((millisgroup % 6e4) / 1000);
         display = document.querySelector('#time');
-        displaygroup = document.querySelector('#timegroup');
-       display.textContent =  hours +":"+ mins + ":" + secs;
-       displaygroup.textContent =  hoursgroup +":"+ minsgroup + ":" + secsgroup;
+        // displaygroup = document.querySelector('#timegroup');
+      display.textContent =  hours +":"+ mins + ":" + secs;
+    //    displaygroup.textContent =  hoursgroup +":"+ minsgroup + ":" + secsgroup;
 
 }
 
-// setInterval(function(){
-//     millis -= 1000;
-//     millisgroup -= 1000;
-//     startTimer();
-// }, 1000);
+setInterval(function(){
+    millis -= 1000;
+    // millisgroup -= 1000;
+    startTimer();
+}, 1000);
 
 
 
