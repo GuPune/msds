@@ -548,40 +548,41 @@ $.ajaxSetup({
 //     }, 1000);
 // }
 
-
-
-const date = new Date();
-const localDateTime = date.toLocaleString('en-GB');
-alert(localDateTime);
-
-let day = localDateTime.slice(0, 10);
-let time = localDateTime.slice(11, 20);
-let total = formatDate(date) +''+time;
-
-var totals = new Date(total);
-var milliseconds3 = totals.getTime();
+var time = new Date().getTime();
+var date = new Date(time);// Milliseconds to date
+alert(date);
 
 
 
-    var start = $('#start').val();
 
-    var end = $('#end').val();
-    var startgroup = $('#startgroup').val();
-    var endgroup = $('#endgroup').val();
+// let day = localDateTime.slice(0, 10);
+// let time = localDateTime.slice(11, 20);
+// let total = formatDate(date) +''+time;
 
-    var datestart = new Date(start);
+// var totals = new Date(total);
+// var milliseconds3 = totals.getTime();
 
 
-    var dateend = new Date(end);
-    var datestartgroup = new Date(startgroup);
-    var dateendgroup = new Date(endgroup);
-var milliseconds = datestart.getTime();
-var milliseconds2 = dateend.getTime();
-var millisecondsgroup = datestartgroup.getTime();
-var millisecondsgroupend = dateendgroup.getTime();
 
-var millis = milliseconds2 - milliseconds3;
-var millisgroup = millisecondsgroupend - milliseconds3;
+//     var start = $('#start').val();
+
+//     var end = $('#end').val();
+//     var startgroup = $('#startgroup').val();
+//     var endgroup = $('#endgroup').val();
+
+//     var datestart = new Date(start);
+
+
+//     var dateend = new Date(end);
+//     var datestartgroup = new Date(startgroup);
+//     var dateendgroup = new Date(endgroup);
+// var milliseconds = datestart.getTime();
+// var milliseconds2 = dateend.getTime();
+// var millisecondsgroup = datestartgroup.getTime();
+// var millisecondsgroupend = dateendgroup.getTime();
+
+// var millis = milliseconds2 - milliseconds3;
+// var millisgroup = millisecondsgroupend - milliseconds3;
 // var millis = 123456789;
 function startTimer(){
     //Thank you MaxArt.
@@ -601,11 +602,11 @@ function startTimer(){
 
 }
 
-setInterval(function(){
-    millis -= 1000;
-    millisgroup -= 1000;
-    startTimer();
-}, 1000);
+// setInterval(function(){
+//     millis -= 1000;
+//     millisgroup -= 1000;
+//     startTimer();
+// }, 1000);
 
 
 
