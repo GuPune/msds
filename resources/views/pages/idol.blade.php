@@ -337,24 +337,28 @@
     var start = $('#start').val();
     var end = $('#end').val();
 
+    const date = new Date().getTime();
+    var datestart = new Date(start.replace(/\s+/g, 'T').concat('.000+07:00')).getTime();
+    var dateend = new Date(end.replace(/\s+/g, 'T').concat('.000+07:00')).getTime();
 
 
-    var datestart = new Date(start);
-    var dateend = new Date(end);
-var milliseconds = datestart.getTime();
-var milliseconds2 = dateend.getTime();
 
-const date = new Date();
-const localDateTime = date.toLocaleString('en-GB');
+//     var datestart = new Date(start);
+//     var dateend = new Date(end);
+// var milliseconds = datestart.getTime();
+// var milliseconds2 = dateend.getTime();
 
-let day = localDateTime.slice(0, 10);
-let time = localDateTime.slice(11, 20);
-let total = formatDate(date) +''+time;
+// const date = new Date();
+// const localDateTime = date.toLocaleString('en-GB');
 
-var totals = new Date(total);
-var milliseconds3 = totals.getTime();
+// let day = localDateTime.slice(0, 10);
+// let time = localDateTime.slice(11, 20);
+// let total = formatDate(date) +''+time;
 
-if((milliseconds3 > milliseconds) && (milliseconds2 > milliseconds3)){
+// var totals = new Date(total);
+// var milliseconds3 = totals.getTime();
+
+if((date > datestart) && (dateend > date)){
     var vote_id = $('#vote_id').val(id);
     $("#vote").modal()
 }else{
