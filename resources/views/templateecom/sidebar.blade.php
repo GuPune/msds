@@ -86,7 +86,7 @@
 
 
     <li class="nav-item">
-        <a class="nav-link" href="/admin/qac">
+        <a class="nav-link" href="/admin/setting/qac">
             <i class="nav-icon fas fa-edit"></i>
             <span>Q&A</span>
         </a>

@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\QA;
 use Illuminate\Http\Request;
 
-class QAController extends Controller
+class QAsettingController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,7 +16,8 @@ class QAController extends Controller
     {
         //
 
-        return view('pages.qafirst');
+        $getqa = QA::all();
+        return view('backend.indexqa')->with('qa',$getqa);
     }
 
     /**
@@ -38,12 +39,6 @@ class QAController extends Controller
     public function store(Request $request)
     {
         //
-        $save = QA::create([
-            "message" => $request->message
-        ]);
-        return response()->json([
-            'code_return' => 200,
-        ]);
     }
 
     /**

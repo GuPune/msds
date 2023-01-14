@@ -35,6 +35,7 @@ Route::get('/app/{token}', [App\Http\Controllers\FirstController::class, 'index'
 Route::get('/resetpassword', [App\Http\Controllers\ResetPasswordController::class, 'index']);
 Route::POST('/resetpassword', [App\Http\Controllers\ResetPasswordController::class, 'store'])->name('reset.custom');
 Route::get('qrcode', [App\Http\Controllers\QrcodeController::class, 'index']);
+Route::get('/qalist/{id}', [App\Http\Controllers\QrcodeController::class, 'show']);
 
 Auth::routes();
 
@@ -53,6 +54,7 @@ Route::post('checkin', [\App\Http\Controllers\DashController::class, 'checkin'])
 
 Route::get('/dash/votefirst', [VoteController::class, 'index'])->name('votefirst');
 Route::get('/dash/qafirst', [QAController::class, 'index'])->name('qafirst');
+Route::post('saveqa', [QAController::class, 'store']);
 
 Route::get('/admin/login',[AuthLoginController::class,'showAdminLoginForm'])->name('admin.login-view');
 Route::post('/admin/login',[AuthLoginController::class,'adminLogin'])->name('admin.login');
@@ -69,7 +71,7 @@ Route::prefix('admin')->group(function () {
     Route::resource('votes', '\App\Http\Controllers\VotesController');
     Route::resource('setting/votess', '\App\Http\Controllers\VotesSettingController');
     Route::resource('setting/idol', '\App\Http\Controllers\VotesIdolController');
-    Route::resource('qac', '\App\Http\Controllers\QaController');
+    Route::resource('setting/qac', '\App\Http\Controllers\QAsettingController');
     Route::resource('users', '\App\Http\Controllers\UserController');
     Route::resource('regis', '\App\Http\Controllers\SystemController');
     Route::post('users/datatables', [\App\Http\Controllers\UserController::class, 'getdatatable'])->name('users.data');
