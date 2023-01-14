@@ -32,7 +32,7 @@
 
                 <div class="col-md-12">
                     <div class="form-group row">
-                      <label class="col-sm-3 col-form-label">ช่วงเวลา</label>
+                      <label class="col-sm-3 col-form-label">ประเภท</label>
                       <div class="col-sm-9">
                         <select class="form-control form-control-sm" name="group_id">
                             <option value="1" @if($group_id == '1') selected @endif>เดี่ยว</option>

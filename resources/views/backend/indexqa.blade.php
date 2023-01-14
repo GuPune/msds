@@ -16,11 +16,6 @@
 
 
     <div class="card shadow mb-4">
-        <div class="card-header py-3"  style="text-align:right; margin: 0 0 2% 0;">
-            <a href="/admin/carosel/create" class="btn btn-success">
-                เพิ่มภาพสไลด์
-            </a>
-        </div>
         <div class="card-body">
             <div class="table-responsive">
                 <table class="table table-bordered" id="example" width="100%" cellspacing="0" style="text-align: center;">
