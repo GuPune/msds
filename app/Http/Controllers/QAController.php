@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\FactQA;
 use App\Models\QA;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class QAController extends Controller
 {
@@ -38,9 +40,38 @@ class QAController extends Controller
     public function store(Request $request)
     {
         //
+
+        $ldate = date('H:i:s');
+
+//         รอบที่ 1 : ช่วง 9.00-10.00
+// รอบที่ 2 : ช่วง 13.00-15.00
+$first1 = '09:00:00';
+$last1 = '10:00:00';
+$first2 = '13:00:00';
+$last2 = '15:00:00';
+$type = 'E';
+if(($ldate > $first1) && ($ldate < $last1)){
+    $type = 'D';
+}
+if(($ldate > $first2) && ($ldate < $last2)){
+    $type = 'N';
+}
+
+        $auth = Auth::user()->id;
+        // if($ldate )
         $save = QA::create([
-            "message" => $request->message
+            "message" => $request->message,
+            "time" => $ldate,
+            "period" => $type,
         ]);
+
+        $saveqa = FactQA::create([
+            "user_id" => $auth,
+            "qa_id" => $save->id,
+        ]);
+
+
+
         return response()->json([
             'code_return' => 200,
         ]);

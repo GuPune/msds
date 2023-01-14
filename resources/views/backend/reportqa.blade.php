@@ -8,6 +8,37 @@
     <!-- Page Heading -->
     <h1 class="h3 mb-4 text-gray-800">รายงาน Q&A</h1>
 
+    <div class="card shadow mb-4">
+        <form method="GET"  action="{{ url('/admin/reportqa') }}" >
+        <div class="card-body">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="form-group row">
+                      <label class="col-sm-3 col-form-label">ช่วงเวลา</label>
+                      <div class="col-sm-9">
+                        <select class="form-control form-control-sm" name="type">
+                            <option value="D" @if($type == 'D') selected @endif>เช้า</option>
+                            <option value="N" @if($type == 'N') selected @endif>บ่าย</option>
+                          </select>
+                      </div>
+                    </div>
+                  </div>
+              </div>
+              <div>
+                @php
+
+                    if($type == ''){
+                        $type = 'D';
+
+                    }
+                @endphp
+                <span style="float: right"><a  href="exportqa/{{$type}}"  class="btn btn-info"><i class="fa fa-file-excel-o" aria-hidden="true"></i> ดาวน์โหลดข้อมูลไฟล์ Excel</a>&nbsp;&nbsp;&nbsp;&nbsp;</span>
+            </div>
+              <button type="submit" class="btn btn-primary mr-2">ค้นหา</button>
+        </div>
+        </form>
+    </div>
+
 
 
     <div class="card shadow mb-4">
@@ -17,13 +48,20 @@
                     <thead>
                         <tr class="center">
                             <th>ลำดับ</th>
-                            <th>รูปภาพ</th>
-                            <th>ปรับเรียง</th>
-                            <th>#</th>
+                            <th>คำถาม</th>
+                            <th>เวลาส่ง</th>
                         </tr>
                     </thead>
 
                     <tbody>
+                        @foreach($report as $key => $rs)
+                        <tr>
+                            <td class="text-center">{{$key+1}}</td>
+                            <td class="text-center">{{$rs->message}}</td>
+                            <td class="text-center">{{$rs->time}}</td>
+                        </tr>
+
+                        @endforeach
 
                     </tbody>
                 </table>

@@ -3,12 +3,16 @@
 namespace App\Http\Controllers;
 
 use App\CoreFunction\Datatable;
+use App\Exports\QAExport;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Maatwebsite\Excel\Facades\Excel;
 use App\Exports\UsersExport;
+
 use App\Exports\UsersRegisExport;
+use App\Exports\VoteExport;
 use App\Models\FactVote;
+use App\Models\QA;
 use DB;
 
 class ReportController extends Controller
@@ -66,7 +70,20 @@ class ReportController extends Controller
     }
     public function reportqa(Request $request)
     {
-        return view('backend.reportqa');
+
+        $qa = QA::where('period','D')->get();
+        $type = '';
+        if($request->type == 'D'){
+            $type = 'D';
+
+        }
+        if($request->type == 'N'){
+            $type = 'N';
+        }
+
+
+
+        return view('backend.reportqa')->with('report',$qa)->with(compact('type'));
     }
     public function reportvoten()
     {
@@ -78,7 +95,7 @@ class ReportController extends Controller
 
         $reportReturn = \DB::table('fact_votes as fsc')
         ->select(
-            \DB::Raw('count(*) as total'),'dsc.image','dsc.des','fsc.votes_id'
+            \DB::Raw('count(*) as total'),'dsc.image','dsc.des','fsc.votes_id','dsc.name'
         )->leftjoin('votes as dsc','fsc.votes_id','=','dsc.id')
         ->where('dsc.type',$request->type)
         ->groupBy('fsc.votes_id')->orderby('total','desc')->get();
@@ -88,10 +105,10 @@ class ReportController extends Controller
 if(!$request->type){
     $reportReturn = \DB::table('fact_votes as fsc')
 ->select(
-    \DB::Raw('count(*) as total'),'dsc.image','dsc.des','fsc.votes_id'
+    \DB::Raw('count(*) as total'),'dsc.image','dsc.des','fsc.votes_id','dec.name'
 )->leftjoin('votes as dsc','fsc.votes_id','=','dsc.id')
 ->where('dsc.type','1')
-->groupBy('fsc.votes_id','dsc.image')->orderby('total','desc')->get();
+->groupBy('fsc.votes_id','dsc.image')->orderby('total','desc','name')->get();
 
 
 $type = '1';
@@ -101,7 +118,7 @@ if($request->type == '3'){
 
     $reportReturn = \DB::table('fact_votes as fsc')
     ->select(
-        \DB::Raw('count(*) as total'),'dsc.image','dsc.des','fsc.votes_id'
+        \DB::Raw('count(*) as total'),'dsc.image','dsc.des','fsc.votes_id','dsc.name'
     )->leftjoin('votes as dsc','fsc.votes_id','=','dsc.id')
     ->where('dsc.type','3')
     ->where('dsc.group_id','2')
@@ -123,9 +140,10 @@ foreach ($pert as $key => $regroup) {
     $datas[$key]['id'] = $key+1;
     $datas[$key]['total'] = $regroup['total'];
     $datas[$key]['image'] = $regroup['image'];
+    $datas[$key]['name'] = $regroup['name'];
     $datas[$key]['des'] = $regroup['des'];
     $datas[$key]['votes_id'] = $regroup['votes_id'];
-    $labels[$key] = $regroup['image'];
+    $labels[$key] = $regroup['name'];
     $data[$key] = $regroup['total'];
 
     $max = FactVote::where('headvotes_id',$type)->count();
@@ -191,6 +209,23 @@ if($y == 'total'){
 
         return view('backend.reporttwoshow')->with('users',$users);
     }
+
+    public function exportqa($y){
+
+
+
+        return Excel::download(new QAExport($y), 'report.xlsx');
+    }
+
+
+    public function exportvote($y){
+
+
+
+        return Excel::download(new VoteExport($y), 'report.xlsx');
+    }
+
+
 
 
 

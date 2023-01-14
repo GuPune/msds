@@ -12,12 +12,24 @@ class QAsettingController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
         //
+        $type = '';
+        $getqa = QA::where('period','D')->get();
+        if($request->type == 'D'){
+            $getqa = QA::where('period','D')->get();
+            $type = 'D';
 
-        $getqa = QA::all();
-        return view('backend.indexqa')->with('qa',$getqa);
+        }
+        if($request->type == 'N'){
+            $getqa = QA::where('period','N')->get();
+            $type = 'N';
+        }
+
+
+
+        return view('backend.indexqa')->with('qa',$getqa)->with(compact('type'));
     }
 
     /**

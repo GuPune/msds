@@ -21,6 +21,17 @@
                       <option value="3" @if($type == 3)  selected @endif>Next Idol Group</option>
                     </select>
                   </div>
+
+                  <div>
+                    @php
+
+                        if($type == ''){
+                            $type = 1;
+
+                        }
+                    @endphp
+                    <span style="float: right"><a  href="exportvote/{{$type}}"  class="btn btn-info"><i class="fa fa-file-excel-o" aria-hidden="true"></i> ดาวน์โหลดข้อมูลไฟล์ Excel</a>&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                </div>
                 <div class="form-group col-md-6">
                     <button type="submit" class="btn btn-primary">ค้นหา</button>
                 </div>

@@ -16,6 +16,28 @@
 
 
     <div class="card shadow mb-4">
+        <form method="GET"  action="{{ url('/admin/setting/qac') }}" >
+        <div class="card-body">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="form-group row">
+                      <label class="col-sm-3 col-form-label">ช่วงเวลา</label>
+                      <div class="col-sm-9">
+                        <select class="form-control form-control-sm" name="type">
+                            <option value="D" @if($type == 'D') selected @endif>เช้า</option>
+                            <option value="N" @if($type == 'N') selected @endif>บ่าย</option>
+                          </select>
+                      </div>
+                    </div>
+                  </div>
+              </div>
+              <button type="submit" class="btn btn-primary mr-2">ค้นหา</button>
+        </div>
+        </form>
+    </div>
+
+
+    <div class="card shadow mb-4">
         <div class="card-body">
             <div class="table-responsive">
                 <table class="table table-bordered" id="example" width="100%" cellspacing="0" style="text-align: center;">
@@ -23,6 +45,7 @@
                         <tr class="center">
                             <th>ลำดับ</th>
                             <th>คำถาม</th>
+                            <th>เวลา</th>
                             <th>#</th>
                         </tr>
                     </thead>
@@ -32,12 +55,13 @@
                         <tr>
                             <td class="text-center">{{$key+1}}</td>
                             <td class="text-center">{{$rs->message}}</td>
+                            <td class="text-center">{{$rs->created_at}}</td>
                             <td class="text-center">
-
                                     <a class="btn btn-danger" href="/qalist/{{$rs->id}}" target="_blank">
                                         <i class="fa fa-eye"></i>
                                     </a>
-                                </td>
+                            </td>
+
                         </tr>
 
                         @endforeach

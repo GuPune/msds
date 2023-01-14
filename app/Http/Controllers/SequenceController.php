@@ -12,7 +12,7 @@ class SequenceController extends Controller
     public function up(Request $request)
     {
 
-        \Log::info($request->all());
+
         $sequence_a = Carosel::where('sequence',   $request->no)->first();
 
         switch($request->name):

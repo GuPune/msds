@@ -94,7 +94,8 @@ Route::prefix('admin')->group(function () {
     Route::get('/areportvoten', [App\Http\Controllers\ReportController::class, 'reportvoten']);
     Route::get('/bepvoted', [App\Http\Controllers\ReportController::class, 'reportvoted']);
     Route::get('export/{type}', [App\Http\Controllers\ReportController::class, 'export']);
-
+    Route::get('exportqa/{type}', [App\Http\Controllers\ReportController::class, 'exportqa']);
+    Route::get('exportvote/{type}', [App\Http\Controllers\ReportController::class, 'exportvote']);
 
 
 });

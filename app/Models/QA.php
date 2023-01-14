@@ -15,5 +15,6 @@ class QA extends Model
         'url',
         'message',
         'period',
+        'time',
     ];
 }
