@@ -105,7 +105,7 @@ class ReportController extends Controller
 if(!$request->type){
     $reportReturn = \DB::table('fact_votes as fsc')
 ->select(
-    \DB::Raw('count(*) as total'),'dsc.image','dsc.des','fsc.votes_id','dec.name'
+    \DB::Raw('count(*) as total'),'dsc.image','dsc.des','fsc.votes_id','dsc.name'
 )->leftjoin('votes as dsc','fsc.votes_id','=','dsc.id')
 ->where('dsc.type','1')
 ->groupBy('fsc.votes_id','dsc.image')->orderby('total','desc','name')->get();

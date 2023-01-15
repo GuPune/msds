@@ -48,6 +48,7 @@
                     <thead>
                         <tr class="center">
                             <th>ลำดับ</th>
+                            <th>ชื่อ</th>
                             <th>รูปภาพ</th>
                             <th>คำอธิบาย</th>
                             <th>จำนวนผลการโหวต</th>
@@ -59,7 +60,7 @@
                         @foreach($s as $key => $rs)
                         <tr>
                             <td class="text-center">{{$key+1}}</td>
-
+                            <td class="text-center">{{$rs['name']}}</td>
                             <td class="text-center">
                                 <img class="img-profile"
                                 src="/public/product/{{$rs['image']}}" width="150" height="100">
