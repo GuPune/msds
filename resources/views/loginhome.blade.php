@@ -12,7 +12,9 @@
     .bocdy  {
         background-image: url("http://139.5.146.235/Art.png");
       /* background-image: url("https://cdn.vuetifyjs.com/images/backgrounds/vbanner.jpg"); */
-
+      background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
     }
 
     html {
