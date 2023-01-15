@@ -16,6 +16,8 @@ class VoteetcController extends Controller
 
     public function chud()
     {
+
+
         // $getauth = Auth::user();
         $getvote = Vote::where('type','1')->get();
         $gethead = Headvote::where('type','1')->first();

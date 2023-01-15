@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Models\QA;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+
 
 class QAsettingController extends Controller
 {
@@ -14,6 +16,11 @@ class QAsettingController extends Controller
      */
     public function index(Request $request)
     {
+
+        $a = Auth::guard('admin')->user();
+        if(!$a){
+        return redirect('/admin/login');
+        }
         //
         $type = '';
         $getqa = QA::where('period','D')->get();

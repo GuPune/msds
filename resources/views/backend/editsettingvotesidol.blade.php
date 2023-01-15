@@ -25,7 +25,7 @@
                     <label class="col-sm-3 col-form-label">หัวข้อการเข้าประกวด</label>
                     <div class="col-sm-9">
                         <select class="form-control form-control-sm" name="type">
-                            <option value="2">ประกวดโชว์ไอดอล</option>
+                            <option value="2">MSD NEXT IDOL</option>
                           </select>
                     </div>
                   </div>

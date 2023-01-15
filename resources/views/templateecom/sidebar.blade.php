@@ -58,10 +58,10 @@
         <div  id="collapse12" class="collapse show'"aria-labelledby="headingTwo" data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
                  <a class="collapse-item" href="/admin/setting/votess">
-                    ผู้เข้าประกวดแต่งกาย
+                    TALENT SHOW
                  </a>
                  <a class="collapse-item" href="/admin/setting/idol">
-                    ผู้เข้าประกวดโชว์เน็ตไอดอล
+                     NEXT IDOL
                  </a>
                  <a class="collapse-item" href="/admin/votes">
                     ตั้งค่า

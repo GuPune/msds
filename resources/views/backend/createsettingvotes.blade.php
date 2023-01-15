@@ -24,7 +24,7 @@
                     <label class="col-sm-3 col-form-label">หัวข้อการเข้าประกวด :</label>
                     <div class="col-sm-9">
                         <select class="form-control form-control-sm" name="type">
-                            <option value="1">ประกวดการแต่งกาย</option>
+                            <option value="1">MSD TALENT SHOW</option>
                           </select>
                     </div>
                   </div>

@@ -4,6 +4,9 @@ namespace App\Http\Controllers;
 
 use App\Models\Vote;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+
+
 
 class VotesSettingController extends Controller
 {
@@ -16,7 +19,10 @@ class VotesSettingController extends Controller
     {
 
 
-
+        $a = Auth::guard('admin')->user();
+        if(!$a){
+        return redirect('/admin/login');
+        }
 $vote =  Vote::select('votes.id','votes.image','votes.sequence','votes.des','votes.type','headvotes.title','votes.name','votes.name_des')
 ->leftJoin('headvotes', 'votes.type', '=', 'headvotes.id')->where('votes.type','1');
 $a = $vote->orderBy('sequence')->get();

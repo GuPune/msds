@@ -22,7 +22,7 @@ class HeadvoteSeeder extends Seeder
 
         $users =  [
             [
-              'title' => 'ประกวดการแต่งกาย_เช้า',
+              'title' => 'MSD TALENT SHOW',
               'start' => '2023-01-10 10:45:00',
               'end' => '2023-01-10 17:00:00',
               'type' => '1',
@@ -31,7 +31,7 @@ class HeadvoteSeeder extends Seeder
               'updated_at' => date('Y-m-d H:i:s')
             ],
             [
-              'title' => 'ประกวดโชว์ไอดอล',
+              'title' => 'MSD NEXT IDOL',
               'start' => '2023-01-10 10:45:00',
               'end' => '2023-01-10 17:00:00',
               'type' => '2',
@@ -40,23 +40,15 @@ class HeadvoteSeeder extends Seeder
               'updated_at' => date('Y-m-d H:i:s')
             ],
             [
-              'title' => 'ประกวดการแต่งกาย',
+              'title' => 'MSD NEXT IDOL GROUP',
               'start' => '2023-01-10 10:45:00',
               'end' => '2023-01-10 17:00:00',
               'type' => '1',
-              'period' => 'N',
-              'created_at' => date('Y-m-d H:i:s'),
-              'updated_at' => date('Y-m-d H:i:s')
-            ],
-            [
-              'title' => 'ประกวดโชว์ไอดอล',
-              'start' => '2023-01-10 10:45:00',
-              'end' => '2023-01-10 17:00:00',
-              'type' => '2',
               'period' => 'N',
               'created_at' => date('Y-m-d H:i:s'),
               'updated_at' => date('Y-m-d H:i:s')
             ]
+
           ];
           Headvote::insert($users);
 

@@ -14,6 +14,8 @@ use App\Exports\VoteExport;
 use App\Models\FactVote;
 use App\Models\QA;
 use DB;
+use Illuminate\Support\Facades\Auth;
+
 
 class ReportController extends Controller
 {
@@ -22,6 +24,11 @@ class ReportController extends Controller
     public function reporttotal(Request $request)
     {
 
+
+        $a = Auth::guard('admin')->user();
+        if(!$a){
+        return redirect('/admin/login');
+        }
         $reportuser = User::all();
         $cou = User::all()->count();
 
@@ -55,6 +62,11 @@ class ReportController extends Controller
     }
     public function reporttwo(Request $request)
     {
+
+        $a = Auth::guard('admin')->user();
+        if(!$a){
+        return redirect('/admin/login');
+        }
      //   $reportuser = User::where('period','N')->get();
         $cou = User::where('period','N')->get()->count();
 
@@ -71,6 +83,10 @@ class ReportController extends Controller
     public function reportqa(Request $request)
     {
 
+        $a = Auth::guard('admin')->user();
+        if(!$a){
+        return redirect('/admin/login');
+        }
         $qa = QA::where('period','D')->get();
         $type = '';
         if($request->type == 'D'){
@@ -91,6 +107,10 @@ class ReportController extends Controller
     }
     public function reportvoted(Request $request)
     {
+        $a = Auth::guard('admin')->user();
+        if(!$a){
+        return redirect('/admin/login');
+        }
       $type = $request->type;
 
         $reportReturn = \DB::table('fact_votes as fsc')
@@ -185,6 +205,10 @@ if($y == 'total'){
     {
 
 
+        $a = Auth::guard('admin')->user();
+        if(!$a){
+        return redirect('/admin/login');
+        }
         $users = User::select("user_id","fname","lname","email","dep","checkin.created_at")
         ->leftJoin('checkin', 'users.id', '=', 'checkin.user_id')
         ->where('checkin.user_id',$id)
@@ -199,6 +223,10 @@ if($y == 'total'){
     {
 
 
+        $a = Auth::guard('admin')->user();
+        if(!$a){
+        return redirect('/admin/login');
+        }
         $users = User::select("user_id","fname","lname","email","dep","checkin.created_at")
         ->leftJoin('checkin', 'users.id', '=', 'checkin.user_id')
         ->where('checkin.user_id',$id)

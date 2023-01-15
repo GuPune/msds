@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Models\Vote;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+
 
 
 class VotesIdolController extends Controller
@@ -15,7 +17,10 @@ class VotesIdolController extends Controller
      */
     public function index(Request $request)
     {
-
+        $a = Auth::guard('admin')->user();
+        if(!$a){
+        return redirect('/admin/login');
+        }
 
 
 $vote =  Vote::select('votes.id','votes.image','votes.sequence','votes.des','votes.type','headvotes.title','votes.group_id','votes.name','votes.name_des')

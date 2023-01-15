@@ -18,9 +18,9 @@ class DatabaseSeeder extends Seeder
         $this->call(UserSeeder::class);
         $this->call(SystemSeeder::class);
         $this->call(HeadvoteSeeder::class);
-        $this->call(VoteSeeder::class);
+        // $this->call(VoteSeeder::class);
         $this->call(CaroselSeeder::class);
         $this->call(AdminSeeder::class);
-        $this->call(Fotefaceeeder::class);
+        // $this->call(Fotefaceeeder::class);
     }
 }

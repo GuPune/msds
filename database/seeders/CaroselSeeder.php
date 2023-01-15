@@ -21,20 +21,38 @@ class CaroselSeeder extends Seeder
 
         $users =  [
             [
-              'image' => '20230109111416U1OUrYP4i9gRkOo2bWSR.png',
+              'image' => '202301131249399q4cSknYoBUIWf7MGswQ.jpg',
               'sequence' => 1,
               'created_at' => date('Y-m-d H:i:s'),
               'updated_at' => date('Y-m-d H:i:s')
             ],
             [
-              'image' => '20230109111431OIjQhVj1pItM5sjswYtn.png',
+              'image' => '20230113124949k6HoC8xV3CSEhpKn6kiD.jpg',
               'sequence' => 2,
               'created_at' => date('Y-m-d H:i:s'),
               'updated_at' => date('Y-m-d H:i:s')
             ],
             [
-                'image' => '20230109111440YL8lBUTAqWpi3ZBqZMX3.jpg',
+                'image' => '20230113124958qV4L6sTw2FYQ23kkNcmM.jpg',
                 'sequence' => 3,
+                'created_at' => date('Y-m-d H:i:s'),
+                'updated_at' => date('Y-m-d H:i:s')
+            ],
+             [
+                'image' => '20230113125007dEwj7XbSoBwHhoAUAKGU.jpg',
+                'sequence' => 4,
+                'created_at' => date('Y-m-d H:i:s'),
+                'updated_at' => date('Y-m-d H:i:s')
+             ],
+             [
+                'image' => '20230113125018NtAhC292xdn8prFRlt3k.png',
+                'sequence' => 5,
+                'created_at' => date('Y-m-d H:i:s'),
+                'updated_at' => date('Y-m-d H:i:s')
+             ],
+             [
+                'image' => '20230113125032lsSlepNPWSrJH8Peb2IM.png',
+                'sequence' => 6,
                 'created_at' => date('Y-m-d H:i:s'),
                 'updated_at' => date('Y-m-d H:i:s')
             ]

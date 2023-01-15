@@ -4,6 +4,9 @@ namespace App\Http\Controllers;
 
 use App\Models\Headvote;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+
+
 
 class VotesController extends Controller
 {
@@ -15,7 +18,10 @@ class VotesController extends Controller
     public function index(Request $request)
     {
         //
-
+        $a = Auth::guard('admin')->user();
+        if(!$a){
+        return redirect('/admin/login');
+        }
         $getheadvote = Headvote::all();
         return view('backend.settingvotes')->with('vote',$getheadvote);
     }
