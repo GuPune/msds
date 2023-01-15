@@ -278,7 +278,7 @@
   <div class="modal fade" id="vote" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-sm" role="document">
         <div class="modal-content">
-            <input type="text" id="vote_id" name="vote_id">
+            <input type="hidden" id="vote_id" name="vote_id">
             <div class="modal-header" style="justify-content: center;">
                 <img id="myImg" src="/aaaa.jpg" alt="Snow" style="width:50%;">
             </div>
@@ -294,7 +294,7 @@
 <div class="modal fade" id="votegroup" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-sm" role="document">
         <div class="modal-content">
-            <input type="text" id="votegroup_id" name="votegroup_id">
+            <input type="hidden" id="votegroup_id" name="votegroup_id">
             <div class="modal-header" style="justify-content: center;">
                 <img id="myImg" src="/aaaa.jpg" alt="Snow" style="width:50%;">
             </div>

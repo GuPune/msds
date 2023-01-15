@@ -23,8 +23,8 @@ class HeadvoteSeeder extends Seeder
         $users =  [
             [
               'title' => 'MSD TALENT SHOW',
-              'start' => '2023-01-10 10:45:00',
-              'end' => '2023-01-10 17:00:00',
+              'start' => '2023-01-15 10:45:00',
+              'end' => '2023-01-17 17:00:00',
               'type' => '1',
               'period' => 'D',
               'created_at' => date('Y-m-d H:i:s'),
@@ -32,8 +32,8 @@ class HeadvoteSeeder extends Seeder
             ],
             [
               'title' => 'MSD NEXT IDOL',
-              'start' => '2023-01-10 10:45:00',
-              'end' => '2023-01-10 17:00:00',
+              'start' => '2023-01-15 10:45:00',
+              'end' => '2023-01-17 17:00:00',
               'type' => '2',
               'period' => 'D',
               'created_at' => date('Y-m-d H:i:s'),
@@ -41,9 +41,9 @@ class HeadvoteSeeder extends Seeder
             ],
             [
               'title' => 'MSD NEXT IDOL GROUP',
-              'start' => '2023-01-10 10:45:00',
-              'end' => '2023-01-10 17:00:00',
-              'type' => '1',
+              'start' => '2023-01-15 10:45:00',
+              'end' => '2023-01-17 17:00:00',
+              'type' => '3',
               'period' => 'N',
               'created_at' => date('Y-m-d H:i:s'),
               'updated_at' => date('Y-m-d H:i:s')

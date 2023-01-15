@@ -128,8 +128,6 @@ $datas[$index]['perd'] = $per;
 
 
         $getvoteusersolo = FactVote::where('user_id',Auth::user()->id)->where('headvotes_id',$getheadsolo->id)->first();
-
-
         $getvoteusergroup = FactVote::where('user_id',Auth::user()->id)->where('headvotes_id',$getheadgroup->id)->first();
 
 
