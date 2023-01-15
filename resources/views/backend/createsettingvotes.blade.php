@@ -65,7 +65,7 @@
 
 
               </div>
-              <input type="hidden" name="image" id="image" value="" required>
+              <input type="hidden" name="image" id="image" value="">
               <button type="submit" class="btn btn-primary mr-2">บันทึก</button>
         </div>
         </form>

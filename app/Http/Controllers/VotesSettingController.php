@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\FactVote;
 use App\Models\Vote;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -70,16 +71,18 @@ $max = $vote->get()->max('sequence');
 
 
         $this->validate($request, [
-            'image' => 'required',
             'name' => 'required',
         ]);
 
-
+$images = $request->image;
+if($request->image == null){
+    $images = 'image.jpg';
+}
 
 
         $max = Vote::where('type','1')->max('sequence');
         $shell_category = Vote::create([
-            "image" => $request->image,
+            "image" => $images,
             "sequence" => $max+1,
             "des" => $request->des,
             "name" => $request->name,
@@ -186,6 +189,7 @@ $max = $vote->get()->max('sequence');
         }
 
      $delete = Vote::where('id',$id)->delete();
+     $deletefact = FactVote::where('votes_id',$id)->delete();
 
 
         return response()->json([

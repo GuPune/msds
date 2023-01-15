@@ -15,11 +15,11 @@ class CreateVotesTable extends Migration
     {
         Schema::create('votes', function (Blueprint $table) {
             $table->id();
-            $table->text('image');
+            $table->text('image')->nullable();
             $table->integer('sequence');
             $table->text('des')->nullable();
-            $table->text('type');
-            $table->string('period');
+            $table->text('type')->nullable();
+            $table->string('period')->nullable();
             $table->string('group_id');
             $table->text('name');
             $table->text('name_des');

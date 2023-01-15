@@ -79,8 +79,18 @@
                         @foreach($vote as $key => $rs)
                         <tr>
                             <td class="text-center">{{$key+1}}</td>
-                            <td class="text-center"><img class="img-profile"
-                                src="/public/product/{{$rs->image}}" width="150" height="100"></td>
+                            <td class="text-center">
+
+                                @if ($rs->image == '')
+                                <img class="img-profile"
+                                src="/img/image.jpg" width="150" height="100">
+                                @else
+                                <img class="img-profile"
+                                src="/public/product/{{$rs->image}}" width="150" height="100">
+
+                                @endif
+
+                            </td>
                             <td class="text-center">{{$rs->name_des}}</td>
                             <td class="text-center">{{$rs->name}}</td>
                             <td class="text-center">{{$rs->title}}</td>
