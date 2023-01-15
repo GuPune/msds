@@ -18,6 +18,7 @@ class CreateQaTable extends Migration
             $table->text('message');
             $table->text('url');
             $table->string('period');
+            $table->time('time');
             $table->timestamps();
         });
     }
