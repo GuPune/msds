@@ -157,15 +157,20 @@ $input['password'] = Hash::make($request->password);
             'status' => "",
             'resetpassword' => $request->password,
         ]);
-
+        $email = User::where('id',$request->id)->first();
         $mailData = [
-            'title' => 'Mail from ItSolutionStuff.com',
-            'body' => 'This is for testing email using smtp.'
+            'title' => 'Mail from MSD',
+            'body' => 'รหัสผ่านของคุณ',
+            'fname' => $email->fname,
+            'pass' => $email->resetpassword
         ];
 
 
 
-        Mail::to('rkknoob@gmail.com')->send(new DemoMail($mailData));
+
+
+
+        Mail::to($email->email)->send(new DemoMail($mailData));
 
         return response()->json([
             'msg_return' => 'บันทึกสำเร็จ',

@@ -43,6 +43,8 @@ class LoginController extends Controller
             'password' => 'required',
         ]);
 
+        $remember = request('remember');
+
 
 
 
@@ -58,7 +60,7 @@ class LoginController extends Controller
         $request->merge(["period"=>$getperiod->period]);
         $credentials = $request->only('email', 'password');
 
-        if (Auth::attempt($credentials)) {
+        if (Auth::attempt($credentials,$remember)) {
             $a = Auth::user();
             $findcheckin = Checkin::where('user_id',$a->id)->first();
            $updatetoken = User::find($a->id)->update(['token' => $request->token]);

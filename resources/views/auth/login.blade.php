@@ -78,7 +78,10 @@
                         </span>
                     @enderror
                   </div>
-
+                  <div class="col-auto" style="text-align: center;">
+                    <label for="remember">Remember me</label>
+                    <input type="checkbox" name="remember" value="1">
+                </div>
 
 
                 <div class="col-auto" style="text-align: center;">

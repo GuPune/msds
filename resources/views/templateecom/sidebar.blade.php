@@ -8,7 +8,7 @@
 
     <li class="nav-item">
         <a class="nav-link" href="#" data-toggle="collapse"  data-target="#collapse11" aria-expanded="true" aria-controls="collapse">
-            <i class="fas fa-fw fa-table"></i>
+            <i class="fas fa-chart-bar"></i>
             <span>รายงาน</span>
         </a>
 
@@ -37,7 +37,7 @@
 
     <li class="nav-item">
         <a class="nav-link" href="/admin/carosel">
-            <i class="fas fa-fw fa-table"></i>
+            <i class="fas fa-bookmark"></i>
             <span>ภาพสไลด์</span>
         </a>
     </li>
@@ -51,7 +51,7 @@
 
     <li class="nav-item">
         <a class="nav-link" href="#" data-toggle="collapse"  data-target="#collapse12" aria-expanded="true" aria-controls="collapse">
-            <i class="fas fa-fw fa-table"></i>
+            <i class="fas fa-book-open"></i>
             <span>ผู้เข้าประกวด</span>
         </a>
 
@@ -72,14 +72,14 @@
     </li>
     <li class="nav-item">
         <a class="nav-link" href="/admin/regis">
-            <i class="nav-icon fas fa-edit"></i>
+            <i class="nav-icon fas fa-address-book"></i>
             <span>จัดกการลงทะเบียน</span>
         </a>
     </li>
 
     <li class="nav-item">
         <a class="nav-link" href="/admin/users">
-            <i class="nav-icon fas fa-edit"></i>
+            <i class="nav-icon 	fas fa-child"></i>
             <span>ดูผลโหวต</span>
         </a>
     </li>
@@ -87,14 +87,14 @@
 
     <li class="nav-item">
         <a class="nav-link" href="/admin/setting/qac">
-            <i class="nav-icon fas fa-edit"></i>
+            <i class="nav-icon fas fa-comments"></i>
             <span>Q&A</span>
         </a>
     </li>
 
     <li class="nav-item">
         <a class="nav-link" href="{{ route('logout.perform') }}">
-            <i class="nav-icon fas fa-edit"></i>
+            <i class="nav-icon 	fas fa-hand-point-right"></i>
             <span>ออกจากระบบ</span>
         </a>
     </li>

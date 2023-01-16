@@ -49,9 +49,10 @@
                     </button>
                 </div>
                 <div class="modal-body">
+                    <span class="text-danger">กรุณาใช้เป็นตัวอักษรภาษาอังกฤษพิมพ์ใหญ่ และตัวเลขเท่านั้น</span>
                     <div class="form-group">
                         <label for="recipient-name" class="col-form-label">Passowrd:</label>
-                        <input type="text" class="form-control" id="password">
+                        <input type="text" class="form-control" id="password" oninput="validateAlphadep();">
                         <input type="hidden" class="form-control" id="id">
                       </div>
                 </div>
@@ -79,6 +80,13 @@
 <script src="https://cdn.datatables.net/1.10.21/js/jquery.dataTables.min.js"></script>
 <script src="https://cdn.datatables.net/1.10.21/js/dataTables.bootstrap4.min.js"></script>
 <script>
+
+
+function validateAlphadep(){
+    var textInput = document.getElementById("password").value;
+    textInput = textInput.replace(/[^A-Z0-9]/g, "");
+    document.getElementById("password").value = textInput;
+}
 
 function RefreshTable(data) {
 

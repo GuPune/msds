@@ -69,7 +69,7 @@
                     <label class="my-1 d-flex align-items-center" style="font-size: 20px;" for="role"><i class="fa fa-lock" aria-hidden="true"></i>  Password <span class="ml-auto"></span></label>
 
 
-                    <input id="password" type="password" style="border-radius: 10px;" class="form-control  @error('password') is-invalid @enderror"  placeholder="Password" name="password" required autocomplete="current-password">
+                    <input id="password" type="password" style="border-radius: 10px;" class="form-control  @error('password') is-invalid @enderror"  placeholder="Password" name="password" value="{{ old('password') }}" required autocomplete="current-password">
 
                     @error('password')
                         <span class="invalid-feedback" role="alert">
@@ -81,8 +81,13 @@
 
 
                 <div class="col-auto" style="text-align: center;">
+                    <label for="remember">Remember me</label>
+                    <input type="checkbox" name="remember" value="1">
+                </div>
+                <div class="col-auto" style="text-align: center;">
                     <button type="submit" class="btn btn-primary" style="background-color: black;border-color: #0a0a0a;">เข้าสู่ระบบ</button>
                 </div>
+
 
                 <div class="form-group">
                     <div class="col-auto" style="text-align: center;">
