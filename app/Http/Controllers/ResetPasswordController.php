@@ -163,6 +163,8 @@ $input['password'] = Hash::make($request->password);
             'body' => 'This is for testing email using smtp.'
         ];
 
+
+
         Mail::to('rkknoob@gmail.com')->send(new DemoMail($mailData));
 
         return response()->json([
