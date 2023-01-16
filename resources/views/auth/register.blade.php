@@ -39,6 +39,8 @@
     Check the following errors :( {{$errors->first()}}
 </div>
 @endif
+
+<span class="text-danger">กรุณาใช้เป็นตัวอักษรภาษาอังกฤษพิมพ์ใหญ่เท่านั้น</span>
               <form class="pt-3" method="POST" action="{{ route('register.post') }}" onsubmit="return validateForm();">
 
                 @csrf

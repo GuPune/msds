@@ -33,6 +33,19 @@
                       <input type="text" class="form-control" id="url" name="url" placeholder="URL" value="{{$sys->url}}" required>
                     </div>
                   </div>
+
+                  <div class="form-row">
+                    <div class="form-group col-md-12">
+                      <label for="inputEmail4">สถานะ</label>
+                      <select class="form-control form-control-sm" name="status">
+
+                        <option value="O"  @if($sys->status == 'O') selected @endif>เปิด</option>
+                        <option value="C"  @if($sys->status == 'C') selected @endif>ปิด</option>
+                      </select>
+                    </div>
+                  </div>
+
+
             </div>
             <button type="submit" class="btn btn-primary">บันทึก</button>
         </form>
