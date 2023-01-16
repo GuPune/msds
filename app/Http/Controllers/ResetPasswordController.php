@@ -8,6 +8,9 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Carbon;
 use Illuminate\Support\Facades\Hash;
+use Mail;
+use App\Mail\DemoMail;
+
 class ResetPasswordController extends Controller
 {
     /**
@@ -154,6 +157,13 @@ $input['password'] = Hash::make($request->password);
             'status' => "",
             'resetpassword' => $request->password,
         ]);
+
+        $mailData = [
+            'title' => 'Mail from ItSolutionStuff.com',
+            'body' => 'This is for testing email using smtp.'
+        ];
+
+        Mail::to('rkknoob@gmail.com')->send(new DemoMail($mailData));
 
         return response()->json([
             'msg_return' => 'บันทึกสำเร็จ',

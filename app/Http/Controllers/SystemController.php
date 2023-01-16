@@ -83,6 +83,7 @@ class SystemController extends Controller
         $upda = System::find($id)->update([
             'token' => $request->token,
             'url' => $request->url,
+            'status' => $request->status,
         ]);
 
         return redirect()->route('regis.index')->with('success','System update successfully');
