@@ -63,6 +63,7 @@ class LoginController extends Controller
 
         if (Auth::attempt($credentials,$remember)) {
             $a = Auth::user();
+            $session_data = $request->session()->put('id', $a->id);
             $findcheckin = Checkin::where('user_id',$a->id)->first();
            $updatetoken = User::find($a->id)->update(['token' => $request->token]);
             $save = Checkin::create([
@@ -92,7 +93,6 @@ class LoginController extends Controller
 
 
         $gettoken = $token;
-
         $checkto = System::where('token',$token)->first();
 
         if(!$checkto){
@@ -246,6 +246,7 @@ if($checkemail){
 
     $getauth = Auth::guard('web')->user();
     $gettoken = $getauth->token;
+
     $getperi = System::where('token',$getauth->token)->first();
 
 

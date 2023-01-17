@@ -8,15 +8,33 @@ use App\Models\Vote;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\CoreFunction\Datatable;
-
+use App\Models\User;
 
 class VoteetcController extends Controller
 {
     //
 
-    public function chud()
+    public function chud(Request $request)
     {
 
+        if(!Auth::user()){
+            $session_data = $request->session()->get('id');
+            $user = User::find($session_data);
+            if($user->token == 'a3'){
+                return redirect('/');
+            }
+            if($user->token == 'fgq5123yh47y34ujsf1'){
+                return redirect()->route('login', [
+                    'token' => 'fgq5123yh47y34ujsf1',
+                ]);
+            }
+            if($user->token == 'fgq5123yh47y3441245'){
+                return redirect()->route('login', [
+                    'token' => 'fgq5123yh47y3441245',
+                ]);
+            }
+
+         }
 
         // $getauth = Auth::user();
         $getvote = Vote::where('type','1')->get();
@@ -117,8 +135,27 @@ $datas[$index]['perd'] = $per;
 
 
 
-    public function idol()
+    public function idol(Request $request)
     {
+
+        if(!Auth::user()){
+            $session_data = $request->session()->get('id');
+            $user = User::find($session_data);
+            if($user->token == 'a3'){
+                return redirect('/');
+            }
+            if($user->token == 'fgq5123yh47y34ujsf1'){
+                return redirect()->route('login', [
+                    'token' => 'fgq5123yh47y34ujsf1',
+                ]);
+            }
+            if($user->token == 'fgq5123yh47y3441245'){
+                return redirect()->route('login', [
+                    'token' => 'fgq5123yh47y3441245',
+                ]);
+            }
+
+         }
 
         $getvotesolo = Vote::where('type','2')->where('group_id','1')->get();
         $getvotegroup = Vote::where('type','3')->where('group_id','2')->get();

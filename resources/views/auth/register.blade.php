@@ -40,7 +40,7 @@
 </div>
 @endif
 
-<span class="text-danger">กรุณาใช้เป็นตัวอักษรภาษาอังกฤษพิมพ์ใหญ่ และตัวเลขเท่านั้น</span>
+<span class="text-danger">กรุณากรอกเป็นตัวอักษรภาษาอังกฤษพิมพ์ใหญ่ และตัวเลขเท่านั้น</span>
               <form class="pt-3" method="POST" action="{{ route('register.post') }}" onsubmit="return validateForm();">
 
                 @csrf

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Carosel;
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -15,16 +16,14 @@ class DashController extends Controller
      */
 
 
-    public function __construct()
-    {
-        $this->middleware('auth');
-    }
 
 
-    public function index()
+
+    public function index(Request $request)
     {
+
+
         //
-
 
 
         return view('pages.first');
@@ -125,6 +124,28 @@ $a = Auth::user();
     {
         //
      //   $gettoken = $token;
+
+     if(!Auth::user()){
+        $session_data = $request->session()->get('id');
+        $user = User::find($session_data);
+        if($user->token == 'a3'){
+            return redirect('/');
+        }
+        if($user->token == 'fgq5123yh47y34ujsf1'){
+            return redirect()->route('login', [
+                'token' => 'fgq5123yh47y34ujsf1',
+            ]);
+        }
+        if($user->token == 'fgq5123yh47y3441245'){
+            return redirect()->route('login', [
+                'token' => 'fgq5123yh47y3441245',
+            ]);
+        }
+
+     }
+
+
+
 
 
      $getcal = Carosel::orderBy('sequence', 'asc')->get();

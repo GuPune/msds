@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\FactQA;
 use App\Models\QA;
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -14,9 +15,28 @@ class QAController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
         //
+
+        if(!Auth::user()){
+            $session_data = $request->session()->get('id');
+            $user = User::find($session_data);
+            if($user->token == 'a3'){
+                return redirect('/');
+            }
+            if($user->token == 'fgq5123yh47y34ujsf1'){
+                return redirect()->route('login', [
+                    'token' => 'fgq5123yh47y34ujsf1',
+                ]);
+            }
+            if($user->token == 'fgq5123yh47y3441245'){
+                return redirect()->route('login', [
+                    'token' => 'fgq5123yh47y3441245',
+                ]);
+            }
+
+         }
 
         return view('pages.qafirst');
     }
