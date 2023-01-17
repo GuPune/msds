@@ -50,15 +50,11 @@ Route::get('/dash/home', [DashController::class, 'home'])->name('twostep');
 Route::get('/registration/{token}', [LoginController::class, 'registration'])->name('register-user');
 Route::post('post-registration', [LoginController::class, 'postRegistration'])->name('register.post');
 Route::post('checkin', [\App\Http\Controllers\DashController::class, 'checkin']);
-
-
 Route::get('/dash/votefirst', [VoteController::class, 'index'])->name('votefirst');
 Route::get('/dash/qafirst', [QAController::class, 'index'])->name('qafirst');
 Route::post('saveqa', [QAController::class, 'store']);
-
 Route::get('/admin/login',[AuthLoginController::class,'showAdminLoginForm'])->name('admin.login-view');
 Route::post('/admin/login',[AuthLoginController::class,'adminLogin'])->name('admin.login');
-
 Route::get('/vote/chud', [VoteetcController::class, 'chud'])->name('chud');
 Route::post('savevote', [VoteetcController::class, 'store'])->name('savechud');
 Route::get('/vote/idol', [VoteetcController::class, 'idol'])->name('idol');

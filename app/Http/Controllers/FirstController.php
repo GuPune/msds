@@ -16,6 +16,11 @@ class FirstController extends Controller
     public function index(Request $request,$token)
     {
         //
+       $user = Auth::user();
+        if(Auth::user()){
+
+            return redirect()->route('twostep');
+        }
 
        $gettoken = $token;
         $checkto = System::where('token',$token)->first();
