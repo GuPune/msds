@@ -7,6 +7,7 @@ use App\Http\Requests\RegisterRequest;
 use App\Models\Checkin;
 use App\Models\User;
 use App\Models\System;
+use App\Rules\CheckEmailRule;
 use Illuminate\Support\Facades\Auth;
 
 class LoginController extends Controller
@@ -104,7 +105,9 @@ class LoginController extends Controller
     {
 
 
-
+        $request->validate([
+            'email' => ['bail','required','string','email','unique:users','max:255', new CheckEmailRule],
+        ]);
 
    //   $user = User::create($request->validated());
 

@@ -72,7 +72,7 @@
 
 
                   <div class="form-group">
-                    <label class="my-1 d-flex align-items-center" style="font-size: 14px;" for="role"> E-MAIL <span class="ml-auto"></span></label>
+                    <label class="my-1 d-flex align-items-center" style="font-size: 14px;" for="role"> E-MAIL <span class="ml-auto text-danger">ตัวอย่าง msd@merck.com</span></label>
                     <input id="email" type="email" class="form-control form-control-lg" style="border-radius: 10px;" placeholder="Email"  name="email" value="{{ old('email') }}" required autocomplete="email" autofocus oninput="validateAlpha();">
                     @if ($errors->has('email'))
                     <span class="text-danger">{{ $errors->first('email') }}</span>
@@ -80,10 +80,7 @@
                   </div>
                   <div class="form-group">
                     <label class="my-1 d-flex align-items-center" style="font-size: 14px;" for="role"> Password <span class="ml-auto"></span></label>
-
-
                     <input id="password" type="password" style="border-radius: 10px;" class="form-control  @error('password') is-invalid @enderror"  placeholder="Password" name="password" required autocomplete="current-password" oninput="validateAlphaPass();">
-
                     @if ($errors->has('password'))
                     <span class="text-danger">{{ $errors->first('password') }}</span>
                 @endif
