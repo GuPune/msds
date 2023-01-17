@@ -174,8 +174,8 @@
 
     @foreach($abc as $key => $xx)
 
-
-    <div class="col-4 col-md-4" style="padding-top: 5px;padding-bottom: 5px" onclick="Addvote({{$xx['id']}});">
+    <input type="hidden" id="name" name="name" value="{{$xx['name']}}">
+    <div class="col-4 col-md-4" style="padding-top: 5px;padding-bottom: 5px" onclick="Addvote({{$xx['id']}},{{$xx['name']}});">
         {{-- <div class="card {{ $xx['id'] ==  $datavote['votes_id'] ? 'selvote' : '' }}">
             <img class="card-img-top imgs" src="/public/product/{{$xx['image']}}" alt="Card image cap">
         </div> --}}
@@ -221,7 +221,9 @@
             <div class="modal-header" style="justify-content: center;">
                 <img id="myImg" src="/aaaa.jpg" alt="Snow" style="width:50%;">
             </div>
-            <div class="modal-body">คุณ {{Auth::guard('web')->user()->fname}} ต้องการโหวตให้กับหมายเลข 03 ?</div>
+            <div class="modal-body">คุณ {{Auth::guard('web')->user()->fname}} ต้องการโหวตให้กับหมายเลข <span id="namemodal"> </span>?
+
+            </div>
             <div class="modal-footer">
                 <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
                 <a class="btn btn-save" href="#">Vote</a>
@@ -254,12 +256,15 @@
   } );
 
 
-  function Addvote(id)
+  function Addvote(id,name)
 {
 
     var ids = $('#id').val();
     var start = $('#start').val();
     var end = $('#end').val();
+
+
+
 
 
     const date = new Date().getTime();
@@ -268,6 +273,9 @@
 
     if((date > datestart) && (dateend > date)){
     var vote_id = $('#vote_id').val(id);
+
+
+    document.getElementById("namemodal").innerHTML = name;
     $("#vote").modal()
 }else{
   $("#closevote").modal()
