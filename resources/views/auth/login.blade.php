@@ -51,6 +51,20 @@
 
                 @csrf
 
+                @php if(isset($_COOKIE['email']) && isset($_COOKIE['password']))
+{
+   $login_email = $_COOKIE['email'];
+   $login_pass  = $_COOKIE['password'];
+   $is_remember = 'checked';
+
+
+}
+else{
+   $login_email ='';
+   $login_pass = '';
+   $is_remember = "";
+ }
+@endphp
 
 
                   <div class="form-group">
@@ -58,7 +72,7 @@
 
                     <input id="token" type="hidden" class="form-control form-control-lg" style="border-radius: 10px;"  name="token" value="{{$gettoken}}" required >
 
-                    <input id="email" type="email" class="form-control form-control-lg" style="border-radius: 10px;" placeholder="Email"  name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
+                    <input id="email" type="email" class="form-control form-control-lg" style="border-radius: 10px;" placeholder="Email"  name="email" value="{{$login_email}}" required autocomplete="email" autofocus>
                     @error('email')
                     <span class="invalid-feedback" role="alert">
                         <strong>{{ $message }}</strong>
@@ -70,7 +84,7 @@
                     <label class="my-1 d-flex align-items-center" style="font-size: 20px;" for="role"><i class="fa fa-lock" aria-hidden="true"></i>  Password <span class="ml-auto"></span></label>
 
 
-                    <input id="password" type="password" style="border-radius: 10px;" class="form-control  @error('password') is-invalid @enderror"  placeholder="Password" name="password" required autocomplete="current-password">
+                    <input id="password" type="password" style="border-radius: 10px;" class="form-control  @error('password') is-invalid @enderror"  placeholder="Password" name="password" value="{{ $login_pass}}" required autocomplete="current-password">
 
                     @error('password')
                         <span class="invalid-feedback" role="alert">
@@ -80,7 +94,11 @@
                   </div>
                   <div class="col-auto" style="text-align: center;">
                     <label for="remember">Remember me</label>
-                    <input type="checkbox" name="remember" value="1">
+                    <input type="checkbox" name="remember" value="1" @if ($is_remember == 'checked')
+                    checked
+                    @else
+
+                    @endif>
                 </div>
 
 

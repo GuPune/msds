@@ -57,6 +57,11 @@ class LoginController extends Controller
                 }
         }
 
+        if($remember == 1){
+            setcookie('email',$request->email,time()+60*60*24*100);
+            setcookie('password',$request->password,time()+60*60*24*100);
+         }
+
 
         $request->merge(["period"=>$getperiod->period]);
         $credentials = $request->only('email', 'password');
