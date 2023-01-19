@@ -304,7 +304,7 @@
             <div class="modal-header" style="justify-content: center;">
                 <img id="myImg" src="/aaaa.jpg" alt="Snow" style="width:50%;">
             </div>
-            <div class="modal-body">คุณ {{Auth::guard('web')->user()->fname}} ต้องการโหวตให้กับหมายเลข 03 ?</div>
+            <div class="modal-body">คุณ {{Auth::guard('web')->user()->fname}} ต้องการโหวตให้กับหมายเลข <span id="namemodal"></span>?</div>
             <div class="modal-footer">
                 <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
                 <a class="btn btn-save-group" href="#">Votegroup</a>
