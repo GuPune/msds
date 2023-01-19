@@ -364,6 +364,7 @@
 
 // var totals = new Date(total);
 // var milliseconds3 = totals.getTime();
+console.log(name);
 
 if((date > datestart) && (dateend > date)){
     var vote_id = $('#vote_id').val(id);
