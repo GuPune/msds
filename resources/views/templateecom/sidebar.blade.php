@@ -77,12 +77,12 @@
         </a>
     </li>
 
-    <li class="nav-item">
+    {{-- <li class="nav-item">
         <a class="nav-link" href="/admin/users">
             <i class="nav-icon 	fas fa-child"></i>
             <span>ดูผลโหวต</span>
         </a>
-    </li>
+    </li> --}}
 
 
     <li class="nav-item">
