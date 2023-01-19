@@ -24,24 +24,26 @@
     position: absolute;
 
     top: 50%;
-    left: 50%;
+    left: 42%;
     margin-top: -25px;
     margin-left: -65px;
 }
     </style>
 
-<div class="row">
+<div class="row" style="
+margin-top: 13rem;
+">
     <div class="col-sm-4 col-md-12">
 
       </div>
       <div class="col-sm-4 col-md-12">
         <a href="/vote/chud">
-        <div class="card text-white bg-primary mb-3 mx-auto" style="max-width: 70%;height: 100px;">
-          <div class="card-body">
+        <div class="card text-white bg-primary mb-3 mx-auto" style="max-width: 70%;height: 100px;border: 0px;">
+          <div class="card-body" style="background-color: #1e2c32;">
 
 
             <div class='fullscreenDiv'>
-                <div class="center">MSD TALENT SHOW</div>
+                <div class="center" style="font-size: 20px;">MSD TALENT SHOW</div>
             </div>
           </div>
         </div>
@@ -59,12 +61,12 @@
       </div>
       <div class="col-sm-4 col-md-12">
         <a href="/vote/idol">
-        <div class="card text-white bg-primary mb-3 mx-auto" style="max-width: 70%;height: 100px;">
-          <div class="card-body">
+        <div class="card text-white bg-primary mb-3 mx-auto" style="max-width: 70%;height: 100px;border: 0px;">
+          <div class="card-body" style="background-color: #1e2c32;">
 
 
             <div class='fullscreenDiv'>
-                <div class="center">MSD NEXT IDOL</div>
+                <div class="center"  style="font-size: 20px;">MSD NEXT IDOL</div>
             </div>
           </div>
         </div>

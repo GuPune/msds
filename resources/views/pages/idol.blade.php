@@ -62,7 +62,8 @@
 
 .blocl{
     height: 250px;
-    background-color: #21A7E1;
+    /* background-color: #21A7E1; */
+    background-color: #1e2c32;
     color: white;
     font-size: 50px;
     text-align: center;
@@ -76,7 +77,8 @@
     }
     .blocl{
     height: 120px;
-    background-color: #21A7E1;
+    /* background-color: #21A7E1; */
+    background-color: #1e2c32;
     color: white;
     font-size: 30px;
     text-align: center;
@@ -90,7 +92,8 @@
 
     .blocl{
     height: 120px;
-    background-color: #21A7E1;
+    /* background-color: #21A7E1; */
+    background-color: #1e2c32;
     color: white;
     font-size: 30px;
     text-align: center;
@@ -106,7 +109,8 @@
 @media (min-width:801px)  {
     .blocl{
     height: 250px;
-    background-color: #21A7E1;
+    /* background-color: #21A7E1; */
+    background-color: #1e2c32;
     color: white;
     font-size: 50px;
     text-align: center;
@@ -120,7 +124,8 @@
     }
     .blocl{
     height: 200px;
-    background-color: #21A7E1;
+    /* background-color: #21A7E1; */
+    background-color: #1e2c32;
     color: white;
     font-size: 50px;
     text-align: center;
@@ -133,7 +138,8 @@
     }
     .blocl{
     height: 250px;
-    background-color: #21A7E1;
+    /* background-color: #21A7E1; */
+    background-color: #1e2c32;
     color: white;
     font-size: 50px;
     text-align: center;
