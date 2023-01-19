@@ -151,15 +151,12 @@
     }
         </style>
 
-
-
             <div class="row">
-                <div class="col-12 help-block-send" style="padding-top: 5px;padding-bottom: 5px">
+                <div class="col-12 help-block-send" style="padding-top: 5px;padding-bottom: 13px">
                 <div class="alert alert-success">
                     <p>ส่งข้อมูลเรียบร้อย</p>
                 </div>
                 </div>
-
                 <div class="col-12 col-md-12" style="padding-top: 5px;padding-bottom: 5px"  onclick="showmodal()">
                     {{-- <div class="card {{ $xx['id'] ==  $datavote['votes_id'] ? 'selvote' : '' }}">
                         <img class="card-img-top imgs" src="/public/product/{{$xx['image']}}" alt="Card image cap">
