@@ -26,7 +26,7 @@ class CheckEmailRule implements Rule
     public function passes($attribute, $value)
     {
 
-        if (strpos($value, '@merck.com') !== false) {
+        if (strpos($value, '@MERCK.COM') !== false) {
             return true;
         }
         return false;

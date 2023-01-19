@@ -118,7 +118,7 @@ $getauth = Auth::guard('web')->user();
 
 if($getauth){
     return redirect()->route('twostep');
-                   }
+}
 
         return view('loginhome')->with(compact('gettoken'));
     }

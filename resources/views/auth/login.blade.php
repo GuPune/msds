@@ -72,7 +72,7 @@ else{
 
                     <input id="token" type="hidden" class="form-control form-control-lg" style="border-radius: 10px;"  name="token" value="{{$gettoken}}" required >
 
-                    <input id="email" type="email" class="form-control form-control-lg" style="border-radius: 10px;" placeholder="Email"  name="email" value="{{$login_email}}" required autocomplete="email" autofocus>
+                    <input id="email" type="email" class="form-control form-control-lg" style="border-radius: 10px;" placeholder="Email"  name="email" value="{{$login_email}}" required autocomplete="email" autofocus  oninput="validateAlphaemail(event);">
                     @error('email')
                     <span class="invalid-feedback" role="alert">
                         <strong>{{ $message }}</strong>
@@ -84,7 +84,7 @@ else{
                     <label class="my-1 d-flex align-items-center" style="font-size: 20px;" for="role"><i class="fa fa-lock" aria-hidden="true"></i>  Password <span class="ml-auto"></span></label>
 
 
-                    <input id="password" type="password" style="border-radius: 10px;" class="form-control  @error('password') is-invalid @enderror"  placeholder="Password" name="password" value="{{ $login_pass}}" required autocomplete="current-password">
+                    <input id="password" type="password" style="border-radius: 10px;" class="form-control  @error('password') is-invalid @enderror"  placeholder="Password" name="password" value="{{ $login_pass}}" required autocomplete="current-password" oninput="validateAlphapass(event);">
 
                     @error('password')
                         <span class="invalid-feedback" role="alert">
@@ -150,6 +150,28 @@ else{
     if(currentLocation){
         localStorage.setItem("url",currentLocation);
     }
+
+
+function validateAlphapass(e){
+    var ss = e.target.selectionStart;
+   var se = e.target.selectionEnd;
+   e.target.value = e.target.value.toUpperCase();
+    var textInput = document.getElementById("password").value;
+    textInput = textInput.replace(/[^A-Z0-9]/g, "");
+    document.getElementById("password").value = textInput;
+}
+
+function validateAlphaemail(e){
+    var ss = e.target.selectionStart;
+   var se = e.target.selectionEnd;
+   e.target.value = e.target.value.toUpperCase();
+
+   var textInput = document.getElementById("email").value;
+    textInput = textInput.replace(/[^A-Z0-9.@]/g, "");
+    document.getElementById("email").value = textInput;
+
+
+}
 
 
  </script>
