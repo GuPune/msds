@@ -94,8 +94,6 @@ if(($ldate > $first2) && ($ldate < $last2)){
             "qa_id" => $save->id,
         ]);
 
-
-
         return response()->json([
             'code_return' => 200,
         ]);

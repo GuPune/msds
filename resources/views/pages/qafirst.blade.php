@@ -154,9 +154,11 @@
 
 
             <div class="row">
-
-
-
+                <div class="col-12 help-block-send" style="padding-top: 5px;padding-bottom: 5px">
+                <div class="alert alert-success">
+                    <p>ส่งข้อมูลเรียบร้อย</p>
+                </div>
+                </div>
 
                 <div class="col-12 col-md-12" style="padding-top: 5px;padding-bottom: 5px"  onclick="showmodal()">
                     {{-- <div class="card {{ $xx['id'] ==  $datavote['votes_id'] ? 'selvote' : '' }}">
@@ -213,7 +215,7 @@
 
 
             <style type="text/css">
-                .help-block-message{
+                .help-block-message,.help-block-send{
                     display: none;
                     color: red;
                     text-align: center;
@@ -260,6 +262,7 @@ $.ajax({
 
         $('#send').modal("hide");
         var message = $('#message').val('');
+        $('.help-block-send').show();
 
     }
 });
