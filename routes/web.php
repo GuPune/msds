@@ -68,6 +68,8 @@ Route::prefix('admin')->group(function () {
     Route::resource('setting/votess', '\App\Http\Controllers\VotesSettingController');
     Route::resource('setting/idol', '\App\Http\Controllers\VotesIdolController');
     Route::resource('setting/qac', '\App\Http\Controllers\QAsettingController');
+    Route::resource('setting/qacsetting', '\App\Http\Controllers\SettingqaController');
+
     Route::resource('users', '\App\Http\Controllers\UserController');
     Route::resource('regis', '\App\Http\Controllers\SystemController');
     Route::post('users/datatables', [\App\Http\Controllers\UserController::class, 'getdatatable'])->name('users.data');

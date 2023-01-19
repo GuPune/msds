@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\FactQA;
 use App\Models\QA;
+use App\Models\Systemqa;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -63,12 +64,15 @@ class QAController extends Controller
 
         $ldate = date('H:i:s');
 
+        $systemqa = Systemqa::first();
+
 //         รอบที่ 1 : ช่วง 9.00-10.00
 // รอบที่ 2 : ช่วง 13.00-15.00
-$first1 = '09:00:00';
-$last1 = '10:00:00';
-$first2 = '13:00:00';
-$last2 = '15:00:00';
+$first1 = $systemqa->startf;
+$last1 = $systemqa->endf;
+$first2 = $systemqa->startl;
+$last2 = $systemqa->endl;
+
 $type = 'E';
 if(($ldate > $first1) && ($ldate < $last1)){
     $type = 'D';

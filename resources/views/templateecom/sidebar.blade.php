@@ -85,11 +85,26 @@
     </li> --}}
 
 
+
+
     <li class="nav-item">
-        <a class="nav-link" href="/admin/setting/qac">
+        <a class="nav-link" href="#" data-toggle="collapse"  data-target="#collapse14" aria-expanded="true" aria-controls="collapse">
             <i class="nav-icon fas fa-comments"></i>
             <span>Q&A</span>
         </a>
+
+        <div  id="collapse14" class="collapse show'"aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+            <div class="bg-white py-2 collapse-inner rounded">
+                 <a class="collapse-item" href="/admin/setting/qac">
+                   Q&A
+                 </a>
+
+                 <a class="collapse-item" href="/admin/setting/qacsetting">
+                    ตั้งค่า
+                 </a>
+            </div>
+        </div>
+
     </li>
 
     <li class="nav-item">
