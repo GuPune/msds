@@ -364,7 +364,7 @@
 
 // var totals = new Date(total);
 // var milliseconds3 = totals.getTime();
-console.log(name);
+
 
 if((date > datestart) && (dateend > date)){
     var vote_id = $('#vote_id').val(id);
@@ -386,7 +386,7 @@ function Addvotegroup(id,name)
     var startp = $('#startgroup').val();
     var end = $('#endgroup').val();
 
-
+    console.log(name);
     const date = new Date().getTime();
     var datestart = new Date(start.replace(/\s+/g, 'T').concat('.000+07:00')).getTime();
     var dateend = new Date(end.replace(/\s+/g, 'T').concat('.000+07:00')).getTime();
