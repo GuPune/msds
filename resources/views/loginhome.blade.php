@@ -28,7 +28,7 @@
       <div class="content-wrapper d-flex align-items-center auth px-0 bocdy">
 
         <div class="row w-100 mx-0">
-            <div class="col-12 col-lg-12 mx-auto">
+            <div class="col-12 col-lg-12 mx-auto" style="text-align: center;">
                 <img src="http://139.5.146.235/1.png" alt="Girl in a jacket" width="400" height="200">
 
             </div>
