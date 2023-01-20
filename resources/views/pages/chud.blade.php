@@ -257,9 +257,6 @@
 
 <script>
 
-    $(document).ready( function () {
-      $('#myTable').DataTable();
-  } );
 
 
   function Addvote(id,name)
