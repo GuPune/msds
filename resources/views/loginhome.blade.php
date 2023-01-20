@@ -7,6 +7,7 @@
   @include('templateadmin.styles')
 </head>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css">
+<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Poppins" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
 <style>
     .bocdy  {
@@ -16,6 +17,10 @@
   background-repeat: no-repeat;
   background-size: cover;
     }
+body{
+    font-family: 'Poppins', sans-serif;
+}
+
 
     html {
 	-webkit-text-size-adjust: none;

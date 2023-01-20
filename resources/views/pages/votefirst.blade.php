@@ -42,7 +42,7 @@ margin-top: 13rem;
           <div class="card-body" style="background-color: #1e2c32;">
 
 
-            <div class='fullscreenDiv'>
+            <div class='fullscreenDiv' style="border-style: solid;border-color: #6ee5ef;">
                 <div class="center" style="font-size: 20px;">MSD TALENT SHOW</div>
             </div>
           </div>
@@ -63,9 +63,7 @@ margin-top: 13rem;
         <a href="/vote/idol">
         <div class="card text-white bg-primary mb-3 mx-auto" style="max-width: 70%;height: 100px;border: 0px;">
           <div class="card-body" style="background-color: #1e2c32;">
-
-
-            <div class='fullscreenDiv'>
+            <div class='fullscreenDiv' style="border-style: solid;border-color: #6ee5ef;">
                 <div class="center"  style="font-size: 20px;">MSD NEXT IDOL</div>
             </div>
           </div>

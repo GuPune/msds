@@ -27,6 +27,7 @@
 
 		<!-- jQuery -->
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Poppins" />
 
     <style media="screen">
          .bocdy  {
@@ -37,6 +38,9 @@
       /* background-image: url("https://cdn.vuetifyjs.com/images/backgrounds/vbanner.jpg"); */
 
     }
+    body{
+    font-family: 'Poppins', sans-serif;
+}
 
       h1, h2, h3, h4, h5, h6{
         font-family: 'Mitr', sans-serif !important;

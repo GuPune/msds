@@ -27,6 +27,7 @@
     <!-- <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css"> -->
     <!-- Font -->
     <link href="https://fonts.googleapis.com/css?family=Mitr&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Poppins" />
 
 		<!-- jQuery -->
 
@@ -45,6 +46,9 @@
       /* background-image: url("https://cdn.vuetifyjs.com/images/backgrounds/vbanner.jpg"); */
 
     }
+    body{
+    font-family: 'Poppins', sans-serif;
+}
 
       h1, h2, h3, h4, h5, h6{
         font-family: 'Mitr', sans-serif !important;
