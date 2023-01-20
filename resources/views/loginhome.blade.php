@@ -34,10 +34,10 @@
             </div>
           <div class="col-12 col-lg-12 mx-auto">
             <div class="col-lg-4 mx-auto">
-                <div class="auth-form-light text-left py-5 px-4 px-sm-5" style="border-radius: 30px;">
+                <div class="auth-form-light text-left py-3 px-4 px-sm-4" style="border-radius: 30px;">
 
                     {{-- <h4>Hello! let's get started</h4> --}}
-                    <h1 class="font-weight-light"><strong>ยินดีต้อนรับ</strong></h1>
+                    <h2 class="font-weight-light"><strong>ยินดีต้อนรับ</strong></h2>
               @if ($message = Session::get('success'))
                     <div class="alert alert-success">
                         <p>{{ $message }}</p>
