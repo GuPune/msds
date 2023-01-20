@@ -21,6 +21,39 @@
 	-webkit-text-size-adjust: none;
 	touch-action: manipulation;
 }
+
+    @media (min-width:320px)  {
+
+.firstlogo{
+    width: 320px;
+    height: 200px;
+}
+      }
+    @media (min-width:480px)  {
+
+        .firstlogo{
+    width: 400px;
+}
+
+
+     }
+    @media (min-width:600px)  {
+
+     }
+    @media (min-width:801px)  {
+
+
+    }
+    @media (min-width:1025px) {
+
+
+
+
+     }
+    @media (min-width:1281px) {
+
+
+    }
     </style>
 <body>
   <div class="container-scroller">
@@ -29,8 +62,7 @@
 
         <div class="row w-100 mx-0">
             <div class="col-12 col-lg-12 mx-auto" style="text-align: center;">
-                <img src="http://139.5.146.235/1.png" alt="Girl in a jacket" width="400" height="200">
-
+                <img src="http://139.5.146.235/1.png" alt="Girl in a jacket"  class="firstlogo">
             </div>
           <div class="col-12 col-lg-12 mx-auto">
             <div class="col-lg-4 mx-auto">
