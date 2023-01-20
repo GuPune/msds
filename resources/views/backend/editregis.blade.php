@@ -45,6 +45,18 @@
                     </div>
                   </div>
 
+                  <div class="form-row">
+                    <div class="form-group col-md-6">
+                      <label for="inputCity">เวลาเริ่มต้น</label>
+                      <input type="text" format-value="yyyy-MM-ddTHH:mm" class="form-control datetime" id="start" name="start"  value="{{$sys->start}}" required>
+                    </div>
+
+                    <div class="form-group col-md-6">
+                      <label for="inputCity">เวลาหยุด</label>
+                      <input type="text" format-value="yyyy-MM-ddTHH:mm" class="form-control datetime" id="end" name="end"  value="{{$sys->end}}" required>
+                    </div>
+                  </div>
+
 
             </div>
             <button type="submit" class="btn btn-primary">บันทึก</button>
@@ -67,10 +79,25 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.22.2/moment.min.js"></script>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.47/css/bootstrap-datetimepicker.min.css" rel="stylesheet" />
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.47/js/bootstrap-datetimepicker.min.js"></script>
 <script>
 
 var $link = "<?php echo url('/public/product/'); ?>";
 
+
+$('.datetime').datetimepicker({
+    format: 'YYYY-MM-DD HH:mm:ss',
+    locale: 'en',
+    sideBySide: true,
+    icons: {
+      up: 'fas fa-chevron-up',
+      down: 'fas fa-chevron-down',
+      previous: 'fas fa-chevron-left',
+      next: 'fas fa-chevron-right'
+    }
+  })
     $('.up').on('click',function(){
                 var no   = $(this).data('no');
                 var name = $(this).data('name');

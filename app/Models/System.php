@@ -20,6 +20,8 @@ class System extends Model
         'path',
         'status',
         'logout',
+        'start',
+        'end',
 
     ];
 }

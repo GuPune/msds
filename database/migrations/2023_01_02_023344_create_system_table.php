@@ -22,6 +22,9 @@ class CreateSystemTable extends Migration
             $table->text('path')->nullable();
             $table->text('logout')->nullable();
             $table->string('status')->nullable();
+            $table->dateTime('start')->nullable();
+            $table->dateTime('end')->nullable();
+
             $table->timestamps();
         });
     }

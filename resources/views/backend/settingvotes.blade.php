@@ -83,6 +83,8 @@
 
 
 
+
+
     $('.up').on('click',function(){
                 var no   = $(this).data('no');
                 var name = $(this).data('name');

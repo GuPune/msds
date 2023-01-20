@@ -84,6 +84,8 @@ class SystemController extends Controller
             'token' => $request->token,
             'url' => $request->url,
             'status' => $request->status,
+            'start' => $request->start,
+            'end' => $request->end,
         ]);
 
         return redirect()->route('regis.index')->with('success','System update successfully');
