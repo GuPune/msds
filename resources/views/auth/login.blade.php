@@ -30,7 +30,8 @@
 
 .firstlogo{
     width: 320px;
-    height: 200px;
+    /* height: 200px; */
+    height: auto;
 }
       }
     @media (min-width:480px)  {
