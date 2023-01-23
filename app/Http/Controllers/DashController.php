@@ -127,7 +127,11 @@ $a = Auth::user();
 
      if(!Auth::user()){
         $session_data = $request->session()->get('id');
+
         $user = User::find($session_data);
+        if(!$user){
+            return redirect('/');
+        }
         if($user->token == 'a3'){
             return redirect('/');
         }
