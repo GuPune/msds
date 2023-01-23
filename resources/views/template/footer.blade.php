@@ -2,14 +2,14 @@
 @php
 $aaa = Session::get('path');
 
+
 use App\Models\System;
 $b = System::where('period',$aaa)->first();
-
+$a = [];
 
 $ldate = date('Y-m-d H:i:s');
-
-
 @endphp
+@if($b)
 @if(($ldate > $b->start) && ($b->end > $ldate)) {
     <div class="row" style="margin-bottom:2%; font-family:Mitr;">
         {{-- <div class="col-4 text-center text-white" style="padding-top:1%;">
@@ -27,4 +27,10 @@ $ldate = date('Y-m-d H:i:s');
       </div>
 }
 @endif
+
+
+@else
+
+@endif
+
 
