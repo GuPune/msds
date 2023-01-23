@@ -125,7 +125,7 @@ $a = Auth::user();
         //
      //   $gettoken = $token;
 
-     dd($request->all());
+     dd(Auth::user());
 
 
 
