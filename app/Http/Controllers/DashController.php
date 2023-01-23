@@ -125,9 +125,12 @@ $a = Auth::user();
         //
      //   $gettoken = $token;
 
+     dd($request->all());
+
+
+
      if(!Auth::user()){
         $session_data = $request->session()->get('id');
-
         $user = User::find($session_data);
         if(!$user){
             return redirect('/');
