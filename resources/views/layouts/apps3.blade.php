@@ -70,6 +70,17 @@
     .ima3{
         width: 100px;
     }
+    .ima{
+        width: 100px;
+    }
+
+    @media only screen and (max-width: 600px) {
+        .ima{
+        width: 100%;
+    }
+
+}
+
 
     @media only screen and (max-width: 600px) {
         .ima3{

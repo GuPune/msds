@@ -41,8 +41,10 @@
                             <td class="text-center">
                                 @if($rs->period == 'D')
                                 {{'ช่วงเช้า'}}
-                                @else
+                                @elseif ($rs->period == 'N')
                                 {{'ช่วงบ่าย'}}
+                                @else
+                                {{'ช่วงก่อนวัน'}}
                                 @endif
                                </td>
                                <td class="text-center">

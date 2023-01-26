@@ -1,6 +1,6 @@
 <div class="row" style="font-family:Mitr;">
     <div class="col-4 text-center text-white" style="padding-top:1%;">
-      <a href="#"><img src="/cms/images/msd-logo.svg" class="imaghead"></a>
+      <a href="/dash/home"><img src="/cms/images/msd-logo.svg" class="imaghead"></a>
     </div>
     <div class="col-5 text-white" style="padding-top:1%;">
       <a href="#" class="ffasd"><i class="fa fa-user-circle fa-2x" aria-hidden="true"></i>

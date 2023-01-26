@@ -59,6 +59,17 @@
       width: 70%;
       margin: auto;
     }
+
+    .ima{
+        width: 100px;
+    }
+
+    @media only screen and (max-width: 600px) {
+        .ima{
+        width: 100%;
+    }
+
+}
     .ima2{
         width: 100px;
     }
