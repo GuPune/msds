@@ -87,7 +87,7 @@ class ReportController extends Controller
         if(!$a){
         return redirect('/admin/login');
         }
-        $qa = QA::where('period','D')->get();
+
         $type = '';
         if($request->type == 'D'){
             $type = 'D';
@@ -97,7 +97,7 @@ class ReportController extends Controller
             $type = 'N';
         }
 
-
+        $qa = QA::where('period',$type)->get();
 
         return view('backend.reportqa')->with('report',$qa)->with(compact('type'));
     }
