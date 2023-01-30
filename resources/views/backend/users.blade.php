@@ -51,7 +51,7 @@
                 <div class="modal-body">
                     <span class="text-danger">กรุณาใช้เป็นตัวอักษรภาษาอังกฤษพิมพ์ใหญ่ และตัวเลขเท่านั้น</span>
                     <div class="form-group">
-                        <label for="recipient-name" class="col-form-label">Passowrd:</label>
+                        <label for="recipient-name" class="col-form-label">Password:</label>
                         <input type="text" class="form-control" id="password" oninput="validateAlphadep();">
                         <input type="hidden" class="form-control" id="id">
                       </div>
