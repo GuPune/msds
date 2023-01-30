@@ -31,8 +31,8 @@ class SystemSeeder extends Seeder
               'logout' => 'http://139.5.146.235/login/a1',
               'path' => '/login/a1',
               'status' => 'O',
-              'start' => '2023-01-17 16:19:30',
-              'end' => '2023-01-21 16:19:42',
+              'start' => '2023-02-06 00:00:00',
+              'end' => '2023-02-08 23:30:00',
             ],
             [
               'token' => 'fgq5123yh47y3441245',
@@ -44,8 +44,8 @@ class SystemSeeder extends Seeder
               'logout' => 'http://139.5.146.235/login/a2',
               'path' => '/login/a2',
               'status' => 'O',
-              'start' => '2023-01-17 16:19:30',
-              'end' => '2023-01-21 16:19:42',
+              'start' => '2023-02-06 00:00:00',
+              'end' => '2023-02-08 23:30:00',
             ],
             [
                 'token' => 'a3',
@@ -57,8 +57,8 @@ class SystemSeeder extends Seeder
                 'logout' => '',
                 'path' => '/',
                 'status' => 'O',
-                'start' => '2023-01-17 16:19:30',
-                'end' => '2023-01-21 16:19:42',
+                'start' => '2023-02-06 00:00:00',
+                'end' => '2023-02-08 23:30:00',
               ]
           ];
           System::insert($users);
