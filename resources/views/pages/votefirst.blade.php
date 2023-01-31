@@ -28,9 +28,93 @@
     margin-top: -25px;
     margin-left: -65px;
 }
+
+
+
+
+@media (min-width:320px)  {
+
+    .voteshow{
+    width: 240px;
+    height: 99px;
+}
+
+.desktop{
+  display: none;
+}
+
+.mobile{
+  display: block;
+}
+
+
+
+
+
+}
+
+@media (min-width:425px)  {
+    .voteshow{
+    width: 270px;
+    height: 99px;
+}
+ }
+@media (min-width:480px)  {
+    .voteshow{
+    width: 335px;
+    height: 99px;
+}
+ }
+@media (min-width:600px)  {
+    .voteshow{
+    width: 515px;
+    height: 99px;
+}
+  }
+@media (min-width:801px)  {
+    .voteshow{
+    width: 515px;
+    height: 99px;
+}
+ }
+
+ @media (min-width:900px) {
+
+.voteshow{
+width: 604px;
+height: 99px;
+}
+
+}
+@media (min-width:1025px) {
+
+    .voteshow{
+    width: 694px;
+    height: 99px;
+}
+
+ }
+@media (min-width:1281px) {
+
+    .voteshow{
+    width: 1166px;
+    height: 100px;
+}
+
+.mobile{
+  display: none;
+
+}
+
+.desktop{
+  display: block;
+}
+
+
+}
     </style>
 
-<div class="row" style="
+{{-- <div class="row" style="
 margin-top: 13rem;
 ">
     <div class="col-sm-4 col-md-12">
@@ -52,10 +136,13 @@ margin-top: 13rem;
     <div class="col-sm-4 col-md-12">
 
     </div>
-  </div>
+  </div> --}}
+<br>
 <br>
 
-<div class="row">
+<br>
+
+{{-- <div class="row">
     <div class="col-sm-4 col-md-12">
 
       </div>
@@ -72,6 +159,35 @@ margin-top: 13rem;
       </div>
     <div class="col-sm-4 col-md-12">
 
+    </div>
+  </div> --}}
+
+
+  <div class="row desktop" style="margin-bottom:2%; font-family:Mitr;">
+    <div class="col-12 text-center text-white bg-dsr" style="padding-top:1%;">
+      <a href="/vote/chud"><img src="/talentshow.png" alt="buttonpng" border="0"  height="100px" width="1269px" class="voteshow"/></a>
+    </div>
+  </div>
+
+
+  <div class="row desktop" style="margin-bottom:2%; font-family:Mitr;">
+    <div class="col-12 text-center text-white bg-dsr" style="padding-top:1%;">
+      <a href="/vote/idol"><img src="/idoldesk.png" alt="buttonpng" border="0"  height="100px" width="1269px" class="voteshow"/></a>
+    </div>
+  </div>
+
+
+
+
+  <div class="row mobile" style="margin-bottom:2%; font-family:Mitr;">
+    <div class="col-12 text-center text-white bg-dsr" style="padding-top:1%;">
+      <a href="/vote/chud"><img src="/talentshowmobile.png" alt="buttonpng" border="0"  height="100px" width="1269px" class="voteshow"/></a>
+    </div>
+  </div>
+
+  <div class="row mobile" style="margin-bottom:2%; font-family:Mitr;">
+    <div class="col-12 text-center text-white bg-dsr" style="padding-top:1%;">
+      <a href="/vote/ido"><img src="/idolmobile.png" alt="buttonpng" border="0"  height="100px" width="1269px" class="voteshow"/></a>
     </div>
   </div>
 
