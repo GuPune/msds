@@ -187,7 +187,7 @@ margin-top: 13rem;
 
   <div class="row mobile" style="margin-bottom:2%; font-family:Mitr;">
     <div class="col-12 text-center text-white bg-dsr" style="padding-top:1%;">
-      <a href="/vote/ido"><img src="/idolmobile.png" alt="buttonpng" border="0"  height="100px" width="1269px" class="voteshow"/></a>
+      <a href="/vote/idol"><img src="/idolmobile.png" alt="buttonpng" border="0"  height="100px" width="1269px" class="voteshow"/></a>
     </div>
   </div>
 
