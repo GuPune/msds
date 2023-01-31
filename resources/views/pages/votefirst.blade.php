@@ -165,14 +165,14 @@ margin-top: 13rem;
 
   <div class="row desktop" style="margin-bottom:2%; font-family:Mitr;">
     <div class="col-12 text-center text-white bg-dsr" style="padding-top:1%;">
-      <a href="/vote/chud"><img src="/talentshow.png" alt="buttonpng" border="0"  height="100px" width="1269px" class="voteshow"/></a>
+      <a href="/vote/chud"><img src="/b1.png" alt="buttonpng" border="0"  height="100px" width="1269px" class="voteshow"/></a>
     </div>
   </div>
 
 
   <div class="row desktop" style="margin-bottom:2%; font-family:Mitr;">
     <div class="col-12 text-center text-white bg-dsr" style="padding-top:1%;">
-      <a href="/vote/idol"><img src="/idoldesk.png" alt="buttonpng" border="0"  height="100px" width="1269px" class="voteshow"/></a>
+      <a href="/vote/idol"><img src="/b3.png" alt="buttonpng" border="0"  height="100px" width="1269px" class="voteshow"/></a>
     </div>
   </div>
 
@@ -181,13 +181,13 @@ margin-top: 13rem;
 
   <div class="row mobile" style="margin-bottom:2%; font-family:Mitr;">
     <div class="col-12 text-center text-white bg-dsr" style="padding-top:1%;">
-      <a href="/vote/chud"><img src="/talentshowmobile.png" alt="buttonpng" border="0"  height="100px" width="1269px" class="voteshow"/></a>
+      <a href="/vote/chud"><img src="/b2.png" alt="buttonpng" border="0"  height="100px" width="1269px" class="voteshow"/></a>
     </div>
   </div>
 
   <div class="row mobile" style="margin-bottom:2%; font-family:Mitr;">
     <div class="col-12 text-center text-white bg-dsr" style="padding-top:1%;">
-      <a href="/vote/idol"><img src="/idolmobile.png" alt="buttonpng" border="0"  height="100px" width="1269px" class="voteshow"/></a>
+      <a href="/vote/idol"><img src="/b3.png" alt="buttonpng" border="0"  height="100px" width="1269px" class="voteshow"/></a>
     </div>
   </div>
 
