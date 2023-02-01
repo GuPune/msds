@@ -23,7 +23,7 @@
                     <label class="col-sm-3 col-form-label">หัวข้อการเข้าประกวด</label>
                     <div class="col-sm-9">
                         <select class="form-control form-control-sm" name="type">
-                            <option value="2">ประกวดโชว์ไอดอล</option>
+                            <option value="2">MSD NEXT IDOL</option>
                           </select>
                     </div>
                   </div>
@@ -35,8 +35,8 @@
                       <label class="col-sm-3 col-form-label">ประเภท</label>
                       <div class="col-sm-9">
                         <select class="form-control form-control-sm" name="group_id">
-                            <option value="1" @if($group_id == '1') selected @endif>เดี่ยว</option>
-                            <option value="2" @if($group_id == '2') selected @endif>กลุ่ม</option>
+                            <option value="1" @if($group_id == '1') selected @endif>MSD NEXT IDOL INDIVIDUAL</option>
+                            <option value="2" @if($group_id == '2') selected @endif>MSD NEXT IDOL GROUP</option>
                           </select>
                       </div>
                     </div>
