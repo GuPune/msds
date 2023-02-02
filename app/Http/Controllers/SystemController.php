@@ -81,7 +81,6 @@ class SystemController extends Controller
         //
 
         $upda = System::find($id)->update([
-            'token' => $request->token,
             'url' => $request->url,
             'status' => $request->status,
             'start' => $request->start,
