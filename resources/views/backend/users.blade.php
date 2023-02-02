@@ -197,8 +197,8 @@ if(password == ''){
 }
 
 
-if (password.length < 7) {
-    return swal("กรอกรหัสผ่าน ต้องไม่น้อยกว่า 6", "กรอกรหัสผ่าน ต้องไม่น้อยกว่า 6!", "error");
+if (password.length < 6) {
+    return swal("กรอกรหัสผ่าน ต้องไม่น้อยกว่า 5", "กรอกรหัสผ่าน ต้องไม่น้อยกว่า 5!", "error");
 }
 
 $.ajaxSetup({
