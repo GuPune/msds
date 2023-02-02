@@ -182,10 +182,10 @@ if($type == '1'){
     $name = 'Talent Show';
 }
 if($type == '2'){
-    $name = 'Next Idol';
+    $name = 'NEXT IDOL INDIVIDUAL';
 }
 if($type == '3'){
-    $name = 'Next Idol Group';
+    $name = 'MSD NEXT IDOL GROUP';
 }
 
 

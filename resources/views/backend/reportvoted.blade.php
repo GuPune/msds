@@ -17,8 +17,8 @@
                 <div class="form-group col-md-6">
                     <select class="custom-select" onchange='submitForm();' name="type" id="type">
                       <option value="1" @if($type == 1)  selected @endif>Talent Show</option>
-                      <option value="2" @if($type == 2)  selected @endif>Next Idol</option>
-                      <option value="3" @if($type == 3)  selected @endif>Next Idol Group</option>
+                      <option value="2" @if($type == 2)  selected @endif>NEXT IDOL INDIVIDUAL</option>
+                      <option value="3" @if($type == 3)  selected @endif>NEXT IDOL GROUP</option>
                     </select>
                   </div>
 
