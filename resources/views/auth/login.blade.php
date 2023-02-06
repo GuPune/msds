@@ -210,7 +210,7 @@ function validateAlphaemail(e){
    e.target.value = e.target.value.toUpperCase();
 
    var textInput = document.getElementById("email").value;
-    textInput = textInput.replace(/[^A-Z0-9.@]/g, "");
+    textInput = textInput.replace(/[^A-Z0-9.@_]/g, "");
     document.getElementById("email").value = textInput;
 }
 
